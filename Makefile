@@ -2,7 +2,7 @@
 LIBFT_PATH		=	./libraries/libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-MINILIBX_PATH	=	./libraries/minilibx
+MINILIBX_PATH	=	./libraries/minilibx-linux
 MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
 SOURCES_FILES	=	so_long.c \
