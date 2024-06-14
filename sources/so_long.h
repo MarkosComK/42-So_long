@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:52:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/14 20:30:54 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/14 23:40:58 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ typedef struct	s_game
 	void	*mlx;
 	void	*win;
 }				t_game;
+
+void	game_start(t_game *game);
 
 #endif
