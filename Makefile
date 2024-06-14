@@ -36,7 +36,7 @@ NAME_BONUS		=	so_long_bonus
 CC				=	cc
 RM				=	rm -f
 
-CFLAGS			=	-Wall -Wextra -Werror
+CFLAGS			=	-Wall -Wextra -Werror -g
 MLXFLAGS		=	-L. -lXext -L. -lX11
 
 .c.o:
