@@ -16,22 +16,15 @@ MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
 SOURCES_FILES	=	so_long.c \
 
-SOURCES_BONUS	=	so_long_bonus.c \
-
 SOURCES_DIR		=	sources
-BONUS_DIR		=	sources_bonus
 
 HEADER			=	$(SOURCES_DIR)/so_long.h
-HEEADER_BONUS	=	$(BONUS_DIR)/so_long_bonus.h
 
-SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
-BONUS_FILES		=	$(addprefix $(BONUS_DIR)/, $(SOURCES_BONUS))
+SOURCES			=	$(addprefix $(SOURCES_DIR)/, game_start.c $(SOURCES_FILES))
 
 OBJECTS			= 	$(SOURCES:.c=.o)
-OBJECTS_BONUS	= 	$(BONUS_FILES:.c=.o)
 
 NAME			=	so_long
-NAME_BONUS		=	so_long_bonus
 
 CC				=	cc
 RM				=	rm -f
@@ -44,13 +37,8 @@ MLXFLAGS		=	-L. -lXext -L. -lX11
 
 all:			$(NAME)
 
-bonus:			$(NAME_BONUS)
-
 $(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS) $(HEADER)
 				@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -o $(NAME)
-
-$(NAME_BONUS):		$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS) $(HEADER_BONUS)
-					@$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -o $(NAME_BONUS)
 
 $(LIBFT):
 				@make --silent -C $(LIBFT_PATH)
