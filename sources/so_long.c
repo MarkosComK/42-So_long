@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:50:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/14 15:32:13 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/14 15:37:26 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct	s_game {
 
 int handle_input(int key, t_game *game)
 {
-	if (key == 65307)
+	if (key == XK_Escape)
 	{
 		ft_printf("The key %d has pressed", key);
 		mlx_destroy_display(game->connection);
