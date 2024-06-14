@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:50:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/14 20:35:14 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/14 21:29:47 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 
 int	endgame(int keycode, t_game *game)
 {
-	if (keycode == XK_Escape)
+	if (keycode == XK_Escape || keycode == XK_q)
 	{
 		mlx_destroy_window(game->mlx, game->win);
+		mlx_destroy_display(game->mlx);
+		free(game->mlx);
+		exit(0);
 	}
 	return (1);
 }
+
+
 
 int	main(void)
 {
