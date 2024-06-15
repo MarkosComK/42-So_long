@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:52:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/15 16:10:00 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/15 19:58:01 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ typedef struct	s_map
 }				t_map;
 
 void	game_start(t_game *game);
+int		game_over(int keycode, t_game *game);
 
 #endif
