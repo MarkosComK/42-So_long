@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:52:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/15 21:32:35 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/15 22:01:13 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ typedef struct	s_map
 	int		width;
 	int		height;
 }				t_map;
+
+typedef struct	s_img
+{
+	void	*img;
+	int		*w;
+	int		*h;
+	int		wi;
+	int		he;
+}				t_img;
 
 void	game_start(char *path, t_game *game);
 int		game_over(int keycode, t_game *game);
