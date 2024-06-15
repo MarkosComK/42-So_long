@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 23:38:19 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/15 17:03:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/15 17:23:57 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,15 @@ void	game_start(t_game *game)
 {
 	t_map	map;
 	int		fd;
-	char	*str;
-	char	**mp = NULL;
 
 	fd = open("./maps/small.ber", O_RDONLY);
 	ft_printf("%d", fd);
-	str = get_next_line(fd);
-	mp = malloc(sizeof(char **));
-	mp[0] = malloc(sizeof(char *) * ft_strlen(str) + 1);
-	mp[0] = str;
-	map.map = NULL;
-	map.map = mp;
+	map.map = malloc(sizeof(char **));
+	map.map[0] = get_next_line(fd);
 	ft_printf("%s", map.map[0]);
+	free(map.map[0]);
+	free(map.map);
+	close(fd);
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, 480, 320, "so_long");
 }
