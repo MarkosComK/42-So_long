@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:52:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/15 16:09:06 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/15 16:10:00 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct	s_map
 	char	**map;
 	int		lines;
 	int		columns;
-}
+}				t_map;
 
 void	game_start(t_game *game);
 
