@@ -16,19 +16,38 @@ int		handle_key(int keycode, t_game *game)
 {
 	if (keycode == XK_r)
 	{
-		ft_printf("working");
 		draw_map(game);
 		draw_player(game);
 	}
+  if (keycode == XK_w)
+  {
+    clean_images(game);
+    game->player_y--;
+    draw_map(game);
+    draw_player(game);
+  }
+  if (keycode == XK_a)
+  {
+    clean_images(game);
+    game->player_x--;
+    draw_map(game);
+    draw_player(game);
+  }
   if (keycode == XK_d)
   {
+    clean_images(game);
     game->player_x++;
     draw_map(game);
     draw_player(game);
   }
+  if (keycode == XK_s)
+  {
+    clean_images(game);
+    game->player_y++;
+    draw_map(game);
+    draw_player(game);
+  }
 	if (keycode == XK_Escape)
-	{
     game_over(game);
-	}
 	return (1);
 }
