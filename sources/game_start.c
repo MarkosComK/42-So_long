@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 23:38:19 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/16 02:30:55 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:23:23 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void	game_start(char *path, t_game *game)
 {
 	set_map(path, game);
 	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, 300, 400, "so_long");
+	game->win = mlx_new_window(game->mlx, 48*game->map.columns, 48*game->map.lines, "so_long");
 }
 
