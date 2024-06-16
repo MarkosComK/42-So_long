@@ -18,7 +18,7 @@
 # include <X11/keysym.h>
 
 //IMAGE ASSETS
-# define PLAYER_IDLE_0 "./assets/character/player_idle_0.xpm"
+# define PLAYER_IDLE_0 "./assets/character/player_idle_bg.xpm"
 # define GROUND_0 "./assets/ground/ground_0.xpm"
 # define WALL_0 "./assets/ground/wall_mid.xpm"
 # define WALL_R "./assets/ground/wall_r.xpm"
