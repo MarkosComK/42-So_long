@@ -28,10 +28,7 @@ int		handle_key(int keycode, t_game *game)
   }
 	if (keycode == XK_Escape)
 	{
-		mlx_destroy_window(game->mlx, game->win);
-		mlx_destroy_display(game->mlx);
-		free(game->mlx);
-		exit(0);
+    game_over(game);
 	}
 	return (1);
 }
