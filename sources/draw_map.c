@@ -17,9 +17,10 @@ void	load_images(t_game *game)
 	int	s;
 
 	s = 48;
-	game->map.img = ft_calloc(sizeof(void **), 2);
+	game->map.img = ft_calloc(sizeof(void **), 3);
 	game->map.img[0] = mlx_xpm_file_to_image(game->mlx, GROUND_0, &s, &s);
 	game->map.img[1] = mlx_xpm_file_to_image(game->mlx, PLAYER_IDLE_0, &s, &s);
+  game->map.img[2] = mlx_xpm_file_to_image(game->mlx, WALL_0, &s, &s);
 }
 
 void	draw_map(t_game *game)
@@ -34,7 +35,10 @@ void	draw_map(t_game *game)
 		j = 0;
 		while (game->map.map[i][j])
 		{
-			mlx_put_image_to_window(game->mlx, game->win, game->map.img[0], 48*j, 48*i);
+      if (game->map.map[i][j] == '1')
+			  mlx_put_image_to_window(game->mlx, game->win, game->map.img[2], 48*j, 48*i);
+      else
+			  mlx_put_image_to_window(game->mlx, game->win, game->map.img[0], 48*j, 48*i);
 			j++;
 		}
 		i++;

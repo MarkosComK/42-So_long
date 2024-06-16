@@ -31,5 +31,6 @@ void  clean_images(t_game *game)
 {
   mlx_destroy_image(game->mlx, game->map.img[0]);
   mlx_destroy_image(game->mlx, game->map.img[1]);
+  mlx_destroy_image(game->mlx, game->map.img[2]);
   free(game->map.img);
 }

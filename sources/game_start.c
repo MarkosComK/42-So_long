@@ -60,7 +60,7 @@ void	set_map(char *path, t_game *game)
     free(str);
 		i++;
 	}
-	game->map.columns = ft_strlen(game->map.map[0]) - 1;
+	game->map.columns = ft_strlen(game->map.map[0]);
 	close(fd);
 }
 

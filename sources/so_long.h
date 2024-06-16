@@ -20,6 +20,7 @@
 //IMAGE ASSETS
 # define PLAYER_IDLE_0 "./assets/character/player_idle_0.xpm"
 # define GROUND_0 "./assets/ground/ground_0.xpm"
+# define WALL_0 "./assets/ground/wall_mid.xpm"
 
 typedef struct	s_map
 {
