@@ -20,7 +20,7 @@ SOURCES_DIR		=	sources
 
 HEADER			=	$(SOURCES_DIR)/so_long.h
 
-SOURCES			=	$(addprefix $(SOURCES_DIR)/, game_start.c draw_map.c game_over.c $(SOURCES_FILES))
+SOURCES			=	$(addprefix $(SOURCES_DIR)/, game_start.c draw_map.c handle_key.c $(SOURCES_FILES))
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 
