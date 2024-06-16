@@ -19,12 +19,17 @@ void  game_over(t_game *game)
   i = 0;
   while (game->map.map[i])
     free(game->map.map[i++]);
-  mlx_destroy_image(game->mlx, game->map.img[0]);
-  mlx_destroy_image(game->mlx, game->map.img[1]);
+  clean_images(game);
   mlx_destroy_window(game->mlx, game->win);
   mlx_destroy_display(game->mlx);
-  free(game->map.img);
   free(game->map.map);
   free(game->mlx);
   exit(0);
+}
+
+void  clean_images(t_game *game)
+{
+  mlx_destroy_image(game->mlx, game->map.img[0]);
+  mlx_destroy_image(game->mlx, game->map.img[1]);
+  free(game->map.img);
 }
