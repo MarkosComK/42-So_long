@@ -51,11 +51,11 @@ void	set_map(char *path, t_game *game)
 	init_map(game);
 	fd = open(path, O_RDONLY);
 	game->map.lines = count_lines(path);
-	game->map.map = malloc(sizeof(char **) * game->map.lines);
+	game->map.map = ft_calloc(sizeof(char **), game->map.lines + 1);
 	i = 0;
 	while ((str = get_next_line(fd))) 
 	{
-		game->map.map[i] = malloc(sizeof(char *) * ft_strlen(str));
+		game->map.map[i] = ft_calloc(sizeof(char *), ft_strlen(str));
 		game->map.map[i] = ft_strdup(str);
 		free(str);
 		i++;
