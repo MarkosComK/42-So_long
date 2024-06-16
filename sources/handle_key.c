@@ -20,6 +20,12 @@ int		handle_key(int keycode, t_game *game)
 		draw_map(game);
 		draw_player(game);
 	}
+  if (keycode == XK_d)
+  {
+    game->player_x++;
+    draw_map(game);
+    draw_player(game);
+  }
 	if (keycode == XK_Escape)
 	{
 		mlx_destroy_window(game->mlx, game->win);
