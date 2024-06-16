@@ -55,12 +55,12 @@ void	set_map(char *path, t_game *game)
 	i = 0;
 	while ((str = get_next_line(fd))) 
 	{
-		game->map.map[i] = ft_calloc(sizeof(char *), ft_strlen(str));
-		game->map.map[i] = ft_strdup(str);
-		free(str);
+		game->map.map[i] = ft_calloc(sizeof(char *), ft_strlen(str) + 1);
+		ft_strlcpy(game->map.map[i], str, ft_strlen(str));
+    free(str);
 		i++;
 	}
-	game->map.columns = ft_strlen(game->map.map[0]);
+	game->map.columns = ft_strlen(game->map.map[0]) - 1;
 	close(fd);
 }
 
