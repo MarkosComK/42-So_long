@@ -17,7 +17,7 @@ void	load_images(t_game *game)
 	int	s;
 
 	s = 48;
-	game->map.img = malloc(sizeof(void *) * 2);
+	game->map.img = ft_calloc(sizeof(void **), 2);
 	game->map.img[0] = mlx_xpm_file_to_image(game->mlx, GROUND_0, &s, &s);
 	game->map.img[1] = mlx_xpm_file_to_image(game->mlx, PLAYER_IDLE_0, &s, &s);
 }
