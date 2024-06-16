@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:52:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/15 22:01:13 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/16 02:40:02 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@
 # include <fcntl.h>
 # include <X11/keysym.h>
 
-typedef struct	s_game 
-{
-	void	*mlx;
-	void	*win;
-}				t_game;
+//IMAGE ASSETS
+# define PLAYER_IDLE_0 "./assets/character/player_idle_0.xpm"
+# define GROUND_0 "./assets/ground/ground_0.xpm"
 
 typedef struct	s_map
 {
@@ -33,16 +31,16 @@ typedef struct	s_map
 	int		height;
 }				t_map;
 
-typedef struct	s_img
+typedef struct	s_game 
 {
-	void	*img;
-	int		*w;
-	int		*h;
-	int		wi;
-	int		he;
-}				t_img;
+	void	*mlx;
+	void	*win;
+	void	**img;
+	t_map	map;
+}				t_game;
 
 void	game_start(char *path, t_game *game);
+void	draw_map(t_game *game);
 int		game_over(int keycode, t_game *game);
 
 #endif
