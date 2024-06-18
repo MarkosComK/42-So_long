@@ -68,6 +68,6 @@ void	game_start(char *path, t_game *game)
 {
 	set_map(path, game);
 	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, 48*game->map.columns, 48*game->map.lines, "so_long");
+	game->win = mlx_new_window(game->mlx, S*game->map.columns, S*game->map.lines, "so_long");
 }
 
