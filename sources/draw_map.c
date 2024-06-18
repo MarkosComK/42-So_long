@@ -44,6 +44,12 @@ void	draw_map(t_game *game)
 		j = 0;
 		while (game->map.map[i][j])
 		{
+      if (game->map.map[i][j] == 'C')
+      {
+        game->player_x = j;
+        game->player_y = i;
+        game->map.map[i][j] = '0';
+      }
       if (game->map.map[i][j] == 'E')
         mlx_put_image_to_window(game->mlx, game->win, game->map.img[3], 48*j, 48*i);
       if (game->map.map[i][j] == '2')
