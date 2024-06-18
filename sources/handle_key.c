@@ -15,37 +15,22 @@
 int		handle_key(int keycode, t_game *game)
 {
 	if (keycode == XK_r)
-	{
-		draw_map(game);
-		draw_player(game);
-	}
+    game->start = 1;
   if (keycode == XK_w)
   {
-    clean_images(game);
     game->player_y--;
-    draw_map(game);
-    draw_player(game);
   }
   if (keycode == XK_a)
   {
-    clean_images(game);
     game->player_x--;
-    draw_map(game);
-    draw_player(game);
   }
   if (keycode == XK_d)
   {
-    clean_images(game);
     game->player_x++;
-    draw_map(game);
-    draw_player(game);
   }
   if (keycode == XK_s)
   {
-    clean_images(game);
     game->player_y++;
-    draw_map(game);
-    draw_player(game);
   }
 	if (keycode == XK_Escape)
     game_over(game);
