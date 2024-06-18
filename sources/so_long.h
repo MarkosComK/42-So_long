@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:52:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/16 14:55:51 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/18 10:39:07 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@
 
 //IMAGE ASSETS
 # define PLAYER_IDLE_0 "./assets/character/player_idle_bg.xpm"
-# define GROUND_0 "./assets/ground/ground_0.xpm"
-# define WALL_0 "./assets/ground/wall_mid.xpm"
-# define WALL_R "./assets/ground/wall_r.xpm"
-# define WALL_RC "./assets/ground/wall_rc.xpm"
+# define GROUND_0 "./sprites/other/walls/black.xpm"
+# define WALL_0 "./sprites/other/walls/wall.xpm"
 # define EXIT_0 "./assets/ground/exit_0.xpm"
+
+//ASSETS SIZE
+# define S 32
 
 typedef struct	s_map
 {
