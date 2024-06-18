@@ -14,7 +14,5 @@
 
 void	draw_player(t_game *game)
 {
-  ft_printf("%i\n", game->player_x);
-  ft_printf("%i\n", game->player_y);
 	mlx_put_image_to_window(game->mlx, game->win, game->map.img[1], 48*game->player_x, 48*game->player_y);
 }
