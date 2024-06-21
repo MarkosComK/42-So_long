@@ -47,7 +47,7 @@ typedef struct	s_game
 	t_map	map;
 }				t_game;
 
-void	game_start(char *path, t_game *game);
+void	game_start(char *path);
 void	draw_map(t_game *game);
 void	draw_player(t_game *game);
 int		handle_key(int keycode, t_game *game);

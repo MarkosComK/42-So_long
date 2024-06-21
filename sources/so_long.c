@@ -15,15 +15,9 @@
 
 int	main(int ac, char **av)
 {
-	t_game	game;
 	if (ac == 2)
 	{
-		game_start(av[1], &game);
-    draw_map(&game);
-    draw_player(&game);
-    clean_images(&game);
-		mlx_key_hook(game.win, handle_key, &game);
-		mlx_loop(game.mlx);
+		game_start(av[1]);
 	}
 }
 

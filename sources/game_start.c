@@ -64,10 +64,15 @@ void	set_map(char *path, t_game *game)
 	close(fd);
 }
 
-void	game_start(char *path, t_game *game)
+void	game_start(char *path)
 {
-	set_map(path, game);
-	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, S*game->map.columns, S*game->map.lines, "so_long");
+	t_game	game;
+	set_map(path, &game);
+	game.mlx = mlx_init();
+	game.win = mlx_new_window(game.mlx, S*game.map.columns, S*game.map.lines, "so_long");
+	draw_map(&game);
+	draw_player(&game);
+	mlx_key_hook(game.win, handle_key, &game);
+	mlx_loop(game.mlx);
 }
 
