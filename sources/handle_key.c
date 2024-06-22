@@ -12,9 +12,9 @@
 
 #include "so_long.h"
 
-int		handle_key(int keycode, t_game *game)
+int handle_key(int keycode, t_game *game)
 {
-	if (keycode == XK_r)
+  if (keycode == XK_r)
     game->start = 1;
   if (keycode == XK_w)
   {
@@ -32,7 +32,7 @@ int		handle_key(int keycode, t_game *game)
   {
     game->player_y++;
   }
-	if (keycode == XK_Escape)
+  if (keycode == XK_Escape)
     game_over(game);
-	return (1);
+  return (1);
 }

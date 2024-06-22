@@ -12,7 +12,9 @@
 
 #include "so_long.h"
 
-void	draw_player(t_game *game)
+int	draw_player(t_game *game)
 {
+	ft_printf("its working!");
 	mlx_put_image_to_window(game->mlx, game->win, game->map.img[1], S*game->player_x, S*game->player_y);
+	return (0);
 }

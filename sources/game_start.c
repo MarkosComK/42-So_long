@@ -57,7 +57,7 @@ void	set_map(char *path, t_game *game)
 	{
 		game->map.map[i] = ft_calloc(sizeof(char *), ft_strlen(str) + 1);
 		ft_strlcpy(game->map.map[i], str, ft_strlen(str));
-    free(str);
+		free(str);
 		i++;
 	}
 	game->map.columns = ft_strlen(game->map.map[0]);
@@ -72,6 +72,7 @@ void	game_start(char *path)
 	game.win = mlx_new_window(game.mlx, S*game.map.columns, S*game.map.lines, "so_long");
 	draw_map(&game);
 	draw_player(&game);
+	mlx_loop_hook(game.mlx, draw_player, &game);
 	mlx_key_hook(game.win, handle_key, &game);
 	mlx_loop(game.mlx);
 }

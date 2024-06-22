@@ -41,17 +41,17 @@ typedef struct	s_game
 	void	*mlx;
 	void	*win;
 	void	**img;
-  int   start;
-  int   player_x;
-  int   player_y;
+	int	   start;
+	int	   player_x;
+	int	   player_y;
 	t_map	map;
 }				t_game;
 
 void	game_start(char *path);
 void	draw_map(t_game *game);
-void	draw_player(t_game *game);
-int		handle_key(int keycode, t_game *game);
-void  game_over(t_game *game);
-void  clean_images(t_game *game);
+int	draw_player(t_game *game);
+int	handle_key(int keycode, t_game *game);
+void	game_over(t_game *game);
+void	clean_images(t_game *game);
 
 #endif

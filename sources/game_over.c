@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 18:46:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/16 18:46:41 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/22 15:31:13 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void  game_over(t_game *game)
   i = 0;
   while (game->map.map[i])
     free(game->map.map[i++]);
+  clean_images(game);
   mlx_destroy_window(game->mlx, game->win);
   mlx_destroy_display(game->mlx);
   free(game->map.map);
