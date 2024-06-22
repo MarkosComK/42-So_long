@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:50:48 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/22 17:10:09 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/22 17:11:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,5 @@ int	update_player(t_game *game)
 		game->player.pos_y++;
 	if (game->player.move.d)
 		game->player.pos_x++;
-	ft_printf("%i\n", game->player.start_x);
-	ft_printf("%i\n", game->player.start_y);
-	ft_printf("%i\n", game->player.pos_x);
-	ft_printf("%i\n", game->player.pos_y);
-	ft_printf("ENDS HERE\n");
 	return (0);
 }
