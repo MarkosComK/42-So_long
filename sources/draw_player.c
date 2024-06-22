@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:50:48 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/22 17:11:45 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/22 18:46:37 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,19 @@ int	start_player(t_game *game)
 
 int	update_player(t_game *game)
 {
+	ft_printf("%i\n", S*game->map.columns);
+	ft_printf("%i\n", game->player.pos_x);
 	clean_images(game);
 	draw_map(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->map.img[1], 
 			2*game->player.pos_x, 2*game->player.pos_y);
-	if (game->player.move.w)
+	if (game->player.move.w && game->player.pos_y > 0)
 		game->player.pos_y--;
-	if (game->player.move.a)
+	if (game->player.move.a && game->player.pos_x > 0)
 		game->player.pos_x--;
-	if (game->player.move.s)
+	if (game->player.move.s && game->player.pos_y * 2 + 32 < S*game->map.lines)
 		game->player.pos_y++;
-	if (game->player.move.d)
+	if (game->player.move.d && game->player.pos_x * 2 + 32 < S*game->map.columns)
 		game->player.pos_x++;
 	return (0);
 }
