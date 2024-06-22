@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:52:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/22 17:04:36 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/22 17:17:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 # include <X11/keysym.h>
 
 //IMAGE ASSETS
-# define PLAYER_IDLE_0 "./assets/character/player_idle_bg.xpm"
+# define PLAYER_IDLE_0 "./sprites/pac-man/pac_open_right.xpm"
 # define GROUND_0 "./sprites/other/walls/black.xpm"
 # define WALL_0 "./sprites/other/walls/wall.xpm"
-# define EXIT_0 "./assets/ground/exit_0.xpm"
+# define EXIT_0 "./sprites/other/portal/portal.xpm"
 
 //ASSETS SIZE
 # define S 32
