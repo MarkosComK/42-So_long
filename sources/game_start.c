@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 23:38:19 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/22 17:05:45 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/22 17:31:10 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,7 @@ void	game_start(char *path)
 	start_player(&game);
 	game.player.pos_x = 0;
 	game.player.pos_y = 0;
-	game.player.move.w = 0;
-	game.player.move.a = 0;
-	game.player.move.s = 0;
-	game.player.move.d = 0;
+	restart_direction(&game);
 	mlx_loop_hook(game.mlx, update_player, &game);
 	mlx_key_hook(game.win, handle_key, &game);
 	mlx_loop(game.mlx);
