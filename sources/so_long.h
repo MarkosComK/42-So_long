@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:52:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/18 10:39:07 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/22 17:04:36 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,40 @@ typedef struct	s_map
 	int		height;
 }				t_map;
 
+typedef struct	s_move
+{
+	int	w;
+	int	a;
+	int	s;
+	int	d;
+}				t_move;
+
+typedef struct	s_entity
+{
+	int		pos_x;
+	int		pos_y;
+	int		start_x;
+	int		start_y;
+	t_move	move;
+}				t_entity;
+
 typedef struct	s_game 
 {
-	void	*mlx;
-	void	*win;
-	void	**img;
-	int	   start;
-	int	   player_x;
-	int	   player_y;
-	t_map	map;
+	void		*mlx;
+	void		*win;
+	void		**img;
+	int			start;
+	t_entity	player;
+	t_map		map;
 }				t_game;
 
 void	game_start(char *path);
 void	draw_map(t_game *game);
-int	draw_player(t_game *game);
-int	handle_key(int keycode, t_game *game);
+int		start_player(t_game *game);
+int		update_player(t_game *game);
+int		handle_key(int keycode, t_game *game);
 void	game_over(t_game *game);
 void	clean_images(t_game *game);
+void	restart_direction(t_game *game);
 
 #endif
