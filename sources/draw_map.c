@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 02:15:21 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/22 15:28:04 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/22 16:11:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	draw_map(t_game *game)
 		{
 			if (game->map.map[i][j] == 'C')
 			{
-				game->player_x = j;
-				game->player_y = i;
+				game->player.start_x = j;
+				game->player.start_y = i;
 				game->map.map[i][j] = '0';
 			}
 			if (game->map.map[i][j] == 'E')
