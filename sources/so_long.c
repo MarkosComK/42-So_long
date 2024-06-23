@@ -6,18 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:23:44 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 20:00:38 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 20:19:46 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-int	error_msg(char *msg)
-{
-	ft_printf("ERROR\n%s%s%s\n", RED, msg, DEFAULT);
-	exit(0);
-	return (0);
-}
 
 int	main(int ac, char **av)
 {
