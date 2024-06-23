@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:25:01 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 21:32:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 21:41:08 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-BOOL	valid_ber(char *path)
+BOOL	validate_ber(char *path)
 {
 	size_t		len;
 
@@ -41,8 +41,8 @@ int	map_retangular(t_map map)
 
 int	map_walls(t_map map)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (map.str[i])
@@ -92,16 +92,16 @@ int	map_components(t_map map)
 	return (0);
 }
 
-void	valid_map(t_game *game)
+void	validate_map(t_game *game)
 {
 	if (!game->map.str[0])
 		error_msg("Map is empty!");
 	if (!map_retangular(game->map))
 		error_msg("Map is not retangular!");
     if (!map_components(game->map))
-        error_msg("Map doesn't have the correct components!");
+		error_msg("Map doesn't have the correct components!");
 	if (!map_walls(game->map))
-		exit_message(game, "Map isn't completely surrounded by walls!\n");
+		error_msg("Map isn't completely surrounded by walls!");
 	game->map.width = game->map.cols * SIZE;
 	game->map.height = game->map.rows * SIZE;
 }
