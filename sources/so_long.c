@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:23:44 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 18:45:42 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 19:25:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 int	error_msg(char *msg)
 {
-	ft_printf("Error\n%s%s%s\n", RED, msg, DEFAULT);
+	ft_printf("ERROR\n%s%s%s\n", RED, msg, DEFAULT);
 	exit(0);
 	return (0);
-}
-bool valid_ber(char *path) {
-  size_t len = ft_strlen(path);
-  bool  result = strcmp(path + len - 4, ".ber");
-  return (result);
 }
 
 int	main(int ac, char **av)
@@ -30,12 +25,12 @@ int	main(int ac, char **av)
 
 	path = av[1];
 	if (ac != 2)
-		error_msg("Usage: ./so_long ./maps/map.ber\n");
-	else if (!valid_ber(path))
+		error_msg("Usage: ./so_long ./maps/map.ber");
+	else if (valid_ber(path))
 	{
-		error_msg("Map isn't a .ber file!\n");
+		error_msg("MAP ISN'T A .ber FILE");
 		exit(1);
 	}
-	init_game(path);
+	//init_game(path);
 	return (0);
 }
