@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 20:25:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 21:17:58 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,29 @@
 
 # define SIZE 32;
 
-typedef struct  s_map
+typedef struct	s_map
 {
-    char    **str;
-    int     rows;
-    int     cols;
-    int     width;
-    int     height;
-}               t_map;
+	char	**str;
+	int		rows;
+	int		cols;
+	int		width;
+	int		height;
+	int		player;
+	int		enemies;
+	int		collectables;
+	int		exits;
+}				t_map;
+
+typedef struct	s_point
+{
+	int	x;
+	int	y;
+}				t_point;
+
+typedef struct s_entity
+{
+	t_point		pos;
+}				t_entity;
 
 typedef struct  s_game
 {
