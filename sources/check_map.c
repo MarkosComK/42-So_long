@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 17:22:41 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 17:42:32 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 17:46:25 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_layout	ft_newlayout(void)
 	lay.n_row = 0;
 	lay.n_col = 0;
 	lay.n_exit = 0;
-	lay.n_pl = 0;
+	lay.n_player = 0;
 	lay.n_gh = 0;
 	lay.n_collect = 0;
 	return (lay);
@@ -34,7 +34,7 @@ int	error_msg(char *msg, char **map_str)
 	return (0);
 }
 
-char    **check_params(int ac, char **av, t_layout layout)
+char    **check_params(int ac, char **av, t_layout *layout)
 {
     int		fd;
 
@@ -44,7 +44,7 @@ char    **check_params(int ac, char **av, t_layout layout)
 	if (fd < 0)
 		error_msg("File not found!", NULL);
 	if (ft_strrncmp(av[1], ".ber", 4))
-		error_msg("Invalid file type, use .ber!", NULL);
+		error_msg("Invalid file type!", NULL);
 	return (check_map(fd, layout));
 }
 t_error	ft_newmap_error(void)
