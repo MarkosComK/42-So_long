@@ -20,7 +20,8 @@ SOURCES_DIR		=	sources
 
 HEADER			=	./includes/so_long.h
 
-SOURCES			=	$(addprefix $(SOURCES_DIR)/, map_checkers.c $(SOURCES_FILES))
+SOURCES			=	$(addprefix $(SOURCES_DIR)/, \
+map_checkers.c start_game.c start_map.c utils.c $(SOURCES_FILES))
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 
