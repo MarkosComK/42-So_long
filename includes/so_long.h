@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 21:17:58 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 21:38:36 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ typedef struct  s_game
     t_map   map;
 }               t_game;
 
-BOOL	valid_ber(char *path);
+BOOL	validate_ber(char *path);
 void	start_game(char *map_name);
 void    set_map(t_game *game, char *map_path);
 //MAP CHECKERS
-void	valid_map(t_game *game);
+void	validate_map(t_game *game);
 // UTILITIES TO DELETE LATER
 void	print_map(t_game *game);
 int     error_msg(char *msg);
