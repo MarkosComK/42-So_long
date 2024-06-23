@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 21:49:18 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 22:09:11 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct  s_game
 }               t_game;
 
 BOOL	validate_ber(char *path);
-void	start_game(char *map_name);
+void	set_game(char *map_name);
 void    set_map(t_game *game, char *map_path);
 void	set_player_pos(t_game *game);
 //MAP CHECKERS

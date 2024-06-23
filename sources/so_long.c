@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:23:44 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 21:38:45 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 22:09:30 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	main(int ac, char **av)
 		error_msg("MAP ISN'T A .ber FILE");
 		exit(1);
 	}
-	start_game(path);
+	set_game(path);
 	return (0);
 }
