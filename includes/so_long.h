@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 22:09:11 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 22:30:01 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 # include "./colors.h"
 # include "../libraries/libft/libft.h"
+# include "../libraries/minilibx-linux/mlx.h"
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdbool.h>
@@ -23,7 +24,7 @@
 # define true 1
 # define false 0
 
-# define SIZE 32;
+# define SIZE 32
 
 typedef struct	s_map
 {
@@ -51,6 +52,8 @@ typedef struct s_entity
 
 typedef struct  s_game
 {
+	void		*mlx;
+	void		*win;
     t_map		map;
 	t_entity	player;
 }               t_game;
