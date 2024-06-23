@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:42:39 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 21:51:24 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 22:07:03 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,4 @@ void	set_player_pos(t_game *game)
 		}
 		y++;
 	}
-	ft_printf("[%i] x: \n", game->player.pos.x);
-	ft_printf("[%i] y: \n", game->player.pos.y);
 }
