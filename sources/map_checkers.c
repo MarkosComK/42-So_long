@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:25:01 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 21:41:08 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 22:04:50 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	map_walls(t_map map)
 		else
 		{
 			if (map.str[i][0] != '1' ||
-				map.str[i][map.cols - 1] != '1')
+				map.str[i][map.cols] != '1')
 				return (0);
 		}
 		i++;
