@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   map_checkers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 19:26:07 by marsoare         ###   ########.fr       */
+/*   Created: 2024/06/23 19:25:01 by marsoare          #+#    #+#             */
+/*   Updated: 2024/06/23 19:25:31 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# include "./colors.h"
-# include "../libraries/libft/libft.h"
-# include <stdlib.h>
-# include <stdbool.h>
-# include <X11/keysym.h>
+#include "../includes/so_long.h"
 
-#define BOOL int
-#define true 1
-#define false 0
+BOOL	valid_ber(char *path)
+{
+	size_t		len;
 
-BOOL	valid_ber(char *path);
-
-#endif
+	len = ft_strlen(path);
+	if (ft_strncmp(path + len - 4, ".ber", 4))
+		return (true);
+	return (false);
+}

@@ -18,9 +18,9 @@ SOURCES_FILES	=	so_long.c \
 
 SOURCES_DIR		=	sources
 
-HEADER			=	$(SOURCES_DIR)/so_long.h
+HEADER			=	./includes/so_long.h
 
-SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
+SOURCES			=	$(addprefix $(SOURCES_DIR)/, map_checkers.c $(SOURCES_FILES))
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 
