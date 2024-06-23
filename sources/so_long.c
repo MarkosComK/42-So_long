@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:23:44 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 20:19:46 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 21:38:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	path = av[1];
 	if (ac != 2)
 		error_msg("Usage: ./so_long ./maps/map.ber");
-	else if (valid_ber(path))
+	else if (validate_ber(path))
 	{
 		error_msg("MAP ISN'T A .ber FILE");
 		exit(1);
