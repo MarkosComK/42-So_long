@@ -72,8 +72,8 @@ void	game_start(char *path)
 	game.win = mlx_new_window(game.mlx, S*game.map.columns, S*game.map.lines, "so_long");
 	draw_map(&game);
 	start_player(&game);
-	game.player.pos_x = 0;
-	game.player.pos_y = 0;
+	game.player.pos_x = game.player.start_x * 16;
+	game.player.pos_y = game.player.start_y * 16;
 	restart_direction(&game);
 	mlx_loop_hook(game.mlx, update_player, &game);
 	mlx_key_hook(game.win, handle_key, &game);
