@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:33:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 19:58:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 20:38:24 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,5 @@ void    set_map(t_game *game, char *map_path)
 		free(str);
 		i++;
 	}
-	game->map.cols = ft_strlen(game->map.str[0]);
 	close(fd);
 }
