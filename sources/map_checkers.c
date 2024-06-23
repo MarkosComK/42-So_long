@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:25:01 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 22:04:50 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/23 22:33:12 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ void	validate_map(t_game *game)
 		error_msg("Map doesn't have the correct components!");
 	if (!map_walls(game->map))
 		error_msg("Map isn't completely surrounded by walls!");
+	game->map.cols = ft_strlen(game->map.str[0]);
 	game->map.width = game->map.cols * SIZE;
 	game->map.height = game->map.rows * SIZE;
 }
