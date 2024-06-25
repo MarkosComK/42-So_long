@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marsoare <marsoare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 22:29:23 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:58:32 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
 void	start_game(t_game *game)
 {
 	game->mlx = mlx_init();
 	game->win= mlx_new_window(game->mlx, game->map.width, game->map.height + SIZE, "So Long");
+	mlx_key_hook(game->win, key_press, game);
 	mlx_loop(game->mlx);
 }
 
