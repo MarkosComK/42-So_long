@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/25 15:05:58 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/25 15:08:30 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ BOOL	validate_ber(char *path);
 void	set_game(char *map_name);
 void    set_map(t_game *game, char *map_path);
 void	set_player_pos(t_game *game);
+void	quit(t_game *game);
 int		key_press(int keycode, t_game *g);
 //MAP CHECKERS
 void	validate_map(t_game *game);
