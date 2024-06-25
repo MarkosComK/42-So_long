@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_keys.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marsoare <marsoare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 22:36:23 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/25 14:59:41 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/25 15:05:33 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ int	key_press(int keycode, t_game *g)
 {
 	if (keycode == XK_Up || keycode == XK_w)
 	{
-		ft_printf("You pressed %i", XK_Up);
+		ft_printf("You pressed %i\n", XK_Up);
 	}
 	if (keycode == XK_Down || keycode == XK_s)
 	{
-		ft_printf("You pressed %i", XK_Down);
+		ft_printf("You pressed %i\n", XK_Down);
 	}
 	else if (keycode == XK_Left || keycode == XK_a)
 	{
-		ft_printf("You pressed %i", XK_Left);
+		ft_printf("You pressed %i\n", XK_Left);
 	}
 	else if (keycode == XK_Right || keycode == XK_d)
 	{
-		ft_printf("You pressed %i", XK_Right);
+		ft_printf("You pressed %i\n", XK_Right);
 	}
 	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
