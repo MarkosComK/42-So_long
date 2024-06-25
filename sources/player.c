@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marsoare <marsoare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:42:39 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 22:07:03 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:10:37 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	set_player_pos(t_game *game)
 		{
 			if (game->map.str[y][x] == 'P')
 			{
-				game->player = (t_entity){x, y};
+				game->player.pos = (t_point){x, y};
 			}
 			x++;
 		}
