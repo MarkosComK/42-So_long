@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marsoare <marsoare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 22:30:01 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:11:44 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ BOOL	validate_ber(char *path);
 void	set_game(char *map_name);
 void    set_map(t_game *game, char *map_path);
 void	set_player_pos(t_game *game);
+int		key_press(int keycode, t_game *g);
 //MAP CHECKERS
 void	validate_map(t_game *game);
 // UTILITIES TO DELETE LATER
