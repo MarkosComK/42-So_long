@@ -6,13 +6,15 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/26 14:15:20 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:41:51 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include "./colors.h"
+# include "./sprites.h"
+# include "./animations.h"
 # include "../libraries/libft/libft.h"
 # include "../libraries/minilibx-linux/mlx.h"
 # include <stdlib.h>
