@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/25 15:08:30 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:15:20 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,26 @@ typedef struct	s_point
 	int	y;
 }				t_point;
 
+typedef struct s_win
+{
+	void	*mlx;
+	void	*win;
+	int		width;	
+	int		height;	
+}		t_win;
+
+typedef struct s_img
+{
+	t_win	win;
+	void	*ptr;
+	char	*addr;
+	int		h;
+	int		w;
+	int		bpp;
+	int		endian;
+	int		line_len;
+}		t_img;
+
 typedef struct s_entity
 {
 	t_point		pos;
@@ -64,6 +84,7 @@ void    set_map(t_game *game, char *map_path);
 void	set_player_pos(t_game *game);
 void	quit(t_game *game);
 int		key_press(int keycode, t_game *g);
+t_img   new_file_img(char *path, t_game *game);
 //MAP CHECKERS
 void	validate_map(t_game *game);
 // UTILITIES TO DELETE LATER
