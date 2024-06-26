@@ -17,7 +17,7 @@ void	start_game(t_game *game)
 
 	game->mlx = mlx_init();
 	game->win= mlx_new_window(game->mlx, game->map.width, game->map.height + SIZE, "So Long");
-	sprite = new_file_img("../sprites/pac-man/black.xpm", game);
+	sprite = new_file_img("./sprites/pac-man/pac_open_right.xpm", game);
 	mlx_put_image_to_window(sprite.win.mlx, sprite.win.win, sprite.ptr, 0, 0);
 	mlx_key_hook(game->win, key_press, game);
 	mlx_loop(game->mlx);
