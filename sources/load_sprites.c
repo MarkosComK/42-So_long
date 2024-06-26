@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 13:40:20 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/26 14:10:36 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:22:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_img   new_file_img(char *path, t_game *game)
 
     image.win.win = game->win;
     image.win.mlx = game->mlx;
-    image.ptr = mlx_xpm_file_to_image(game->mlx, path, &image.w, &image.h);
+    image.ptr = mlx_xpm_file_to_image(image.win.mlx, path, &image.w, &image.h);
     if (!image.ptr)
         error_msg("File could not be read!\n");
     else
