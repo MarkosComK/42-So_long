@@ -13,8 +13,6 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include "./colors.h"
-# include "./sprites.h"
-# include "./animations.h"
 # include "../libraries/libft/libft.h"
 # include "../libraries/minilibx-linux/mlx.h"
 # include <stdlib.h>

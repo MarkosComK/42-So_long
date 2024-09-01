@@ -20,8 +20,7 @@ SOURCES_DIR		=	sources
 
 HEADER			=	./includes/so_long.h
 
-SOURCES			=	$(addprefix $(SOURCES_DIR)/, \
-map_checkers.c start_game.c start_map.c player.c utils.c end_game.c handle_keys.c load_sprites.c $(SOURCES_FILES))
+SOURCES			=	$(wildcard $(SOURCES_DIR)/*.c)
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 
@@ -32,6 +31,7 @@ RM				=	rm -f
 
 CFLAGS			=	-Wall -Wextra -Werror -g
 MLXFLAGS		=	-L. -lXext -L. -lX11
+INCLUDES		= -L ./libraries/lbft/
 
 .c.o:
 				@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
@@ -39,7 +39,7 @@ MLXFLAGS		=	-L. -lXext -L. -lX11
 all:			$(NAME)
 
 $(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS) $(HEADER)
-				@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -o $(NAME)
+				@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(INCLUDES) $(MINILIBX) $(MLXFLAGS) -o $(NAME)
 
 $(LIBFT):
 				@make --silent -C $(LIBFT_PATH)
