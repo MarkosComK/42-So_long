@@ -8,6 +8,10 @@ BLUE = $(shell printf "\33[34m")
 PURPLE = $(shell printf "\33[35m")
 TITLE = $(shell printf "\33[32;40m")
 
+# Detect the OS
+UNAME_S := $(shell uname -s)
+
+# Your existing targets and rules here
 LIBFT_PATH		=	./libraries/libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
@@ -29,9 +33,19 @@ NAME			=	so_long
 CC				=	cc
 RM				=	rm -f
 
-CFLAGS			=	-Wall -Wextra -Werror -g
-MLXFLAGS		=	-L. -lXext -L. -lX11
-INCLUDES		= -L ./libraries/lbft/
+CFLAGS			=	-Wall -Wextra -Werror -g -fsanitize=address
+INCLUDES		= -L ./libraries/libft -lft
+
+# Set platform-specific flags
+ifeq ($(UNAME_S),Linux)
+    CFLAGS += -I/usr/include/X11
+    MLXFLAGS += -L/usr/lib/X11 -lX11
+endif
+
+ifeq ($(UNAME_S),Darwin)
+    CFLAGS += -I/opt/X11/include
+    MLXFLAGS += -L/opt/X11/lib -lX11 -lX11 -lXext -lXrandr -lXcursor -lXinerama -lXxf86vm -lXrender -lX11-xcb -lXfixes
+endif
 
 .c.o:
 				@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
