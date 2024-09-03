@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/26 14:41:51 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 11:56:48 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 # include "./colors.h"
 # include "../libraries/libft/libft.h"
+# include "./sprites.h"
 # include "../libraries/minilibx-linux/mlx.h"
 # include <stdlib.h>
 # include <fcntl.h>
@@ -37,6 +38,7 @@ typedef struct	s_map
 	int		enemies;
 	int		collectables;
 	int		exits;
+	t_sprite	sprites;
 }				t_map;
 
 typedef struct	s_point
@@ -44,26 +46,6 @@ typedef struct	s_point
 	int	x;
 	int	y;
 }				t_point;
-
-typedef struct s_win
-{
-	void	*mlx;
-	void	*win;
-	int		width;	
-	int		height;	
-}		t_win;
-
-typedef struct s_img
-{
-	t_win	win;
-	void	*ptr;
-	char	*addr;
-	int		h;
-	int		w;
-	int		bpp;
-	int		endian;
-	int		line_len;
-}		t_img;
 
 typedef struct s_entity
 {
@@ -76,11 +58,11 @@ typedef struct  s_game
 	void		*win;
     t_map		map;
 	t_entity	player;
-	t_img		sprites;
 }               t_game;
 
 BOOL	validate_ber(char *path);
-void	set_game(char *map_name);
+void	set_game(t_game *game, char *map_name);
+void	start_game(char	*map_path);
 void    set_map(t_game *game, char *map_path);
 void	set_player_pos(t_game *game);
 void	quit(t_game *game);

@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   sprites.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/23 18:23:44 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 22:09:30 by marsoare         ###   ########.fr       */
+/*   Created: 2024/09/03 11:30:46 by marsoare          #+#    #+#             */
+/*   Updated: 2024/09/03 11:50:55 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#ifndef SPRITES_H
+# define SPRITES_H
+# include "so_long.h"
 
-int	main(int ac, char **av)
+
+typedef struct s_img
 {
-	char	*path;
+	void	*mlx;
+	void	*win;
+	void	*ptr;
+	char	*addr;
+	int		h;
+	int		w;
+	int		bpp;
+	int		endian;
+	int		line_len;
+}		t_img;
 
-	path = av[1];
-	if (ac != 2)
-		error_msg("Usage: ./so_long ./maps/map.ber");
-	else if (validate_ber(path))
-	{
-		error_msg("MAP ISN'T A .ber FILE");
-		exit(1);
-	}
-	start_game(path);
-	return (0);
-}
+typedef struct s_sprite
+{
+	t_img	wall;
+}		t_sprite;
+
+
+#endif
