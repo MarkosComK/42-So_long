@@ -76,6 +76,7 @@ typedef struct  s_game
 	void		*win;
     t_map		map;
 	t_entity	player;
+	t_img		sprites;
 }               t_game;
 
 BOOL	validate_ber(char *path);

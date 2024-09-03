@@ -12,6 +12,11 @@
 
 #include "../includes/so_long.h"
 
+void	put_map()
+{
+
+}
+
 int		count_lines(char *map_path)
 {
 	int		count;

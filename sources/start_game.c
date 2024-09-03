@@ -13,12 +13,11 @@
 #include "../includes/so_long.h"
 void	start_game(t_game *game)
 {
-	t_img	sprite;
 
 	game->mlx = mlx_init();
 	game->win= mlx_new_window(game->mlx, game->map.width, game->map.height + SIZE, "So Long");
-	sprite = new_file_img("./sprites/pac-man/pac_open_right.xpm", game);
-	mlx_put_image_to_window(sprite.win.mlx, sprite.win.win, sprite.ptr, 0, 0);
+	game->sprites = new_file_img("./sprites/wall-0.xpm", game);
+	mlx_put_image_to_window(game->sprites.win.mlx, game->sprites.win.win, game->sprites.ptr, 0, 0);
 	mlx_key_hook(game->win, key_press, game);
 	mlx_loop(game->mlx);
 }
