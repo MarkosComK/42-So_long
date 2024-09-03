@@ -6,12 +6,12 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 13:40:20 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 12:03:53 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:14:37 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
+/*
 t_img   new_file_img(char *path, t_game *game)
 {
     t_img   image;
@@ -26,6 +26,7 @@ t_img   new_file_img(char *path, t_game *game)
          &(image.line_len), &(image.endian));
     return (image);
 }
+*/
 /*
 unsigned int    get_pixel_img(t_img img, int x, int y)
 {

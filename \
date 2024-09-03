@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:33:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 18:36:01 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:31:27 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,11 +134,11 @@ void	create_map(t_game *game)
 			game->map.tiles[y][x].sprite_path = ft_strdup(sprite_path);
 			sprite = create_sprite(game, sprite_path);
 			create_world(sprite, game, x, y);
-			mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, 0, 0);
 			mlx_destroy_image(game->mlx, sprite->ptr);
 		}
 	}
 	ft_printf("ponteiro: %p\n", sprite);
+	mlx_put_image_to_window(game->mlx, game->win, FLOOR0, 10, 10);
 }
 
 t_tile	new_tile(char type, int x, int y)

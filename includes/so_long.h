@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 14:17:19 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:26:03 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,9 @@ int     error_msg(char *msg);
 t_img	*create_sprite(t_game *game, char *sprite_path);
 void	put_pixel(t_img *sprite, int x, int y, int color);
 unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
+
+void	fill_map(t_game *game);
+void	start_world(t_game *game);
+void	create_map(t_game *game);
 
 #endif
