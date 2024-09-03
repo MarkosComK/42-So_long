@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:42:39 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/25 15:06:01 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 14:24:24 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	set_player_pos(t_game *game)
 	int	x;
 
 	y = 0;
-	while (game->map.str[y])
+	while (game->map.data[y])
 	{
 		x = 0;
-		while (game->map.str[y][x])
+		while (game->map.data[y][x])
 		{
-			if (game->map.str[y][x] == 'P')
+			if (game->map.data[y][x] == 'P')
 			{
-				game->player.pos = (t_point){x, y};
+				game->player.pos = (t_pos){x, y};
 			}
 			x++;
 		}

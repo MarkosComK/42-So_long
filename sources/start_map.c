@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:33:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 13:38:28 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 15:15:58 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,124 @@ void	set_map_tiles(t_game *game)
 	}
 }
 
+char	*get_sprite_path(t_game *game, char c)
+{
+	char	*path;
+	(void) game;
+
+	path = NULL;
+	if (c == '1')
+		path = WALL;
+	else if (c == '0' || c == 'C' || c == 'E' || c == 'P' || c == 'M')
+	{
+		if (rand() % 2 == 0)
+			path = FLOOR0;
+		else if (rand() % 3 == 0)
+			path = FLOOR1;
+		else
+			path = FLOOR2;
+	}
+	/* to do 
+	if (!path)
+	{
+		ft_printf("Failed to allocate path for character: %c\n", c);
+		gameover(game);
+	}
+	*/
+	return (path);
+}
+
+void	create_world(t_img *sprite, t_game *game, int posx, int posy)
+{
+	int				x;
+	int				y;
+	unsigned int	color;
+	unsigned int	trans_color;
+
+	trans_color = 0xFFC0CB;
+	y = -1;
+	while (++y < sprite->h)
+	{
+		x = -1;
+		while (++x < sprite->w)
+		{
+			color = get_color_in_pixel(sprite, x, y);
+			if (color != trans_color)
+			{
+				put_pixel(game->world, posx * SZ + x, posy * SZ + y, color);
+			}
+		}
+	}
+}
+
+void	create_map(t_game *game)
+{
+	int			y;
+	int			x;
+	t_img		*sprite;
+	char		*sprite_path;
+
+	y = -1;
+	while (++y < game->map.rows)
+	{
+		x = -1;
+		while (++x < game->map.cols)
+		{
+			sprite_path = get_sprite_path(game, game->map.tiles[y][x].type);
+	/* to do 
+			if (!sprite_path)
+			{
+				gameover(game);
+			}
+	*/
+			game->map.tiles[y][x].sprite_path = ft_strdup(sprite_path);
+			sprite = create_sprite(game, sprite_path);
+			create_world(sprite, game, x, y);
+			mlx_destroy_image(game->mlx, sprite->ptr);
+			free(sprite);
+		}
+	}
+}
+
+t_tile	new_tile(char type, int x, int y)
+{
+	t_tile	tile;
+
+	tile.type = type;
+	tile.pos.x = x;
+	tile.pos.y = y;
+	return (tile);
+}
+
+void	fill_map(t_game *game)
+{
+	int		x;
+	int		y;
+	int		i;
+	int		j;
+	char	**mapd;
+
+	mapd = game->map.data;
+	y = 0;
+	i = 0;
+	j = 0;
+	while (mapd[i])
+	{
+		x = 0;
+		j = 0;
+		while (mapd[i][j])
+		{
+			//check_type(game, mapd[i], x, y);
+			game->map.tiles[y][x] = new_tile(mapd[i][j], x * SZ, y * SZ);
+			game->map.tiles[y][x].sprite_path = NULL;
+			x++;
+			j++;
+		}
+		i++;
+		y++;
+	}
+}
+
 void    set_map(t_game *game, char *map_path)
 {
 	int		fd;
@@ -78,4 +196,5 @@ void    set_map(t_game *game, char *map_path)
 	}
 	close(fd);
 	set_map_tiles(game);
+	fill_map(game);
 }
