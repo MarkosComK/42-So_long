@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:02:59 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 18:25:45 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:43:54 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,6 @@ void	put_pixel(t_img *sprite, int x, int y, int color)
 {
 	char	*dst;
 
-	if (x < 10 && y < 10)
-		ft_printf("x: %i y: %i\n", x, y);
-	if (x < 10 && y < 10)
-		ft_printf("ponteiro: %p\n", sprite);
 	dst = sprite->addr + (y * sprite->line_len + x * (sprite->bpp
 				/ 8));
 	*(unsigned int *)dst = color;

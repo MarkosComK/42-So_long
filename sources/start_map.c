@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:33:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 18:42:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:43:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	create_world(t_img *sprite, t_game *game, int posx, int posy)
 			if (color != trans_color)
 			{
 				put_pixel(game->world, posx * SZ + x, posy * SZ + y, color);
-				//mlx_pixel_put(game->mlx, game->win, posx * SZ + x, posy * SZ + y, color);
 			}
 		}
 	}
