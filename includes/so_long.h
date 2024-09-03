@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 20:58:34 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 21:18:08 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,23 +98,23 @@ unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
  */
 int     error_msg(char *msg);
 void	print_map(t_game *game);
-//
-void	set_game(t_game *game, char *map_name);
-void	start_game(char	*map_path);
-void    set_map(t_game *game, char *map_path);
-void	set_player_pos(t_game *game);
-void	quit(t_game *game);
-int		key_press(int keycode, t_game *g);
-t_img   new_file_img(char *path, t_game *game);
-//MAP CHECKERS
-void	validate_map(t_game *game);
-// UTILITIES TO DELETE LATER
-t_img	*create_sprite(t_game *game, char *sprite_path);
-void	put_pixel(t_img *sprite, int x, int y, int color);
-unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
 
+//end_game.c
+void	quit(t_game *game);
+
+//handle_keys.c
+int	key_press(int keycode, t_game *g);
+
+//player.c
+void	set_player_pos(t_game *game);
+
+//start_game.c
+void	start_game(char	*map_path);
+void	set_game(t_game *game, char *map_path);
+
+//start_map.c
 void	fill_map(t_game *game);
 void	start_world(t_game *game);
-void	create_map(t_game *game);
+void    set_map(t_game *game, char *map_path);
 
 #endif

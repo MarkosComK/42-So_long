@@ -6,19 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 18:43:15 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 21:05:58 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-void	set_game(t_game *game, char	*map_path)
-{
-	ft_bzero(game, sizeof(t_game));
-	set_map(game, map_path);
-	validate_map(game);
-	set_player_pos(game);
-}
 
 void	start_game(char	*map_path)
 {
@@ -35,3 +27,10 @@ void	start_game(char	*map_path)
 	mlx_loop(game.mlx);
 }
 
+void	set_game(t_game *game, char *map_path)
+{
+	ft_bzero(game, sizeof(t_game));
+	set_map(game, map_path);
+	validate_map(game);
+	set_player_pos(game);
+}
