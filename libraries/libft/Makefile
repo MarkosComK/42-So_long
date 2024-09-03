@@ -7,6 +7,8 @@ RESET  = $(shell printf "\33[0m")
 BLUE = $(shell printf "\33[34m")
 PURPLE = $(shell printf "\33[35m")
 TITLE = $(shell printf "\33[32;40m")
+#get which is the operational system
+UNAME_S := $(shell uname -s)
 
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror -g
@@ -29,6 +31,15 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 	./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c
 OBJS = ${SRCS:.c=.o}
 
+
+# Set platform-specific flags
+ifeq ($(UNAME_S),Linux)
+    CFLAGS +=
+endif
+
+ifeq ($(UNAME_S),Darwin)
+    CFLAGS += -arch arm64
+endif
 
 ${NAME}: ${OBJS}
 	@ar rcs ${NAME} ${OBJS}
