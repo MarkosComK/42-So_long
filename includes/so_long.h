@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 19:49:31 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 20:06:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,25 @@ typedef struct  s_game
 	t_img		*world;
 }               t_game;
 
-/* FOLDERS
+/*
+ * checkers/
+ */
+//validate_ber.c
+
+BOOL	validate_ber(char *path);
+//validate_map.c
+
+void	validate_map(t_game *game);
+int	map_retangular(t_map map);
+int	map_components(t_map map);
+int	map_walls(t_map map);
+
+/*
  * utils/
  */
 int     error_msg(char *msg);
 void	print_map(t_game *game);
-/*
- * utils/
- */
-BOOL	validate_ber(char *path);
+//
 void	set_game(t_game *game, char *map_name);
 void	start_game(char	*map_path);
 void    set_map(t_game *game, char *map_path);
