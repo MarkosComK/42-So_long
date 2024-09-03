@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 12:06:05 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 12:51:12 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	start_game(char	*map_path)
 	set_game(&game, map_path);
 	game.mlx = mlx_init();
 	game.win= mlx_new_window(game.mlx, game.map.width, game.map.height + SIZE, "So Long");
-	game.map.sprites.wall = new_file_img("./sprites/wall-0.xpm", &game);
-	mlx_put_image_to_window(game.mlx, game.win, game.map.sprites.wall.ptr, 0, 0);
 	mlx_key_hook(game.win, key_press, &game);
 	mlx_loop(game.mlx);
 }
