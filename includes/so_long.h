@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 18:26:03 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 19:49:31 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,14 @@ typedef struct  s_game
 	t_img		*world;
 }               t_game;
 
+/* FOLDERS
+ * utils/
+ */
+int     error_msg(char *msg);
+void	print_map(t_game *game);
+/*
+ * utils/
+ */
 BOOL	validate_ber(char *path);
 void	set_game(t_game *game, char *map_name);
 void	start_game(char	*map_path);
@@ -79,8 +87,6 @@ t_img   new_file_img(char *path, t_game *game);
 //MAP CHECKERS
 void	validate_map(t_game *game);
 // UTILITIES TO DELETE LATER
-void	print_map(t_game *game);
-int     error_msg(char *msg);
 t_img	*create_sprite(t_game *game, char *sprite_path);
 void	put_pixel(t_img *sprite, int x, int y, int color);
 unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);

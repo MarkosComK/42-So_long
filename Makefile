@@ -24,7 +24,7 @@ SOURCES_DIR		=	sources
 
 HEADER			=	./includes/so_long.h
 
-SOURCES			=	$(wildcard $(SOURCES_DIR)/*.c)
+SOURCES			=	$(wildcard $(SOURCES_DIR)/*.c) $(wildcard $(SOURCES_DIR)/*/*.c)
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 
@@ -33,7 +33,7 @@ NAME			=	so_long
 CC				=	cc
 RM				=	rm -f
 
-CFLAGS			=	-Wall -Wextra -Werror -g
+CFLAGS			=	-Wall -Wextra -Werror -g 
 INCLUDES		= -L ./libraries/libft
 
 # Set platform-specific flags
