@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:33:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 18:36:01 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:42:44 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ char	*get_sprite_path(t_game *game, char c)
 		if (rand() % 2 == 0)
 			path = FLOOR0;
 		else if (rand() % 3 == 0)
-			path = FLOOR1;
+			path = FLOOR0;
 		else
-			path = FLOOR2;
+			path = FLOOR0;
 	}
 	/* to do 
 	if (!path)
@@ -95,7 +95,6 @@ void	create_world(t_img *sprite, t_game *game, int posx, int posy)
 
 	trans_color = 0xFFC0CB;
 	y = -1;
-	ft_printf("ponteiro: %p\n", game->world);
 	while (++y < sprite->h)
 	{
 		x = -1;
@@ -134,11 +133,9 @@ void	create_map(t_game *game)
 			game->map.tiles[y][x].sprite_path = ft_strdup(sprite_path);
 			sprite = create_sprite(game, sprite_path);
 			create_world(sprite, game, x, y);
-			mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, 0, 0);
 			mlx_destroy_image(game->mlx, sprite->ptr);
 		}
 	}
-	ft_printf("ponteiro: %p\n", sprite);
 }
 
 t_tile	new_tile(char type, int x, int y)
