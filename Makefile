@@ -34,12 +34,12 @@ CC				=	cc
 RM				=	rm -f
 
 CFLAGS			=	-Wall -Wextra -Werror -g -fsanitize=address
-INCLUDES		= -L ./libraries/libft -lft
+INCLUDES		= -L ./libraries/libft
 
 # Set platform-specific flags
 ifeq ($(UNAME_S),Linux)
     CFLAGS += -I/usr/include/X11
-    MLXFLAGS += -L/usr/lib/X11 -lX11
+    MLXFLAGS += -L. -lXext -L. -lX11
 endif
 
 ifeq ($(UNAME_S),Darwin)
