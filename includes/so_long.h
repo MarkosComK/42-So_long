@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 11:56:48 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:31:46 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,38 +25,45 @@
 # define true 1
 # define false 0
 
-# define SIZE 32
+# define SZ 32
+
+typedef struct	s_pos
+{
+	int	x;
+	int	y;
+}				t_pos;
+
+typedef struct s_tile
+{
+	char	type;
+	char	*sprite_path;
+	t_pos	pos;
+}		t_tile;
 
 typedef struct	s_map
 {
-	char	**str;
+	char		**data;
 	int		rows;
 	int		cols;
 	int		width;
 	int		height;
-	int		player;
-	int		enemies;
 	int		collectables;
+	int		player;
 	int		exits;
-	t_sprite	sprites;
+	t_tile		**tiles;
 }				t_map;
 
-typedef struct	s_point
-{
-	int	x;
-	int	y;
-}				t_point;
 
 typedef struct s_entity
 {
-	t_point		pos;
+	t_pos		pos;
 }				t_entity;
 
 typedef struct  s_game
 {
 	void		*mlx;
 	void		*win;
-    t_map		map;
+	t_map		map;
 	t_entity	player;
 }               t_game;
 

@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:25:01 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/23 22:33:12 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:32:07 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	map_retangular(t_map map)
 	int		i;
 
 	i = 0;
-	columns = ft_strlen(map.str[i]);
-	while (map.str[i])
+	columns = ft_strlen(map.data[i]);
+	while (map.data[i])
 	{
-		if (ft_strlen(map.str[i]) != columns)
+		if (ft_strlen(map.data[i]) != columns)
 			return (0);
 		i++;
 	}
@@ -45,22 +45,22 @@ int	map_walls(t_map map)
 	int	j;
 
 	i = 0;
-	while (map.str[i])
+	while (map.data[i])
 	{
 		j = 0;
 		if (i == 0 || i == map.rows)
 		{
-			while (map.str[i][j])
+			while (map.data[i][j])
 			{
-				if (map.str[i][j] != '1')
+				if (map.data[i][j] != '1')
 					return (0);
 				j++;
 			}
 		}
 		else
 		{
-			if (map.str[i][0] != '1' ||
-				map.str[i][map.cols] != '1')
+			if (map.data[i][0] != '1' ||
+				map.data[i][map.cols] != '1')
 				return (0);
 		}
 		i++;
@@ -74,16 +74,16 @@ int	map_components(t_map map)
 	int	j;
 
 	i = -1;
-	while (map.str[++i])
+	while (map.data[++i])
 	{
 		j = -1;
-		while (map.str[i][++j])
+		while (map.data[i][++j])
 		{
-			if (map.str[i][j] == 'C')
+			if (map.data[i][j] == 'C')
 				map.collectables++;
-			else if (map.str[i][j] == 'P')
+			else if (map.data[i][j] == 'P')
 				map.player++;
-			else if (map.str[i][j] == 'E')
+			else if (map.data[i][j] == 'E')
 				map.exits++;
 		}
 	}
@@ -94,15 +94,15 @@ int	map_components(t_map map)
 
 void	validate_map(t_game *game)
 {
-	if (!game->map.str[0])
+	if (!game->map.data[0])
 		error_msg("Map is empty!");
 	if (!map_retangular(game->map))
 		error_msg("Map is not retangular!");
-    if (!map_components(game->map))
+	if (!map_components(game->map))
 		error_msg("Map doesn't have the correct components!");
 	if (!map_walls(game->map))
 		error_msg("Map isn't completely surrounded by walls!");
-	game->map.cols = ft_strlen(game->map.str[0]);
-	game->map.width = game->map.cols * SIZE;
-	game->map.height = game->map.rows * SIZE;
+	game->map.cols = ft_strlen(game->map.data[0]);
+	game->map.width = game->map.cols * SZ;
+	game->map.height = game->map.rows * SZ;
 }
