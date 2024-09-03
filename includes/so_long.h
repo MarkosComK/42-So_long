@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 20:41:25 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 20:44:05 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,10 @@ int	map_walls(t_map map);
  */
 //create_sprites.c
 t_img	*create_sprite(t_game *game, char *sprite_path);
+
+//handle_pixel.c
+void	put_pixel(t_img *sprite, int x, int y, int color);
+unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
 
 /*
  * utils/
