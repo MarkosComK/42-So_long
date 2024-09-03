@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 20:06:35 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 20:41:25 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,18 @@ typedef struct  s_game
  * checkers/
  */
 //validate_ber.c
-
 BOOL	validate_ber(char *path);
-//validate_map.c
 
+//validate_map.c
 void	validate_map(t_game *game);
 int	map_retangular(t_map map);
 int	map_components(t_map map);
 int	map_walls(t_map map);
+/*
+ * checkers/
+ */
+//create_sprites.c
+t_img	*create_sprite(t_game *game, char *sprite_path);
 
 /*
  * utils/
