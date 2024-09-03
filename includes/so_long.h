@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 20:44:05 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/03 20:58:34 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,15 @@ void	validate_map(t_game *game);
 int	map_retangular(t_map map);
 int	map_components(t_map map);
 int	map_walls(t_map map);
+
 /*
- * checkers/
+ * sprites/
  */
 //create_sprites.c
 t_img	*create_sprite(t_game *game, char *sprite_path);
+void	create_map(t_game *game);
+char	*get_sprite_path(t_game *game, char c);
+void	create_world(t_img *sprite, t_game *game, int posx, int posy);
 
 //handle_pixel.c
 void	put_pixel(t_img *sprite, int x, int y, int color);
