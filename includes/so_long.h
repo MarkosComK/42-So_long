@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 21:18:08 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:49:16 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,9 @@ unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
  */
 int     error_msg(char *msg);
 void	print_map(t_game *game);
+
+//randomizer.c
+char	*randomize_floor(void);
 
 //end_game.c
 void	quit(t_game *game);
