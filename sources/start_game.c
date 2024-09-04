@@ -19,10 +19,10 @@ void	start_game(char	*map_path)
 	set_game(&game, map_path);
 	fill_map(&game);
 	game.mlx = mlx_init();
-	game.win= mlx_new_window(game.mlx, game.map.width, game.map.height + SZ, "So Long");
+	game.win= mlx_new_window(game.mlx, game.map.width - 48, game.map.height, "So Long");
 	start_world(&game);
 	create_map(&game);
-	mlx_put_image_to_window(game.mlx, game.win, game.world->ptr, 0, 0);
+	mlx_put_image_to_window(game.mlx, game.win, game.world->ptr, -24, 0);
 	mlx_key_hook(game.win, key_press, &game);
 	mlx_loop(game.mlx);
 }
