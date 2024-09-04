@@ -23,6 +23,8 @@ void	quit(t_game *game)
 	while (game->map.tiles[i])
 		free(game->map.tiles[i++]);
 	free(game->map.tiles);
+	mlx_destroy_image(game->mlx, game->world->ptr);
+	free(game->world);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
 	free(game->map.data);

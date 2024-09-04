@@ -56,16 +56,13 @@ void	create_map(t_game *game)
 		while (++x < game->map.cols)
 		{
 			sprite_path = get_sprite_path(game, game->map.tiles[y][x].type, x, y);
-	/* to do 
 			if (!sprite_path)
-			{
-				gameover(game);
-			}
-	*/
-			game->map.tiles[y][x].sprite_path = ft_strdup(sprite_path);
+				return ;
+			game->map.tiles[y][x].sprite_path = sprite_path;
 			sprite = create_sprite(game, sprite_path);
 			create_world(sprite, game, x, y);
 			mlx_destroy_image(game->mlx, sprite->ptr);
+			free(sprite);
 		}
 	}
 }
