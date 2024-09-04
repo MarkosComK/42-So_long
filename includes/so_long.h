@@ -86,7 +86,7 @@ int	map_walls(t_map map);
 //create_sprites.c
 t_img	*create_sprite(t_game *game, char *sprite_path);
 void	create_map(t_game *game);
-char	*get_sprite_path(t_game *game, char c);
+char	*get_sprite_path(t_game *game, char c, int x, int y);
 void	create_world(t_img *sprite, t_game *game, int posx, int posy);
 
 //handle_pixel.c
