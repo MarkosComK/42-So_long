@@ -23,7 +23,9 @@ void	init_player(t_game *game)
 	set_player_pos(game);
 	s_pos = (t_pos){player.s_pos.x, player.s_pos.x}; //del later
 	player.d_pos = (t_pos){0, 0};
-	player.current_sprite = 0; //load sprite here
+	player.sprite = NULL;
+	player.current_sprite = 0; //save current sprite here
+	load_player_sprite(game);
 	d_pos = player.d_pos; //del later
 	
 	
@@ -32,8 +34,60 @@ void	init_player(t_game *game)
 
 void	load_player_sprite(t_game *game)
 {
-	(void) game;
+	t_entity	player;
 
+	player = game->player;
+	player.sprite_idle[0] = P_IDLE0;
+}
+
+void	drawn_player(t_game *game)
+{
+	t_entity	player;
+	char		*current_sprite;
+
+	player = game->player;
+	current_sprite = P_IDLE0;
+	player.sprite = create_sprite(game, current_sprite);
+	create_player(player.sprite, game, player.s_pos.x, player.s_pos.y);
+	if (player.sprite)
+		destroy_sprite(&player.sprite, game->mlx);
+}
+
+void	destroy_sprite(t_sprite **sprite, void *mlx)
+{
+	if (*sprite)
+	{
+		if ((*sprite)->img)
+		{
+			mlx_destroy_image(mlx, (*sprite)->img);
+			(*sprite)->img = NULL;
+		}
+		free(*sprite);
+		*sprite = NULL;
+	}
+}
+
+void	create_player(t_img *sprite, t_game *game, int posx, int posy)
+{
+	int				x;
+	int				y;
+	unsigned int	color;
+	unsigned int	trans_color;
+
+	trans_color = 0xFFC0CB;
+	y = -1;
+	while (++y < sprite->h)
+	{
+		x = -1;
+		while (++x < sprite->w)
+		{
+			color = get_color_in_pixel(sprite, x, y);
+			if (color != trans_color)
+			{
+				put_pixel(game->world, posx * SZ + x, posy * SZ + y, color);
+			}
+		}
+	}
 }
 
 void	set_player_pos(t_game *game)

@@ -30,3 +30,12 @@ void	print_map(t_game *game)
 		i++;
 	}
 }
+
+void	print_player_struct(t_entity player)
+{
+	ft_printf("s_pos x: %i y: %i\n", player.s_pos.x, player.s_pos.y);
+	ft_printf("d_pos x: %i y: %i\n", player.d_pos.x, player.d_pos.y);
+	ft_printf("sprite: %s\n", player.sprite);
+	ft_printf("current sprite: %i\n", player.current_sprite);
+	ft_printf("player_sprite_idle: %s\n", player.sprite_idle);
+}

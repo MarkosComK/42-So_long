@@ -58,7 +58,9 @@ typedef struct s_entity
 {
 	t_pos		s_pos;
 	t_pos		d_pos;
+	t_img		*sprite;
 	int			current_sprite;
+	char		*sprite_idle[0];
 }				t_entity;
 
 typedef struct  s_game
@@ -87,7 +89,10 @@ int	map_walls(t_map map);
  */
 //player.c
 void	init_player(t_game *game);
+void	load_player_sprite(t_game *game);
+void	drawn_player(t_game *game);
 void	set_player_pos(t_game *game);
+void	create_player(t_img *sprite, t_game *game, int posx, int posy);
 
 /*
  * sprites/
@@ -107,6 +112,7 @@ unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
  */
 int     error_msg(char *msg);
 void	print_map(t_game *game);
+void	print_player_struct(t_entity player);
 
 //randomizer.c
 char	*randomize_floor(void);
@@ -116,9 +122,6 @@ void	quit(t_game *game);
 
 //handle_keys.c
 int	key_press(int keycode, t_game *g);
-
-//player.c
-void	set_player_pos(t_game *game);
 
 //start_game.c
 void	start_game(char	*map_path);
