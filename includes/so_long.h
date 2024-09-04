@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/04 17:04:46 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/04 17:08:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,13 @@ void	validate_map(t_game *game);
 int	map_retangular(t_map map);
 int	map_components(t_map map);
 int	map_walls(t_map map);
+
+/*
+ * checkers/
+ */
+//player.c
+void	init_player(t_game *game);
+void	set_player_pos(t_game *game);
 
 /*
  * sprites/

@@ -13,6 +13,11 @@
 
 #include "../../includes/so_long.h"
 
+void	init_player(t_game *game)
+{
+
+}
+
 void	set_player_pos(t_game *game)
 {
 	int	y;
