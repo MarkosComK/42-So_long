@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 21:05:58 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/04 17:05:47 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ void	set_game(t_game *game, char *map_path)
 	set_map(game, map_path);
 	validate_map(game);
 	set_player_pos(game);
+	init_player(game);
 }

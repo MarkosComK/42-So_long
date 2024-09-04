@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/04 14:49:16 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/04 17:04:46 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ typedef struct	s_map
 
 typedef struct s_entity
 {
-	t_pos		pos;
+	t_pos		s_pos;
+	t_pos		d_pos;
+	int			current_sprite;
 }				t_entity;
 
 typedef struct  s_game

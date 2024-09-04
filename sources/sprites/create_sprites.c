@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:40:26 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/04 14:49:24 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:51:00 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,6 @@ char	*get_sprite_path(t_game *game, char c, int x, int y)
 		path = WALL_INNER;
 	else if (c == '0' || c == 'C' || c == 'E' || c == 'P' || c == 'M')
 		path = randomize_floor();
-	/* to do 
-	if (!path)
-	{
-		ft_printf("Failed to allocate path for character: %c\n", c);
-		gameover(game);
-	}
-	*/
 	return (path);
 }
 

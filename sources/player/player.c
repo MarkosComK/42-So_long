@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -10,7 +11,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long.h"
 
 void	set_player_pos(t_game *game)
 {
@@ -25,7 +26,7 @@ void	set_player_pos(t_game *game)
 		{
 			if (game->map.data[y][x] == 'P')
 			{
-				game->player.pos = (t_pos){x, y};
+				game->player.s_pos = (t_pos){x, y};
 			}
 			x++;
 		}
