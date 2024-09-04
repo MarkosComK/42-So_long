@@ -15,7 +15,7 @@
 
 void	init_player(t_game *game)
 {
-
+	set_player_pos(game);
 }
 
 void	set_player_pos(t_game *game)
