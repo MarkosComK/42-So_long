@@ -16,6 +16,7 @@
 void	init_player(t_game *game)
 {
 	set_player_pos(game);
+	ft_printf("Player x: %i y: %i\n", game->player.s_pos.x, game->player.s_pos.y);
 }
 
 void	set_player_pos(t_game *game)
