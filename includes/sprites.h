@@ -15,6 +15,13 @@
 # include "so_long.h"
 
 # define WALL "./sprites/wall-0.xpm"
+# define WALL_L "./sprites/wall-l.xpm"
+# define WALL_R "./sprites/wall-r.xpm"
+# define WALL_LT "./sprites/wall-lt.xpm"
+# define WALL_RT "./sprites/wall-rt.xpm"
+# define WALL_LB "./sprites/wall-lb.xpm"
+# define WALL_RB "./sprites/wall-rb.xpm"
+# define WALL_INNER "./sprites/wall-inner-0.xpm"
 # define FLOOR0 "./sprites/floor-0.xpm"
 # define FLOOR1 "./sprites/floor-1.xpm"
 # define FLOOR2 "./sprites/floor-2.xpm"
