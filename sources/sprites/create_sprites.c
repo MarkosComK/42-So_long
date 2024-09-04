@@ -55,7 +55,7 @@ void	create_map(t_game *game)
 		x = -1;
 		while (++x < game->map.cols)
 		{
-			sprite_path = get_sprite_path(game, game->map.tiles[y][x].type);
+			sprite_path = get_sprite_path(game, game->map.tiles[y][x].type, x, y);
 	/* to do 
 			if (!sprite_path)
 			{
@@ -70,23 +70,23 @@ void	create_map(t_game *game)
 	}
 }
 
-char	*get_sprite_path(t_game *game, char c)
+char	*get_sprite_path(t_game *game, char c, int x, int y)
 {
 	char	*path;
 	(void) game;
 
+	ft_printf("cols: %i x: %i\n", game->map.cols, x);
 	path = NULL;
-	if (c == '1')
+	if (c == '1' && x == 0 && y == 0)
+		path = WALL_LT;
+	else if (c == '1' && x == game->map.cols - 1 && y == 0)
+		path = WALL_RT;
+	else if (c == '1' && x == game->map.cols - 1 && y == game->map.rows - 1)
+		path = WALL_RT;
+	else if (c == '1')
 		path = WALL;
 	else if (c == '0' || c == 'C' || c == 'E' || c == 'P' || c == 'M')
-	{
-		if (rand() % 2 == 0)
-			path = FLOOR0;
-		else if (rand() % 3 == 0)
-			path = FLOOR0;
-		else
-			path = FLOOR0;
-	}
+		path = FLOOR0;
 	/* to do 
 	if (!path)
 	{
