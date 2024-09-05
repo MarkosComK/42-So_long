@@ -17,7 +17,6 @@ void	draw_map(t_game *game)
 	int			y;
 	int			x;
 	t_img		*sprite;
-	char		*sprite_path;
 
 	y = -1;
 	while (++y < game->map.rows)
@@ -25,12 +24,7 @@ void	draw_map(t_game *game)
 		x = -1;
 		while (++x < game->map.cols)
 		{
-			sprite_path = get_sprite_path(game,
-					game->map.tiles[y][x].type, x, y);
-			if (!sprite_path)
-				return ;
-			game->map.tiles[y][x].sprite_path = sprite_path;
-			sprite = create_sprite(game, sprite_path);
+			sprite = create_sprite(game, game->map.tiles[y][x].sprite_path);
 			create_world(sprite, game, x, y);
 			mlx_destroy_image(game->mlx, sprite->ptr);
 			free(sprite);
