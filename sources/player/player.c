@@ -53,14 +53,14 @@ void	drawn_player(t_game *game)
 		destroy_sprite(&player.sprite, game->mlx);
 }
 
-void	destroy_sprite(t_sprite **sprite, void *mlx)
+void	destroy_sprite(t_img **sprite, void *mlx)
 {
 	if (*sprite)
 	{
-		if ((*sprite)->img)
+		if ((*sprite)->ptr)
 		{
-			mlx_destroy_image(mlx, (*sprite)->img);
-			(*sprite)->img = NULL;
+			mlx_destroy_image(mlx, (*sprite)->ptr);
+			(*sprite)->ptr = NULL;
 		}
 		free(*sprite);
 		*sprite = NULL;

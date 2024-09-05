@@ -91,6 +91,7 @@ int	map_walls(t_map map);
 void	init_player(t_game *game);
 void	load_player_sprite(t_game *game);
 void	drawn_player(t_game *game);
+void	destroy_sprite(t_img **sprite, void *mlx);
 void	set_player_pos(t_game *game);
 void	create_player(t_img *sprite, t_game *game, int posx, int posy);
 

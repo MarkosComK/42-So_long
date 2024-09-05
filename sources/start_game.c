@@ -22,7 +22,6 @@ void	start_game(char	*map_path)
 	game.win= mlx_new_window(game.mlx, game.map.width - 48, game.map.height, "So Long");
 	start_world(&game);
 	create_map(&game);
-	drawn_player(&game);
 	mlx_put_image_to_window(game.mlx, game.win, game.world->ptr, -24, 0);
 	mlx_key_hook(game.win, key_press, &game);
 	mlx_loop(game.mlx);
