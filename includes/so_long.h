@@ -136,7 +136,7 @@ int     error_msg(char *msg);
 void	print_map(t_game *game);
 void	print_player_struct(t_entity player);
 //randomizer.c
-char	*randomize_floor(void);
+char	*randomize_floor(int x, int y, t_map map);
 //utils.c
 int	count_lines(char *map_path);
 
