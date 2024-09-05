@@ -6,11 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 09:14:10 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 09:34:51 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:02:42 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long.h"
 
 void	draw_map(t_game *game);
 void	render_map(t_game *game);
