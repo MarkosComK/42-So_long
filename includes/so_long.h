@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 10:16:20 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:21:12 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void	create_player(t_img *sprite, t_game *game, int posx, int posy);
 //quit.c
 void	quit(t_game *game);
 void	free_map(t_map map);
+void	free_tiles(t_map map);
 
 /*
  * renderization/
