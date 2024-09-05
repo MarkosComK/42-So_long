@@ -40,19 +40,6 @@ void	load_player_sprite(t_game *game)
 	player.sprite_idle[0] = P_IDLE0;
 }
 
-void	draw_player(t_game *game)
-{
-	t_entity	player;
-	char		*current_sprite;
-
-	player = game->player;
-	current_sprite = P_IDLE0;
-	player.sprite = create_sprite(game, current_sprite);
-	create_player(player.sprite, game, player.s_pos.x, player.s_pos.y);
-	if (player.sprite)
-		destroy_sprite(&player.sprite, game->mlx);
-}
-
 void	destroy_sprite(t_img **sprite, void *mlx)
 {
 	if (*sprite)
