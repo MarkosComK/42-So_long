@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/04 17:08:45 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 09:28:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	map_walls(t_map map);
 //player.c
 void	init_player(t_game *game);
 void	load_player_sprite(t_game *game);
-void	drawn_player(t_game *game);
+void	draw_player(t_game *game);
 void	destroy_sprite(t_img **sprite, void *mlx);
 void	set_player_pos(t_game *game);
 void	create_player(t_img *sprite, t_game *game, int posx, int posy);
@@ -123,6 +123,9 @@ void	quit(t_game *game);
 
 //handle_keys.c
 int	key_press(int keycode, t_game *g);
+
+//renderization.c
+void	render_game(t_game *game);
 
 //start_game.c
 void	start_game(char	*map_path);

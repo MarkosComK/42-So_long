@@ -40,7 +40,7 @@ void	load_player_sprite(t_game *game)
 	player.sprite_idle[0] = P_IDLE0;
 }
 
-void	drawn_player(t_game *game)
+void	draw_player(t_game *game)
 {
 	t_entity	player;
 	char		*current_sprite;
