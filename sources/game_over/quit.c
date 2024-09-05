@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:08:25 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 10:08:56 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:16:16 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void	quit(t_game *game)
 {
 	int	i;
 
-	i = 0;
-	while (game->map.data[i])
-		free(game->map.data[i++]);
+	free_map(game->map);
 	i = 0;
 	while (game->map.tiles[i])
 		free(game->map.tiles[i++]);
@@ -30,4 +28,13 @@ void	quit(t_game *game)
 	free(game->map.data);
 	free(game->mlx);
 	exit(0);
+}
+
+void	free_map(t_map map)
+{
+	int	i;
+
+	i = 0;
+	while (map.data[i])
+		free(map.data[i++]);
 }
