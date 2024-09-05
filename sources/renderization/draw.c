@@ -47,7 +47,6 @@ void	draw_player(t_game *game)
 	current_sprite = P_IDLE0;
 	player.sprite = create_sprite(game, current_sprite);
 	create_player(player.sprite, game, player.s_pos.x, player.s_pos.y);
-	ft_printf("draw_player(): game s_pos.x: %i\n", player.s_pos.x);
 	if (player.sprite)
 		destroy_sprite(&player.sprite, game->mlx);
 }

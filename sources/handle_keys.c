@@ -12,30 +12,47 @@
 
 #include "../includes/so_long.h"
 
+void	colision_check(t_game *game, t_pos *pos, int dx, int dy);
+
 int	key_press(int keycode, t_game *g)
 {
+	t_pos	*pos;
+
+	pos = &g->player.s_pos;
 	if (keycode == XK_Up || keycode == XK_w)
 	{
-		g->player.s_pos.y--;
-		ft_printf("You pressed %i\n", XK_Up);
+		ft_printf("outside pos {%i, %i}\n", pos->x, pos->y);
+		colision_check(g, pos, 0, -1);
 	}
 	if (keycode == XK_Down || keycode == XK_s)
 	{
-		g->player.s_pos.y++;
-		ft_printf("You pressed %i\n", XK_Down);
+		colision_check(g, pos, 0, 1);
 	}
 	else if (keycode == XK_Left || keycode == XK_a)
 	{
-		g->player.s_pos.x--;
-		ft_printf("You pressed %i\n", XK_Left);
+		colision_check(g, pos, -1, 0);
 	}
 	else if (keycode == XK_Right || keycode == XK_d)
 	{
-		g->player.s_pos.x++;
-		ft_printf("You pressed %i\n", XK_Right);
-		ft_printf("game s_pos.x: %i\n", g->player.s_pos.x);
+		colision_check(g, pos, 1, 0);
 	}
 	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
 	return (1);
+}
+
+void	colision_check(t_game *game, t_pos *pos, int dx, int dy)
+{
+	t_pos	new_pos;
+
+	new_pos.x = pos->x + dx;
+	new_pos.y = pos->y + dy;
+	ft_printf("inside {%i, %i}\n", pos->x, pos->y);
+	if (game->map.data[new_pos.y][new_pos.x] == '1')
+		return ;
+	else
+	{
+		game->player.s_pos.x += dx;
+		game->player.s_pos.y += dy;
+	}
 }
