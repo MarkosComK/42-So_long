@@ -40,20 +40,6 @@ void	load_player_sprite(t_game *game)
 	player.sprite_idle[0] = P_IDLE0;
 }
 
-void	destroy_sprite(t_img **sprite, void *mlx)
-{
-	if (*sprite)
-	{
-		if ((*sprite)->ptr)
-		{
-			mlx_destroy_image(mlx, (*sprite)->ptr);
-			(*sprite)->ptr = NULL;
-		}
-		free(*sprite);
-		*sprite = NULL;
-	}
-}
-
 void	create_player(t_img *sprite, t_game *game, int posx, int posy)
 {
 	int				x;

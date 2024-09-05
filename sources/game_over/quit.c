@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:08:25 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 10:23:30 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:30:10 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,4 @@ void	quit(t_game *game)
 	free(game->world);
 	free(game->mlx);
 	exit(0);
-}
-
-void	free_map(t_map map)
-{
-	int	i;
-
-	i = 0;
-	while (map.data[i])
-		free(map.data[i++]);
-	free(map.data);
-}
-
-void	free_tiles(t_map map)
-{
-	int	i;
-
-	i = 0;
-	while (map.tiles[i])
-		free(map.tiles[i++]);
-	free(map.tiles);
 }
