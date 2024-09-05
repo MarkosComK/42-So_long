@@ -47,7 +47,6 @@ void	colision_check(t_game *game, t_pos *pos, int dx, int dy)
 
 	new_pos.x = pos->x + dx;
 	new_pos.y = pos->y + dy;
-	ft_printf("inside {%i, %i}\n", pos->x, pos->y);
 	if (game->map.data[new_pos.y][new_pos.x] == '1')
 		return ;
 	else
