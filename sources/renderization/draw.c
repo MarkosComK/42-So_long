@@ -25,7 +25,8 @@ void	draw_map(t_game *game)
 		x = -1;
 		while (++x < game->map.cols)
 		{
-			sprite_path = get_sprite_path(game, game->map.tiles[y][x].type, x, y);
+			sprite_path = get_sprite_path(game,
+					game->map.tiles[y][x].type, x, y);
 			if (!sprite_path)
 				return ;
 			game->map.tiles[y][x].sprite_path = sprite_path;
@@ -49,4 +50,3 @@ void	draw_player(t_game *game)
 	if (player.sprite)
 		destroy_sprite(&player.sprite, game->mlx);
 }
-
