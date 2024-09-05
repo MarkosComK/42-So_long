@@ -99,12 +99,14 @@ void	set_map(t_game *game, char *map_path)
 	game->map.rows = count_lines(map_path);
 	game->map.data = ft_calloc(sizeof(char **), game->map.rows + 1);
 	i = 0;
-	while ((str = get_next_line(fd))) 
+	str = get_next_line(fd);
+	while (str)
 	{
 		game->map.data[i] = ft_calloc(sizeof(char *), ft_strlen(str) + 1);
 		ft_strlcpy(game->map.data[i], str, ft_strlen(str));
 		free(str);
 		i++;
+		str = get_next_line(fd);
 	}
 	close(fd);
 	set_map_tiles(game);
