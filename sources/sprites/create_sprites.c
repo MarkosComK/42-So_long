@@ -86,7 +86,7 @@ char	*get_sprite_path(t_game *game, char c, int x, int y)
 	else if (c == '1')
 		path = WALL_INNER;
 	else if (c == '0' || c == 'C' || c == 'E' || c == 'P' || c == 'M')
-		path = randomize_floor();
+		path = FLOOR0;
 	return (path);
 }
 
