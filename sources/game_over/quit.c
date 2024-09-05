@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../../includes/so_long.h"
+#include "../../includes/so_long.h"
 
 void	quit(t_game *game)
 {
-
 	free_map(game->map);
 	free_tiles(game->map);
 	mlx_destroy_image(game->mlx, game->world->ptr);
