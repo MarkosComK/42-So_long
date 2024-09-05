@@ -16,14 +16,17 @@ int	key_press(int keycode, t_game *g)
 {
 	if (keycode == XK_Up || keycode == XK_w)
 	{
+		g->player.s_pos.y--;
 		ft_printf("You pressed %i\n", XK_Up);
 	}
 	if (keycode == XK_Down || keycode == XK_s)
 	{
+		g->player.s_pos.y++;
 		ft_printf("You pressed %i\n", XK_Down);
 	}
 	else if (keycode == XK_Left || keycode == XK_a)
 	{
+		g->player.s_pos.x--;
 		ft_printf("You pressed %i\n", XK_Left);
 	}
 	else if (keycode == XK_Right || keycode == XK_d)
