@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 09:31:21 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:33:05 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 void	start_game(char	*map_path)
 {
 	t_game	game;
-	
+
 	set_game(&game, map_path);
 	fill_map(&game);
 	game.mlx = mlx_init();
-	game.win= mlx_new_window(game.mlx, game.map.width - 48, game.map.height, "So Long");
+	game.win = mlx_new_window(game.mlx, game.map.width - 48,
+			game.map.height, "So Long");
 	start_world(&game);
 	create_map(&game);
 	render_game(&game);
