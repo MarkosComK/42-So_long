@@ -18,6 +18,7 @@ void	render_game(t_game *game)
 	render_player(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);
 }
+
 void	render_map(t_game *game)
 {
 	draw_map(game);
