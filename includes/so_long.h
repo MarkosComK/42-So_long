@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 18:31:27 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:25:31 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ typedef struct s_bottle
 {
 	t_pos		pos;
 	t_img		*sprite;
-	void		*t_bottle;
+	struct s_bottle	*next;
 }				t_bottle;
 
 typedef struct  s_game
@@ -77,7 +77,7 @@ typedef struct  s_game
 	t_map		map;
 	t_entity	player;
 	t_img		*world;
-	t_bottle	bottle;
+	t_bottle	*bottle;
 }               t_game;
 
 /*
@@ -96,6 +96,9 @@ int	map_walls(t_map map);
  */
 //collectibles.c
 void	init_collectibles(t_game *game);
+//list_utils.c
+t_bottle	*ft_bottlelast(t_bottle *lst);
+void		ft_bottleadd_back(t_bottle **lst, t_bottle *n_node);
 
 /*
  * game_over/
