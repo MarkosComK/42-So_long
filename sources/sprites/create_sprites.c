@@ -16,7 +16,7 @@ t_img	*create_sprite(t_game *game, char *sprite_path)
 {
 	t_img	*sprite;
 
-	sprite = (t_img *)ft_calloc(1, sizeof(t_img ));
+	sprite = (t_img *)ft_calloc(1, sizeof(t_img));
 	if (!sprite)
 	{
 		free(sprite_path);
@@ -49,7 +49,8 @@ void	create_map(t_game *game)
 		x = -1;
 		while (++x < game->map.cols)
 		{
-			sprite_path = get_sprite_path(game, game->map.tiles[y][x].type, x, y);
+			sprite_path = get_sprite_path(game,
+					game->map.tiles[y][x].type, x, y);
 			if (!sprite_path)
 				return ;
 			game->map.tiles[y][x].sprite_path = sprite_path;
@@ -64,7 +65,7 @@ void	create_map(t_game *game)
 char	*get_sprite_path(t_game *game, char c, int x, int y)
 {
 	char	*path;
-	t_map		map;
+	t_map	map;
 
 	map = game->map;
 	path = NULL;
@@ -72,7 +73,7 @@ char	*get_sprite_path(t_game *game, char c, int x, int y)
 		path = WALL_LT;
 	else if (c == '1' && x == map.cols - 1 && y == 0)
 		path = WALL_RT;
-	else if (c == '1' && x ==  0 && y == map.rows - 1)
+	else if (c == '1' && x == 0 && y == map.rows - 1)
 		path = WALL_LB;
 	else if (c == '1' && x == map.cols - 1 && y == map.rows - 1)
 		path = WALL_RB;
