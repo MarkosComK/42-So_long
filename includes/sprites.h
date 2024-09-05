@@ -28,6 +28,7 @@
 # define FLOOR3 "./sprites/floor-3.xpm"
 # define FLOOR4 "./sprites/floor-4.xpm"
 # define P_IDLE0 "./sprites/idle-0.xpm"
+# define COLLECTIBLE "./sprites/collectible-0.xpm"
 
 typedef struct s_img
 {

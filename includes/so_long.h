@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 11:05:06 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:31:27 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,13 @@ typedef struct s_entity
 	char		*sprite_idle[0];
 }				t_entity;
 
+typedef struct s_bottle
+{
+	t_pos		pos;
+	t_img		*sprite;
+	void		*t_bottle;
+}				t_bottle;
+
 typedef struct  s_game
 {
 	void		*mlx;
@@ -70,6 +77,7 @@ typedef struct  s_game
 	t_map		map;
 	t_entity	player;
 	t_img		*world;
+	t_bottle	bottle;
 }               t_game;
 
 /*
@@ -77,7 +85,6 @@ typedef struct  s_game
  */
 //validate_ber.c
 BOOL	validate_ber(char *path);
-
 //validate_map.c
 void	validate_map(t_game *game);
 int	map_retangular(t_map map);
@@ -85,13 +92,10 @@ int	map_components(t_map map);
 int	map_walls(t_map map);
 
 /*
- * checkers/
+ * collectibes/
  */
-//player.c
-void	init_player(t_game *game);
-void	load_player_sprite(t_game *game);
-void	set_player_pos(t_game *game);
-void	create_player(t_img *sprite, t_game *game, int posx, int posy);
+//collectibles.c
+void	init_collectibles(t_game *game);
 
 /*
  * game_over/
@@ -100,6 +104,15 @@ void	create_player(t_img *sprite, t_game *game, int posx, int posy);
 void	destroy_sprite(t_img **sprite, void *mlx);
 void	free_map(t_map map);
 void	free_tiles(t_map map);
+
+/*
+ * player/
+ */
+//player.c
+void	init_player(t_game *game);
+void	load_player_sprite(t_game *game);
+void	set_player_pos(t_game *game);
+void	create_player(t_img *sprite, t_game *game, int posx, int posy);
 
 //quit.c
 void	quit(t_game *game);
@@ -110,6 +123,7 @@ void	quit(t_game *game);
 //draw.c
 void	draw_player(t_game *game);
 void	draw_map(t_game *game);
+void	draw_collectibles(t_game *game);
 
 //renderization.c
 void	render_game(t_game *game);
