@@ -28,7 +28,9 @@ int	key_press(int keycode, t_game *g)
 	}
 	else if (keycode == XK_Right || keycode == XK_d)
 	{
+		g->player.s_pos.x++;
 		ft_printf("You pressed %i\n", XK_Right);
+		ft_printf("game s_pos.x: %i\n", g->player.s_pos.x);
 	}
 	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);

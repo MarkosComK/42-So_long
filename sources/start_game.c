@@ -12,6 +12,12 @@
 
 #include "../includes/so_long.h"
 
+int	game_loop_hook(t_game *game)
+{
+	render_game(game);
+	return (0);
+}
+
 void	start_game(char	*map_path)
 {
 	t_game	game;
@@ -23,7 +29,7 @@ void	start_game(char	*map_path)
 			game.map.height, "So Long");
 	start_world(&game);
 	create_map(&game);
-	render_game(&game);
+	mlx_loop_hook(game.mlx, game_loop_hook, &game);
 	mlx_key_hook(game.win, key_press, &game);
 	mlx_loop(game.mlx);
 }
