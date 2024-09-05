@@ -14,8 +14,6 @@
 
 void	init_player(t_game *game)
 {
-	t_pos		s_pos;
-	t_pos		d_pos;
 	t_entity	player;
 
 	player = game->player;
