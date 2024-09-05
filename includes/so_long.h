@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 10:30:52 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:05:06 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,9 +135,10 @@ unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
 int     error_msg(char *msg);
 void	print_map(t_game *game);
 void	print_player_struct(t_entity player);
-
 //randomizer.c
 char	*randomize_floor(void);
+//utils.c
+int	count_lines(char *map_path);
 
 //end_game.c
 void	quit(t_game *game);
@@ -151,6 +152,8 @@ void	start_game(char	*map_path);
 void	set_game(t_game *game, char *map_path);
 
 //start_map.c
+void	set_map_tiles(t_game *game);
+t_tile	new_tile(char type, int x, int y);
 void	fill_map(t_game *game);
 void	start_world(t_game *game);
 void    set_map(t_game *game, char *map_path);

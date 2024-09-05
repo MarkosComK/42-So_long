@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:33:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 11:07:57 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:13:30 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@ void	set_map_tiles(t_game *game)
 	{
 		game->map.tiles[i] = (t_tile *)ft_calloc(sizeof(t_tile *) * SZ,
 				ft_strlen(game->map.data[i]) + 1);
-		if (!game->map.tiles[i++])
-		{
-			ft_putendl_fd("Tiles alocation failes", 2);
-			exit (1);
-		}
 		i++;
 	}
 }
@@ -104,14 +99,12 @@ void	set_map(t_game *game, char *map_path)
 	game->map.rows = count_lines(map_path);
 	game->map.data = ft_calloc(sizeof(char **), game->map.rows + 1);
 	i = 0;
-	str = get_next_line(fd);
-	while (str)
+	while ((str = get_next_line(fd))) 
 	{
 		game->map.data[i] = ft_calloc(sizeof(char *), ft_strlen(str) + 1);
 		ft_strlcpy(game->map.data[i], str, ft_strlen(str));
 		free(str);
 		i++;
-		str = get_next_line(fd);
 	}
 	close(fd);
 	set_map_tiles(game);
