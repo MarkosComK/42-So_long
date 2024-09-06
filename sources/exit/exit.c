@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   renderization.c                                    :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 09:14:10 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 18:32:25 by marsoare         ###   ########.fr       */
+/*   Created: 2024/09/06 14:32:10 by marsoare          #+#    #+#             */
+/*   Updated: 2024/09/06 14:36:54 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-void	render_game(t_game *game)
+void	set_exit_pos(t_game *game)
 {
-	render_map(game);
-	render_player(game);
-	render_collectibles(game);
-	render_exit(game);
-	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);
+	int	y;
+	int	x;
+
+	y = 0;
+	while (game->map.data[y])
+	{
+		x = 0;
+		while (game->map.data[y][x])
+		{
+			if (game->map.data[y][x] == 'E')
+			{
+				game->exit.pos = (t_pos){x, y};
+			}
+			x++;
+		}
+		y++;
+	}
 }
 
-void	render_map(t_game *game)
+void	init_exit(t_game *game)
 {
-	draw_map(game);
-}
+	t_exit	exit;
 
-void	render_player(t_game *game)
-{
-	draw_player(game);
-}
-
-void	render_collectibles(t_game *game)
-{
-	draw_bottles(game);
-}
-
-void	render_exit(t_game *game)
-{
-	draw_exit(game);
+	exit = game->exit;
+	set_exit_pos(game);
+	exit.sprite[0] = NULL;
+	exit.sprite[1] = NULL;
+	exit.open = FALSE;
 }

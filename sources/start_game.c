@@ -42,4 +42,5 @@ void	set_game(t_game *game, char *map_path)
 	set_player_pos(game);
 	init_player(game);
 	init_collectibles(game);
+	init_exit(game);
 }

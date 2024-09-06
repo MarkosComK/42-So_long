@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 19:25:31 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:36:24 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,13 @@ typedef struct s_entity
 	int			points;
 }				t_entity;
 
+typedef struct s_exit
+{
+	t_pos		pos;
+	t_img		*sprite[2];
+	BOOL		open;
+}				t_exit;
+
 typedef struct s_bottle
 {
 	t_pos		pos;
@@ -79,6 +86,7 @@ typedef struct  s_game
 	t_entity	player;
 	t_img		*world;
 	t_bottle	*bottle;
+	t_exit		exit;
 }               t_game;
 
 /*
@@ -103,6 +111,11 @@ t_bottle	*bottle_add(t_bottle *node, int x, int y);
 t_bottle	*bottle_push_tail(t_bottle *stack, int x, int y);
 t_bottle	*bottle_create(int x, int y);
 int			bottles_size(t_bottle *lst);
+/*
+ * exit/
+ */
+//exit.c
+void	init_exit(t_game *game);
 
 /*
  * game_over/
@@ -133,12 +146,14 @@ void	draw_player(t_game *game);
 void	draw_map(t_game *game);
 void	draw_collectibles(t_game *game);
 void	draw_bottles(t_game *game);
+void	draw_exit(t_game *game);
 
 //renderization.c
 void	render_game(t_game *game);
 void	render_map(t_game *game);
 void	render_player(t_game *game);
 void	render_collectibles(t_game *game);
+void	render_exit(t_game *game);
 
 /*
  * sprites/

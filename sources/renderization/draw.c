@@ -59,3 +59,15 @@ void	draw_bottles(t_game *game)
 		bottle = bottle->next;
 	}
 }
+
+void	draw_exit(t_game *game)
+{
+	t_exit	exit;
+
+	exit = game->exit;
+	exit.sprite[0] = create_sprite(game, COLLECTIBLE);
+	exit.sprite[1] = create_sprite(game, COLLECTIBLE);
+	create_player(exit.sprite[0], game, exit.pos.x, exit.pos.y);
+	mlx_destroy_image(game->mlx, exit.sprite[0]->ptr);
+	free(exit.sprite[0]);
+}
