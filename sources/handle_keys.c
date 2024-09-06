@@ -13,14 +13,12 @@
 #include "../includes/so_long.h"
 
 void	wall_check(t_game *game, t_pos *pos, int dx, int dy);
-void	bottle_check(t_game *game, t_pos *pos);
 
 int	key_press(int keycode, t_game *g)
 {
 	t_pos	*pos;
 
 	pos = &g->player.s_pos;
-		bottle_check(g, pos);
 	if (keycode == XK_Up || keycode == XK_w)
 	{
 		wall_check(g, pos, 0, -1);
@@ -106,5 +104,17 @@ void	wall_check(t_game *game, t_pos *pos, int dx, int dy)
 	{
 		game->player.s_pos.x += dx;
 		game->player.s_pos.y += dy;
+	}
+}
+
+void	exit_check(t_game *game, t_pos *pos)
+{
+	t_exit	*exit;
+
+	exit = &game->exit;
+	if (exit->open)
+	{
+		if (pos->x == exit->pos.x && pos->y == exit->pos.y)
+			quit(game);
 	}
 }

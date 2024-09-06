@@ -186,6 +186,8 @@ void	quit(t_game *game);
 
 //handle_keys.c
 int	key_press(int keycode, t_game *g);
+void	bottle_check(t_game *game, t_pos *pos);
+void	exit_check(t_game *game, t_pos *pos);
 
 
 //start_game.c

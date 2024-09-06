@@ -67,9 +67,8 @@ void	draw_exit(t_game *game)
 	exit = game->exit;
 	exit.sprite[0] = create_sprite(game, EXIT_CLOSE);
 	exit.sprite[1] = create_sprite(game, EXIT_OPEN);
-	if (game->player.points == game->map.collectables)
+	if (game->exit.open)
 	{
-		exit.open = true;
 		create_player(exit.sprite[1], game, exit.pos.x, exit.pos.y);
 	}
 	else
