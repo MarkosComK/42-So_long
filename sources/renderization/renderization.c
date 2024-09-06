@@ -15,9 +15,9 @@
 void	render_game(t_game *game)
 {
 	render_map(game);
-	render_player(game);
 	render_collectibles(game);
 	render_exit(game);
+	render_player(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);
 }
 

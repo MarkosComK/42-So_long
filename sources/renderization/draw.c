@@ -65,9 +65,18 @@ void	draw_exit(t_game *game)
 	t_exit	exit;
 
 	exit = game->exit;
-	exit.sprite[0] = create_sprite(game, COLLECTIBLE);
-	exit.sprite[1] = create_sprite(game, COLLECTIBLE);
-	create_player(exit.sprite[0], game, exit.pos.x, exit.pos.y);
+	exit.sprite[0] = create_sprite(game, EXIT_CLOSE);
+	exit.sprite[1] = create_sprite(game, EXIT_OPEN);
+	if (game->player.points == game->map.collectables)
+	{
+		create_player(exit.sprite[1], game, exit.pos.x, exit.pos.y);
+	}
+	else
+	{
+		create_player(exit.sprite[0], game, exit.pos.x, exit.pos.y);
+	}
+	mlx_destroy_image(game->mlx, exit.sprite[1]->ptr);
 	mlx_destroy_image(game->mlx, exit.sprite[0]->ptr);
+	free(exit.sprite[1]);
 	free(exit.sprite[0]);
 }

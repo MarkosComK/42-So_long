@@ -18,17 +18,13 @@ t_img	*create_sprite(t_game *game, char *sprite_path)
 
 	sprite = (t_img *)ft_calloc(1, sizeof(t_img));
 	if (!sprite)
-	{
-		free(sprite_path);
 		return (NULL);
-	}
 	sprite->ptr = mlx_xpm_file_to_image(game->mlx, sprite_path, &sprite->w,
 			&sprite->h);
 	if (!sprite->ptr)
 	{
 		ft_printf("Failed to load image: %s\n", sprite_path);
 		free(sprite);
-		free(sprite_path);
 		return (NULL);
 	}
 	sprite->addr = mlx_get_data_addr(sprite->ptr, &sprite->bpp,

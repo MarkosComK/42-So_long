@@ -29,6 +29,8 @@
 # define FLOOR4 "./sprites/floor-4.xpm"
 # define P_IDLE0 "./sprites/idle-0.xpm"
 # define COLLECTIBLE "./sprites/collectible-0.xpm"
+# define EXIT_CLOSE "./sprites/floor-1.xpm"
+# define EXIT_OPEN "./sprites/door-open.xpm"
 
 typedef struct s_img
 {
