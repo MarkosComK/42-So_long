@@ -12,7 +12,8 @@
 
 #include "../includes/so_long.h"
 
-void	colision_check(t_game *game, t_pos *pos, int dx, int dy);
+void	wall_check(t_game *game, t_pos *pos, int dx, int dy);
+void	bottle_check(t_game *game, t_pos *pos);
 
 int	key_press(int keycode, t_game *g)
 {
@@ -21,28 +22,45 @@ int	key_press(int keycode, t_game *g)
 	pos = &g->player.s_pos;
 	if (keycode == XK_Up || keycode == XK_w)
 	{
-		colision_check(g, pos, 0, -1);
+		wall_check(g, pos, 0, -1);
+		bottle_check(g, pos);
 	}
 	if (keycode == XK_Down || keycode == XK_s)
 	{
-		colision_check(g, pos, 0, 1);
+		wall_check(g, pos, 0, 1);
+		bottle_check(g, pos);
 	}
 	else if (keycode == XK_Left || keycode == XK_a)
 	{
-		colision_check(g, pos, -1, 0);
+		wall_check(g, pos, -1, 0);
+		bottle_check(g, pos);
 	}
 	else if (keycode == XK_Right || keycode == XK_d)
 	{
-		colision_check(g, pos, 1, 0);
+		wall_check(g, pos, 1, 0);
+		bottle_check(g, pos);
 	}
 	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
-	print_player(g);
-	print_bottles(g);
 	return (1);
 }
 
-void	colision_check(t_game *game, t_pos *pos, int dx, int dy)
+void	bottle_check(t_game *game, t_pos *pos)
+{
+	t_pos	new_pos;
+	t_bottle	*bottles;
+
+	new_pos = (t_pos){pos->x, pos->y};
+	bottles = game->bottle;
+	while (bottles)
+	{
+		if (new_pos.x == bottles->pos.x && new_pos.y == bottles->pos.y)
+			ft_printf("You hit the bottle {%i, %i}\n", bottles->pos.x, bottles->pos.y);
+		bottles = bottles -> next;
+	}
+}
+
+void	wall_check(t_game *game, t_pos *pos, int dx, int dy)
 {
 	t_pos	new_pos;
 
