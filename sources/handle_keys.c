@@ -20,25 +20,22 @@ int	key_press(int keycode, t_game *g)
 	t_pos	*pos;
 
 	pos = &g->player.s_pos;
+		bottle_check(g, pos);
 	if (keycode == XK_Up || keycode == XK_w)
 	{
 		wall_check(g, pos, 0, -1);
-		bottle_check(g, pos);
 	}
 	if (keycode == XK_Down || keycode == XK_s)
 	{
 		wall_check(g, pos, 0, 1);
-		bottle_check(g, pos);
 	}
 	else if (keycode == XK_Left || keycode == XK_a)
 	{
 		wall_check(g, pos, -1, 0);
-		bottle_check(g, pos);
 	}
 	else if (keycode == XK_Right || keycode == XK_d)
 	{
 		wall_check(g, pos, 1, 0);
-		bottle_check(g, pos);
 	}
 	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
