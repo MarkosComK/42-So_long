@@ -88,6 +88,7 @@ void	bottle_check(t_game *game, t_pos *pos)
 	{
 		if (new_pos.x == bottles->pos.x && new_pos.y == bottles->pos.y)
 		{
+			game->player.points++;
 			del_bottle(game, index);
 			return ;
 		}
