@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 11:30:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 17:13:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:41:12 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # define WALL_RT "./sprites/wall-rt.xpm"
 # define WALL_LB "./sprites/wall-lb.xpm"
 # define WALL_RB "./sprites/wall-rb.xpm"
-# define WALL_INNER "./sprites/wall-inner-2.xpm"
+# define WALL_INNER_0 "./sprites/wall-inner-0.xpm"
+# define WALL_INNER_2 "./sprites/wall-inner-2.xpm"
 # define FLOOR0 "./sprites/floor-0.xpm"
 # define FLOOR1 "./sprites/floor-1.xpm"
 # define FLOOR2 "./sprites/floor-2.xpm"
