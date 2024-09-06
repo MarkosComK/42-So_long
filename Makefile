@@ -21,12 +21,15 @@ MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 SOURCES_FILES	=	so_long.c \
 
 SOURCES_DIR		=	sources
+BONUS_DIR		=	bonus
 
 HEADER			=	./includes/so_long.h
 
 SOURCES			=	$(wildcard $(SOURCES_DIR)/*.c) $(wildcard $(SOURCES_DIR)/*/*.c)
+SOURCES_BONUS			=	$(wildcard $(BONUS_DIR)/*.c) $(wildcard $(BONUS_DIR)/*/*.c)
 
 OBJECTS			= 	$(SOURCES:.c=.o)
+OBJECTS_BONUS			= 	$(SOURCES_BONUS:.c=.o)
 
 NAME			=	so_long
 
@@ -84,6 +87,9 @@ $(MINILIBX):
 				@echo "$(GREEN) Successfully compiled so_long."
 				@echo
 				@echo
+
+bonus:		$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS) $(HEADER)
+				@$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(INCLUDES) $(MINILIBX) $(MLXFLAGS) -o $(NAME)_bonus
 
 clean:
 				$(MAKE) -C $(LIBFT_PATH) clean
