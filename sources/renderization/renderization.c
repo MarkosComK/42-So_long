@@ -16,6 +16,7 @@ void	render_game(t_game *game)
 {
 	render_map(game);
 	render_player(game);
+	render_collectibles(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);
 }
 
@@ -31,5 +32,5 @@ void	render_player(t_game *game)
 
 void	render_collectibles(t_game *game)
 {
-	(void)game;
+	draw_bottles(game);
 }

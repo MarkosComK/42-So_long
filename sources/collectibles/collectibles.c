@@ -42,9 +42,9 @@ void	init_collectibles(t_game *game)
 			if (game->map.data[i][j] == 'C')
 			{
 				if (!game->bottle)
-					game->bottle = bottle_create(i, j);
+					game->bottle = bottle_create(j, j);
 				else
-					bottle_push_tail(game->bottle, i, j);
+					bottle_push_tail(game->bottle, j, i);
 			}
 			j++;
 		}

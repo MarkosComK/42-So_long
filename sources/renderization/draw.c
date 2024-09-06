@@ -44,3 +44,16 @@ void	draw_player(t_game *game)
 	if (player.sprite)
 		destroy_sprite(&player.sprite, game->mlx);
 }
+
+void	draw_bottles(t_game *game)
+{
+	t_bottle	*bottle;
+
+	bottle = game->bottle;
+	while (bottle)
+	{
+		bottle->sprite = create_sprite(game, COLLECTIBLE);
+		create_player(bottle->sprite, game, bottle->pos.x, bottle->pos.y);
+		bottle = bottle->next;
+	}
+}

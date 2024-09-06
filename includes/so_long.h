@@ -129,11 +129,13 @@ void	quit(t_game *game);
 void	draw_player(t_game *game);
 void	draw_map(t_game *game);
 void	draw_collectibles(t_game *game);
+void	draw_bottles(t_game *game);
 
 //renderization.c
 void	render_game(t_game *game);
 void	render_map(t_game *game);
 void	render_player(t_game *game);
+void	render_collectibles(t_game *game);
 
 /*
  * sprites/
