@@ -45,3 +45,16 @@ void	free_tiles(t_map map)
 		free(map.tiles[i++]);
 	free(map.tiles);
 }
+
+void	free_bottles(t_bottle *bottles)
+{
+	t_bottle	*tmp;
+
+	tmp = bottles;
+	while (tmp)
+	{
+		tmp = bottles -> next;
+		free(bottles);
+		bottles = tmp;
+	}
+}

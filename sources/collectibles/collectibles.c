@@ -49,7 +49,6 @@ void	init_collectibles(t_game *game)
 			}
 			j++;
 		}
-		ft_printf("\n");
 		i++;
 	}
 	print_bottles(game->bottle);

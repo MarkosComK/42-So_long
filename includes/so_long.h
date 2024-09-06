@@ -108,6 +108,7 @@ t_bottle	*stack_add_tail(t_bottle *stack, int x, int y);
 void	destroy_sprite(t_img **sprite, void *mlx);
 void	free_map(t_map map);
 void	free_tiles(t_map map);
+void	free_bottles(t_bottle *bottles);
 
 /*
  * player/

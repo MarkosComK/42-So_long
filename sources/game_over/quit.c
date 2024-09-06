@@ -16,6 +16,7 @@ void	quit(t_game *game)
 {
 	free_map(game->map);
 	free_tiles(game->map);
+	free_bottles(game->bottle);
 	mlx_destroy_image(game->mlx, game->world->ptr);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
