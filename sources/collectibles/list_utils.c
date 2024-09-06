@@ -59,3 +59,16 @@ t_bottle	*bottle_create(int x, int y)
 	stack_new -> next = NULL;
 	return (stack_new);
 }
+
+int	bottles_size(t_bottle *lst)
+{
+	int	size;
+
+	size = 0;
+	while (lst)
+	{
+		size++;
+		lst = lst -> next;
+	}
+	return (size);
+}

@@ -37,5 +37,5 @@ void	init_collectibles(t_game *game)
 		}
 		i++;
 	}
-	free(node);
+	game->map.collectables = bottles_size(game->bottle);
 }

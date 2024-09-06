@@ -69,6 +69,7 @@ typedef struct s_bottle
 	t_img		*sprite;
 	struct s_bottle	*next;
 }				t_bottle;
+
 typedef struct  s_game
 {
 	void		*mlx;
@@ -100,6 +101,7 @@ t_bottle	*ft_bottlelast(t_bottle *lst);
 t_bottle	*bottle_add(t_bottle *node, int x, int y);
 t_bottle	*bottle_push_tail(t_bottle *stack, int x, int y);
 t_bottle	*bottle_create(int x, int y);
+int			bottles_size(t_bottle *lst);
 
 /*
  * game_over/
