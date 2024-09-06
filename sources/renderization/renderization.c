@@ -13,6 +13,7 @@
 #include "../../includes/so_long.h"
 
 void	render_walls_0(t_game *game);
+void	render_walls_1(t_game *game);
 
 void	render_game(t_game *game)
 {
@@ -21,6 +22,7 @@ void	render_game(t_game *game)
 	render_collectibles(game);
 	render_exit(game);
 	render_player(game);
+	render_walls_1(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);
 }
 
@@ -32,6 +34,11 @@ void	render_map(t_game *game)
 void	render_walls_0(t_game *game)
 {
 	draw_wall_0(game);
+}
+
+void	render_walls_1(t_game *game)
+{
+	draw_wall_1(game);
 }
 
 void	render_player(t_game *game)

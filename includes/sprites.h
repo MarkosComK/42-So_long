@@ -22,6 +22,7 @@
 # define WALL_LB "./sprites/wall-lb.xpm"
 # define WALL_RB "./sprites/wall-rb.xpm"
 # define WALL_INNER_0 "./sprites/wall-inner-0.xpm"
+# define WALL_I_01 "./sprites/wall-inner-01.xpm"
 # define WALL_INNER_2 "./sprites/wall-inner-2.xpm"
 # define FLOOR0 "./sprites/floor-0.xpm"
 # define FLOOR1 "./sprites/floor-1.xpm"
