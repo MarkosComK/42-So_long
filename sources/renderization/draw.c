@@ -80,3 +80,51 @@ void	draw_exit(t_game *game)
 	free(exit.sprite[1]);
 	free(exit.sprite[0]);
 }
+
+void	create_wall_0(t_img *sprite, t_game *game, int posx, int posy)
+{
+	int				x;
+	int				y;
+	unsigned int	color;
+	unsigned int	trans_color;
+
+	trans_color = 0xFFC0CB;
+	y = -1;
+	while (++y < sprite->h)
+	{
+		x = -1;
+		while (++x < sprite->w)
+		{
+			color = get_color_in_pixel(sprite, x, y);
+			if (color != trans_color)
+			{
+				put_pixel(game->world, posx * SZ + x, posy * SZ + y - 38, color);
+			}
+		}
+	}
+}
+
+void	draw_wall_0(t_game *game)
+{
+	int			y;
+	int			x;
+	t_img		*sprite;
+
+	y = 1;
+	while (y < game->map.rows - 1)
+	{
+		x = 1;
+		while (x < game->map.cols - 1)
+		{
+			if (game->map.data[y][x] == '1')
+			{
+				sprite = create_sprite(game, WALL_INNER_0);
+				create_wall_0(sprite, game, x, y);
+				mlx_destroy_image(game->mlx, sprite->ptr);
+				free(sprite);
+			}
+			x++;
+		}
+		y++;
+	}
+}

@@ -12,9 +12,12 @@
 
 #include "../../includes/so_long.h"
 
+void	render_walls_0(t_game *game);
+
 void	render_game(t_game *game)
 {
 	render_map(game);
+	render_walls_0(game);
 	render_collectibles(game);
 	render_exit(game);
 	render_player(game);
@@ -24,6 +27,11 @@ void	render_game(t_game *game)
 void	render_map(t_game *game)
 {
 	draw_map(game);
+}
+
+void	render_walls_0(t_game *game)
+{
+	draw_wall_0(game);
 }
 
 void	render_player(t_game *game)

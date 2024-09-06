@@ -148,6 +148,7 @@ void	draw_map(t_game *game);
 void	draw_collectibles(t_game *game);
 void	draw_bottles(t_game *game);
 void	draw_exit(t_game *game);
+void	draw_wall_0(t_game *game);
 
 //renderization.c
 void	render_game(t_game *game);
