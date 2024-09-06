@@ -97,9 +97,9 @@ int	map_walls(t_map map);
 void	init_collectibles(t_game *game);
 //list_utils.c
 t_bottle	*ft_bottlelast(t_bottle *lst);
-t_bottle	*stack_add_node(t_bottle *node, int x, int y);
-t_bottle	*stack_new_node(int x, int y);
-t_bottle	*stack_add_tail(t_bottle *stack, int x, int y);
+t_bottle	*bottle_add(t_bottle *node, int x, int y);
+t_bottle	*bottle_push_tail(t_bottle *stack, int x, int y);
+t_bottle	*bottle_create(int x, int y);
 
 /*
  * game_over/

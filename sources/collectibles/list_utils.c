@@ -21,11 +21,11 @@ t_bottle	*ft_bottlelast(t_bottle *lst)
 	return (lst);
 }
 
-t_bottle	*stack_add_node(t_bottle *node, int x, int y)
+t_bottle	*bottle_add(t_bottle *node, int x, int y)
 {
 	t_bottle	*new;
 
-	new = stack_new_node(x, y);
+	new = bottle_create(x, y);
 	if (!new)
 		return (NULL);
 	if (!node)
@@ -34,12 +34,12 @@ t_bottle	*stack_add_node(t_bottle *node, int x, int y)
 	return (new);
 }
 
-t_bottle	*stack_add_tail(t_bottle *stack, int x, int y)
+t_bottle	*bottle_push_tail(t_bottle *stack, int x, int y)
 {
 	t_bottle	*new_node;
 	t_bottle	*last;
 
-	new_node = stack_new_node(x, y);
+	new_node = bottle_create(x, y);
 	if (!new_node)
 		return (NULL);
 	last = ft_bottlelast(stack);
@@ -47,7 +47,7 @@ t_bottle	*stack_add_tail(t_bottle *stack, int x, int y)
 	return (new_node);
 }
 
-t_bottle	*stack_new_node(int x, int y)
+t_bottle	*bottle_create(int x, int y)
 {
 	t_bottle	*stack_new;
 

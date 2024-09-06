@@ -45,7 +45,7 @@ void	init_collectibles(t_game *game)
 		{
 			if (game->map.data[i][j] == 'C')
 			{
-				stack_add_tail(game->bottle, i, j);
+				bottle_push_tail(game->bottle, i, j);
 			}
 			j++;
 		}
