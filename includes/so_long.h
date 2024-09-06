@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/06 14:36:24 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/06 17:58:44 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int			bottles_size(t_bottle *lst);
  */
 //exit.c
 void	init_exit(t_game *game);
+void	create_exit(t_img *sprite, t_game *game, int posx, int posy);
 
 /*
  * game_over/

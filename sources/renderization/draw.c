@@ -69,11 +69,11 @@ void	draw_exit(t_game *game)
 	exit.sprite[1] = create_sprite(game, EXIT_OPEN);
 	if (game->exit.open)
 	{
-		create_player(exit.sprite[1], game, exit.pos.x, exit.pos.y);
+		create_exit(exit.sprite[1], game, exit.pos.x, exit.pos.y);
 	}
 	else
 	{
-		create_player(exit.sprite[0], game, exit.pos.x, exit.pos.y);
+		create_exit(exit.sprite[0], game, exit.pos.x, exit.pos.y);
 	}
 	mlx_destroy_image(game->mlx, exit.sprite[1]->ptr);
 	mlx_destroy_image(game->mlx, exit.sprite[0]->ptr);
