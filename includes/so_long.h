@@ -69,7 +69,6 @@ typedef struct s_bottle
 	t_img		*sprite;
 	struct s_bottle	*next;
 }				t_bottle;
-
 typedef struct  s_game
 {
 	void		*mlx;
@@ -98,7 +97,9 @@ int	map_walls(t_map map);
 void	init_collectibles(t_game *game);
 //list_utils.c
 t_bottle	*ft_bottlelast(t_bottle *lst);
-void		ft_bottleadd_back(t_bottle **lst, t_bottle *n_node);
+t_bottle	*stack_add_node(t_bottle *node, int x, int y);
+t_bottle	*stack_new_node(int x, int y);
+t_bottle	*stack_add_tail(t_bottle *stack, int x, int y);
 
 /*
  * game_over/

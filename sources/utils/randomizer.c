@@ -19,7 +19,6 @@ char	*randomize_floor(int x, int y, t_map map)
 
 	floor = FLOOR0;
 	value = rand() % 100;
-	ft_printf("value %i\n", value);
 	if (value >= 0 && value <= 70)
 		floor = FLOOR0;
 	else if (value >= 80 && value <= 90)
