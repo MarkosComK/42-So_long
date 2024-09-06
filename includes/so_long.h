@@ -153,9 +153,11 @@ unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
 /*
  * utils/
  */
+//printers.c
 int     error_msg(char *msg);
 void	print_map(t_game *game);
-void	print_player_struct(t_entity player);
+void	print_player(t_game *game);
+void	print_bottles(t_game *game);
 //randomizer.c
 char	*randomize_floor(int x, int y, t_map map);
 //utils.c

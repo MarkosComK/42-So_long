@@ -12,19 +12,6 @@
 
 #include "../../includes/so_long.h"
 
-void	print_bottles(t_bottle *bottles)
-{
-	t_bottle	*current;
-
-	current = bottles;
-	ft_printf("STACK: \n");
-	while (current)
-	{
-		ft_printf("node->pos{%i, %i}\n", current->pos.x, current->pos.y);
-		current = current->next;
-	}
-}
-
 void	init_collectibles(t_game *game)
 {
 	t_bottle	*node;
@@ -50,6 +37,5 @@ void	init_collectibles(t_game *game)
 		}
 		i++;
 	}
-	print_bottles(game->bottle);
 	free(node);
 }

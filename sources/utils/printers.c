@@ -31,11 +31,24 @@ void	print_map(t_game *game)
 	}
 }
 
-void	print_player_struct(t_entity player)
+void	print_player(t_game *game)
 {
+	t_entity	player;
+
+	player = game->player;
 	ft_printf("s_pos x: %i y: %i\n", player.s_pos.x, player.s_pos.y);
 	ft_printf("d_pos x: %i y: %i\n", player.d_pos.x, player.d_pos.y);
-	ft_printf("sprite: %s\n", player.sprite);
-	ft_printf("current sprite: %i\n", player.current_sprite);
-	ft_printf("player_sprite_idle: %s\n", player.sprite_idle);
+}
+
+void	print_bottles(t_game *game)
+{
+	t_bottle	*current;
+
+	current = game->bottle;
+	ft_printf("STACK: \n");
+	while (current)
+	{
+		ft_printf("node->pos{%i, %i}\n", current->pos.x, current->pos.y);
+		current = current->next;
+	}
 }

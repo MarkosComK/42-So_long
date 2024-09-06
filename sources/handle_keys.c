@@ -21,7 +21,6 @@ int	key_press(int keycode, t_game *g)
 	pos = &g->player.s_pos;
 	if (keycode == XK_Up || keycode == XK_w)
 	{
-		ft_printf("outside pos {%i, %i}\n", pos->x, pos->y);
 		colision_check(g, pos, 0, -1);
 	}
 	if (keycode == XK_Down || keycode == XK_s)
@@ -38,6 +37,8 @@ int	key_press(int keycode, t_game *g)
 	}
 	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
+	print_player(g);
+	print_bottles(g);
 	return (1);
 }
 
