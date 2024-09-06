@@ -34,10 +34,6 @@ void	init_collectibles(t_game *game)
 	i = 0;
 	j = 0;
 	node = NULL;
-	game->bottle = malloc(sizeof(t_bottle));
-	game->bottle->sprite = NULL;
-	game->bottle->pos = (t_pos){0, 0};
-	game->bottle->next = NULL;
 	while(game->map.data[i])
 	{
 		j = 0;
@@ -45,7 +41,10 @@ void	init_collectibles(t_game *game)
 		{
 			if (game->map.data[i][j] == 'C')
 			{
-				bottle_push_tail(game->bottle, i, j);
+				if (!game->bottle)
+					game->bottle = bottle_create(i, j);
+				else
+					bottle_push_tail(game->bottle, i, j);
 			}
 			j++;
 		}
