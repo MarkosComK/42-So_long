@@ -45,18 +45,53 @@ int	key_press(int keycode, t_game *g)
 	return (1);
 }
 
+void	del_bottle(t_game *game, int index)
+{
+	t_bottle* prev;
+    t_bottle* temp = game->bottle;
+
+    if (temp == NULL)
+        return ;
+
+    if (index == 0) {
+        game->bottle = temp->next;
+        free(temp);
+        return ;
+    }
+
+    for (int i = 0; temp != NULL && i < index; i++) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    if (temp != NULL) {
+        prev->next = temp->next;
+        free(temp);
+    }
+    else {
+        ft_printf("Data not present\n");
+    }
+    return ;
+}
+
 void	bottle_check(t_game *game, t_pos *pos)
 {
 	t_pos	new_pos;
 	t_bottle	*bottles;
+	int			index;
 
 	new_pos = (t_pos){pos->x, pos->y};
 	bottles = game->bottle;
+	index = 0;
 	while (bottles)
 	{
 		if (new_pos.x == bottles->pos.x && new_pos.y == bottles->pos.y)
-			ft_printf("You hit the bottle {%i, %i}\n", bottles->pos.x, bottles->pos.y);
+		{
+			del_bottle(game, index);
+			return ;
+		}
 		bottles = bottles -> next;
+		index++;
 	}
 }
 
