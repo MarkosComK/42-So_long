@@ -61,6 +61,7 @@ typedef struct s_entity
 	t_img		*sprite;
 	int			current_sprite;
 	char		*sprite_idle[0];
+	int			points;
 }				t_entity;
 
 typedef struct s_bottle

@@ -22,6 +22,7 @@ void	init_player(t_game *game)
 	player.sprite = NULL;
 	player.current_sprite = 0;
 	load_player_sprite(game);
+	player.points = 0;
 }
 
 void	load_player_sprite(t_game *game)
