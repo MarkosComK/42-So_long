@@ -47,38 +47,39 @@ int	key_press(int keycode, t_game *g)
 
 void	del_bottle(t_game *game, int index)
 {
-	t_bottle* prev;
-    t_bottle* temp = game->bottle;
+	t_bottle*	 prev;
+	t_bottle*	 temp;
+	int		i;
 
-    if (temp == NULL)
-        return ;
-
-    if (index == 0) {
-        game->bottle = temp->next;
-        free(temp);
-        return ;
-    }
-
-    for (int i = 0; temp != NULL && i < index; i++) {
-        prev = temp;
-        temp = temp->next;
-    }
-
-    if (temp != NULL) {
-        prev->next = temp->next;
-        free(temp);
-    }
-    else {
-        ft_printf("Data not present\n");
-    }
-    return ;
+	temp = game->bottle;
+	i = 0;
+	if (temp == NULL)
+		return ;
+	if (index == 0)
+	{
+		game->bottle = temp->next;
+		free(temp);
+		return ;
+	}
+	while (i < index && temp != NULL)
+	{
+		prev = temp;
+		temp = temp->next;
+		i++;
+	}
+	if (temp != NULL)
+	{
+		prev->next = temp->next;
+		free(temp);
+	}
+	return ;
 }
 
 void	bottle_check(t_game *game, t_pos *pos)
 {
-	t_pos	new_pos;
+	t_pos		new_pos;
 	t_bottle	*bottles;
-	int			index;
+	int		index;
 
 	new_pos = (t_pos){pos->x, pos->y};
 	bottles = game->bottle;
