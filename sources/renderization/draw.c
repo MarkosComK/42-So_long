@@ -54,6 +54,8 @@ void	draw_bottles(t_game *game)
 	{
 		bottle->sprite = create_sprite(game, COLLECTIBLE);
 		create_player(bottle->sprite, game, bottle->pos.x, bottle->pos.y);
+		mlx_destroy_image(game->mlx, bottle->sprite->ptr);
+		free(bottle->sprite);
 		bottle = bottle->next;
 	}
 }
