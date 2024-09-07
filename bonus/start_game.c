@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 19:52:59 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 22:03:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	start_game(char	*map_path)
 			game.map.height, "So Long");
 	start_world(&game);
 	create_map(&game);
-	mlx_hook(game.win, 02, 1L << 0, key_press, &game);
 	mlx_loop_hook(game.mlx, game_loop_hook, &game);
+	mlx_hook(game.win, 02, 1L << 0, key_press, &game);
 	mlx_loop(game.mlx);
 }
 
