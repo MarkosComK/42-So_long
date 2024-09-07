@@ -6,12 +6,23 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 18:47:01 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 19:52:59 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
 #include <time.h>
+
+int	delay_time(t_game *game, int	frame)
+{
+	static int	delay;
+
+	if (delay == 4)
+		delay = 0;
+	delay += frame;
+	game->player.delay = delay;
+	return (delay);
+}
 
 int	game_loop_hook(t_game *game)
 { 
@@ -29,6 +40,7 @@ int	game_loop_hook(t_game *game)
 		bottle_check(game, &game->player.s_pos);
 		exit_check(game, &game->player.s_pos);
 		render_game(game);
+		delay_time(game, 1);
 	}
 	return (0);
 }

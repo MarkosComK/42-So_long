@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:42:39 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 18:13:59 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 19:23:56 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	init_player(t_game *game)
 	player.d_pos = (t_pos){0, 0};
 	player.sprite = NULL;
 	player.current_sprite = 0;
+	player.delay = 0;
 	load_player_sprite(game);
 	player.points = 0;
 }

@@ -30,7 +30,6 @@ void	render_map(t_game *game)
 
 void	render_player(t_game *game)
 {
-	game->player.current_sprite = (game->player.current_sprite + 1) % 4;
 	if (game->player.d_pos.x == 1)
 		draw_player_r(game);
 	else if (game->player.d_pos.x == -1)

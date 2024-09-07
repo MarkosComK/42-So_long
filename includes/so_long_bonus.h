@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 19:00:08 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 19:23:50 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ typedef struct s_entity
 	t_pos		s_pos;
 	t_pos		d_pos;
 	t_img		*sprite;
+	int			delay;
 	int			current_sprite;
 	char		*sprite_idle[0];
 	char		*right_sprites[4];
