@@ -51,53 +51,53 @@ ifeq ($(UNAME_S),Darwin)
 endif
 
 .c.o:
-				@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-all:			$(NAME)
+all:	$(NAME)
 
-$(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS) $(HEADER)
-				@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(INCLUDES) $(MINILIBX) $(MLXFLAGS) -o $(NAME)
+$(NAME): $(LIBFT) $(MINILIBX) $(OBJECTS) $(HEADER)
+	@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(INCLUDES) $(MINILIBX) $(MLXFLAGS) -o $(NAME)
 
 $(LIBFT):
-				@make --silent -C $(LIBFT_PATH)
+	@make --silent -C $(LIBFT_PATH)
 
 $(MINILIBX):
-				@make --silent -C $(MINILIBX_PATH)
-				@clear
-				@echo
-				@echo
-				@echo "$(TITLE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-				@echo "$(PURPLE)"
-				@echo "                   )                               /=>                                   "
-				@echo "                   (  +____________________/\\/\\___ / /|                                  "
-				@echo "                   .''._____________'._____      / /|/\\                                  "
-				@echo "                  : () :              :\\ ----\\|    \\ )                                   "
-				@echo "                   '..'______________.'0|----|      \\                                    "
-				@echo "                     0_0/____/        \\                                                  "
-				@echo "                                       |----    /----\\                                   "
-				@echo "                                       || -\\\\ --|      \\                                  "
-				@echo "                                       ||   || ||\\      \\                                "
-				@echo "                                       \\\\____// '|      \\                                 "
-				@echo "                Bang! Bang!                     .'/       |                              "
-				@echo "                                               .:/        |                              "
-				@echo "                                                :/_________|                             "
-				@echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(TITLE)]━━"
-				@echo
-				@echo
-				@echo "$(GREEN) Successfully compiled so_long."
-				@echo
-				@echo
+	@make --silent -C $(MINILIBX_PATH)
+	@clear
+	@echo
+	@echo
+	@echo "$(TITLE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+	@echo "$(PURPLE)"
+	@echo "                   )                               /=>                                   "
+	@echo "                   (  +____________________/\\/\\___ / /|                                  "
+	@echo "                   .''._____________'._____      / /|/\\                                  "
+	@echo "                  : () :              :\\ ----\\|    \\ )                                   "
+	@echo "                   '..'______________.'0|----|      \\                                    "
+	@echo "                     0_0/____/        \\                                                  "
+	@echo "                                       |----    /----\\                                   "
+	@echo "                                       || -\\\\ --|      \\                                  "
+	@echo "                                       ||   || ||\\      \\                                "
+	@echo "                                       \\\\____// '|      \\                                 "
+	@echo "                Bang! Bang!                     .'/       |                              "
+	@echo "                                               .:/        |                              "
+	@echo "                                                :/_________|                             "
+	@echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(TITLE)]━━"
+	@echo
+	@echo
+	@echo "$(GREEN) Successfully compiled so_long."
+	@echo
+	@echo
 
-bonus:		$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS) $(HEADER)
-				@$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(INCLUDES) $(MINILIBX) $(MLXFLAGS) -o $(NAME)_bonus
+bonus:	$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS) $(HEADER)
+	@$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(INCLUDES) $(MINILIBX) $(MLXFLAGS) -o $(NAME)_bonus
 
 clean:
-				$(MAKE) -C $(LIBFT_PATH) clean
-				$(MAKE) -C $(MINILIBX_PATH) clean
-				$(RM) $(OBJECTS) $(OBJECTS_BONUS)
+	$(MAKE) -C $(LIBFT_PATH) clean
+	$(MAKE) -C $(MINILIBX_PATH) clean
+	$(RM) $(OBJECTS) $(OBJECTS_BONUS)
 
-fclean:			clean
-				$(MAKE) -C $(LIBFT_PATH) fclean
-				$(RM) $(NAME) $(NAME_BONUS)
+fclean:	clean
+	$(MAKE) -C $(LIBFT_PATH) fclean
+	$(RM) $(NAME) $(NAME)_bonus
 
-re:				fclean all
+re:	fclean all
