@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:42:39 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 11:58:23 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:13:59 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,18 @@ void	init_player(t_game *game)
 
 void	load_player_sprite(t_game *game)
 {
-	t_entity	player;
+	t_entity	*player;
 
-	player = game->player;
-	player.sprite_idle[0] = P_IDLE0;
+	player = &game->player;
+	player->sprite_idle[0] = P_IDLE0;
+	player->left_sprites[0] = P_L_RUN_0;
+	player->left_sprites[1] = P_L_RUN_1;
+	player->left_sprites[2] = P_L_RUN_2;
+	player->left_sprites[3] = P_L_RUN_3;
+	player->right_sprites[0] = P_R_RUN_0;
+	player->right_sprites[1] = P_R_RUN_1;
+	player->right_sprites[2] = P_R_RUN_2;
+	player->right_sprites[3] = P_R_RUN_3;
 }
 
 void	create_player(t_img *sprite, t_game *game, int posx, int posy)

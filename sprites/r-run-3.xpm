@@ -2,7 +2,7 @@
 static char *_06b4af7fef4453ec357582f4ec4ccdfxBKrdKqcVooyMnmo[] = {
 /* columns rows colors chars-per-pixel */
 "24 38 7 1 ",
-"  c None",
+"  c #FFC0CB",
 ". c #5D275D",
 "X c #1A1C2C",
 "o c #EF7D57",

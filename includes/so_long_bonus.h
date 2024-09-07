@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 12:08:37 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 17:02:37 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@
 # include <fcntl.h>
 # include <stdbool.h>
 # include <X11/keysym.h>
+# include <time.h>
 
 # define SZ 32
+//walls
 # define WALL "./sprites/wall-0.xpm"
 # define WALL_L "./sprites/wall-l.xpm"
 # define WALL_R "./sprites/wall-r.xpm"
@@ -31,13 +33,25 @@
 # define WALL_INNER_0 "./sprites/wall-inner-0.xpm"
 # define WALL_I_01 "./sprites/wall-inner-01.xpm"
 # define WALL_INNER_2 "./sprites/wall-inner-2.xpm"
+//floors
 # define FLOOR0 "./sprites/floor-0.xpm"
 # define FLOOR1 "./sprites/floor-1.xpm"
 # define FLOOR2 "./sprites/floor-2.xpm"
 # define FLOOR3 "./sprites/floor-3.xpm"
 # define FLOOR4 "./sprites/floor-4.xpm"
+//player
 # define P_IDLE0 "./sprites/idle-01.xpm"
+# define P_R_RUN_0 "./sprites/r-run-0.xpm"
+# define P_R_RUN_1 "./sprites/r-run-1.xpm"
+# define P_R_RUN_2 "./sprites/r-run-2.xpm"
+# define P_R_RUN_3 "./sprites/r-run-3.xpm"
+# define P_L_RUN_0 "./sprites/l-run-0.xpm"
+# define P_L_RUN_1 "./sprites/l-run-1.xpm"
+# define P_L_RUN_2 "./sprites/l-run-2.xpm"
+# define P_L_RUN_3 "./sprites/l-run-3.xpm"
+//collectible
 # define COLLECTIBLE "./sprites/collectible-0.xpm"
+//exit
 # define EXIT_CLOSE "./sprites/floor-1.xpm"
 # define EXIT_OPEN "./sprites/door-open.xpm"
 
@@ -91,6 +105,8 @@ typedef struct s_entity
 	t_img		*sprite;
 	int			current_sprite;
 	char		*sprite_idle[0];
+	char		*right_sprites[4];
+	char		*left_sprites[4];
 	int			points;
 }				t_entity;
 
@@ -216,6 +232,7 @@ void	print_bottles(t_game *game);
 char	*randomize_floor(int x, int y, t_map map);
 //utils.c
 int	count_lines(char *map_path);
+int	print_fps(clock_t current_time);
 
 //end_game.c
 void	quit(t_game *game);

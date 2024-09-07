@@ -6,19 +6,30 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 18:05:34 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:47:01 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
+#include <time.h>
 
 int	game_loop_hook(t_game *game)
-{
-	if (game->player.points == game->map.collectables)
-		game->exit.open = true;
-	bottle_check(game, &game->player.s_pos);
-	exit_check(game, &game->player.s_pos);
-	render_game(game);
+{ 
+	static clock_t last_time;
+    clock_t current_time;
+    float delta_time;
+
+	last_time = 0;
+	current_time = clock();
+	delta_time = (float)(current_time - last_time) / CLOCKS_PER_SEC;
+	if (delta_time >= 1.0f / 30.0f)
+	{
+		if (game->player.points == game->map.collectables)
+			game->exit.open = true;
+		bottle_check(game, &game->player.s_pos);
+		exit_check(game, &game->player.s_pos);
+		render_game(game);
+	}
 	return (0);
 }
 
