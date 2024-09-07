@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 11:52:11 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 11:56:52 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 11:57:52 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	create_wall_0(t_img *sprite, t_game *game, int posx, int posy)
 			if (color != trans_color)
 			{
 				put_pixel(game->world, posx * SZ + x, posy * SZ + y - 38,
-			  color);
+					color);
 			}
 		}
 	}
