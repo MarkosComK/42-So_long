@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/06 17:58:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 11:55:42 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,9 +148,12 @@ void	draw_map(t_game *game);
 void	draw_collectibles(t_game *game);
 void	draw_bottles(t_game *game);
 void	draw_exit(t_game *game);
+//draw_wall.c
 void	draw_wall_0(t_game *game);
 void	draw_wall_1(t_game *game);
-
+//render_wall.c
+void	render_walls_0(t_game *game);
+void	render_walls_1(t_game *game);
 //renderization.c
 void	render_game(t_game *game);
 void	render_map(t_game *game);
