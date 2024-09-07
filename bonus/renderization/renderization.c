@@ -6,14 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 09:14:10 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 18:32:25 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 11:54:36 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
-
-void	render_walls_0(t_game *game);
-void	render_walls_1(t_game *game);
 
 void	render_game(t_game *game)
 {
@@ -29,16 +26,6 @@ void	render_game(t_game *game)
 void	render_map(t_game *game)
 {
 	draw_map(game);
-}
-
-void	render_walls_0(t_game *game)
-{
-	draw_wall_0(game);
-}
-
-void	render_walls_1(t_game *game)
-{
-	draw_wall_1(game);
 }
 
 void	render_player(t_game *game)
