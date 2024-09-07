@@ -16,7 +16,7 @@ int	main(int ac, char **av)
 {
 	char	*path;
 
-	path = av[1];
+		path = av[1];
 	if (ac != 2)
 		error_msg("Usage: ./so_long ./maps/map.ber");
 	else if (validate_ber(path))

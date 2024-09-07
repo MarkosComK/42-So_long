@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 11:55:42 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 12:08:37 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@
 # include <fcntl.h>
 # include <stdbool.h>
 # include <X11/keysym.h>
-
-# define BOOL int
-# define true 1
-# define false 0
 
 # define SZ 32
 
@@ -68,7 +64,7 @@ typedef struct s_exit
 {
 	t_pos		pos;
 	t_img		*sprite[2];
-	BOOL		open;
+	bool		open;
 }				t_exit;
 
 typedef struct s_bottle
@@ -93,7 +89,7 @@ typedef struct  s_game
  * checkers/
  */
 //validate_ber.c
-BOOL	validate_ber(char *path);
+bool	validate_ber(char *path);
 //validate_map.c
 void	validate_map(t_game *game);
 int	map_retangular(t_map map);

@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:53:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 19:53:55 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 12:09:03 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-BOOL	validate_ber(char *path)
+bool	validate_ber(char *path)
 {
 	size_t		len;
 
