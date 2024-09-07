@@ -42,15 +42,13 @@ int	key_press(int keycode, t_game *g)
 
 void	del_bottle(t_game *game, int index)
 {
-	t_bottle*	 prev;
-	t_bottle*	 temp;
-	int		i;
+	t_bottle	*prev;
+	t_bottle	*temp;
+	int			i;
 
 	temp = game->bottle;
 	i = 0;
-	if (temp == NULL)
-		return ;
-	if (index == 0)
+	if (index == 0 && temp != NULL)
 	{
 		game->bottle = temp->next;
 		free(temp);
@@ -74,7 +72,7 @@ void	bottle_check(t_game *game, t_pos *pos)
 {
 	t_pos		new_pos;
 	t_bottle	*bottles;
-	int		index;
+	int			index;
 
 	new_pos = (t_pos){pos->x, pos->y};
 	bottles = game->bottle;
