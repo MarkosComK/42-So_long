@@ -13,7 +13,8 @@
 #include "../includes/so_long.h"
 
 int	game_loop_hook(t_game *game)
-{	if (game->player.points == game->map.collectables)
+{
+	if (game->player.points == game->map.collectables)
 		game->exit.open = true;
 	bottle_check(game, &game->player.s_pos);
 	exit_check(game, &game->player.s_pos);
@@ -32,9 +33,8 @@ void	start_game(char	*map_path)
 			game.map.height, "So Long");
 	start_world(&game);
 	create_map(&game);
-	mlx_hook(game.win, 02, 1L<<0, key_press, &game);
+	mlx_hook(game.win, 02, 1L << 0, key_press, &game);
 	mlx_loop_hook(game.mlx, game_loop_hook, &game);
-	//mlx_key_hook(game.win, key_press, &game);
 	mlx_loop(game.mlx);
 }
 
