@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 22:36:23 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 09:52:27 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:57:12 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,22 @@ int	key_press(int keycode, t_game *g)
 	if (keycode == XK_Up || keycode == XK_w)
 	{
 		wall_check(g, pos, 0, -1);
+		g->player.d_pos = (t_pos){0, -1};
 	}
 	if (keycode == XK_Down || keycode == XK_s)
 	{
 		wall_check(g, pos, 0, 1);
+		g->player.d_pos = (t_pos){0, 1};
 	}
 	else if (keycode == XK_Left || keycode == XK_a)
 	{
 		wall_check(g, pos, -1, 0);
+		g->player.d_pos = (t_pos){-1, 0};
 	}
 	else if (keycode == XK_Right || keycode == XK_d)
 	{
 		wall_check(g, pos, 1, 0);
+		g->player.d_pos = (t_pos){1, 0};
 	}
 	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);

@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:04:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 18:34:05 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:54:22 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	draw_player(t_game *game)
 	char		*current_sprite;
 
 	player = game->player;
-	current_sprite = player.right_sprites[player.current_sprite];
+	current_sprite = P_IDLE0;
 	player.sprite = create_sprite(game, current_sprite);
 	create_player(player.sprite, game, player.s_pos.x, player.s_pos.y);
 	if (player.sprite)

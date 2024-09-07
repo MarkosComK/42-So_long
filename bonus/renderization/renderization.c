@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 09:14:10 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 18:36:58 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:59:56 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,12 @@ void	render_map(t_game *game)
 void	render_player(t_game *game)
 {
 	game->player.current_sprite = (game->player.current_sprite + 1) % 4;
-	draw_player(game);
+	if (game->player.d_pos.x == 1)
+		draw_player_r(game);
+	else if (game->player.d_pos.x == -1)
+		draw_player_l(game);
+	else
+		draw_player(game);
 }
 
 void	render_collectibles(t_game *game)
