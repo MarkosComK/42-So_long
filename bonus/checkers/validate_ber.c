@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../includes/so_long_bonus.h"
 
-BOOL	validate_ber(char *path)
+bool	validate_ber(char *path)
 {
 	size_t		len;
 
