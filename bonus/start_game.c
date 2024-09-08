@@ -16,11 +16,18 @@
 int	delay_time(t_game *game, int	frame)
 {
 	static int	delay;
+	static int	frames;
 
 	if (delay == 4)
 		delay = 0;
 	delay += frame;
+	frames++;
 	game->player.delay = delay;
+	if (frames == 10)
+	{
+		frames = 0;
+		game->player.is_mov = 0;
+	}
 	return (delay);
 }
 

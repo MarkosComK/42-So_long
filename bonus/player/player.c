@@ -20,6 +20,7 @@ void	init_player(t_game *game)
 	set_player_pos(game);
 	player.d_pos = (t_pos){0, 0};
 	player.sprite = NULL;
+	player.is_mov = 0;
 	player.current_sprite = 0;
 	player.delay = 0;
 	load_player_sprite(game);

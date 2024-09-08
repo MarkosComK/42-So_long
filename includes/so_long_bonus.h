@@ -104,6 +104,7 @@ typedef struct s_entity
 	t_pos		d_pos;
 	t_img		*sprite;
 	int			delay;
+	int			is_mov;
 	int			current_sprite;
 	char		*sprite_idle[0];
 	char		*right_sprites[4];
