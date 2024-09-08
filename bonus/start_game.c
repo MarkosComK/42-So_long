@@ -13,7 +13,7 @@
 #include "../includes/so_long_bonus.h"
 #include <time.h>
 
-int	delay_time(t_game *game, int	frame)
+int	delay_time(t_game *game, int frame)
 {
 	static int	delay;
 	static int	frames;
@@ -32,10 +32,10 @@ int	delay_time(t_game *game, int	frame)
 }
 
 int	game_loop_hook(t_game *game)
-{ 
-	static clock_t last_time;
-    clock_t current_time;
-    float delta_time;
+{
+	static clock_t	last_time;
+	clock_t			current_time;
+	float			delta_time;
 
 	last_time = 0;
 	current_time = clock();
