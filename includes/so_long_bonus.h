@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 19:23:50 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/08 11:59:58 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,6 +199,9 @@ void	draw_exit(t_game *game);
 //draw_animate_player.c
 void	draw_player_r(t_game *game);
 void	draw_player_l(t_game *game);
+//draw_animate_player2.c
+void	draw_player_b(t_game *game);
+void	draw_player_t(t_game *game);
 //draw_wall.c
 void	draw_wall_0(t_game *game);
 void	draw_wall_1(t_game *game);
@@ -246,6 +249,9 @@ void	quit(t_game *game);
 int	key_press(int keycode, t_game *g);
 void	bottle_check(t_game *game, t_pos *pos);
 void	exit_check(t_game *game, t_pos *pos);
+void	wall_check(t_game *game, t_pos *pos, t_pos xy);
+//handle_keys_utils.c
+void	check_sprites(t_game *game, t_entity *player, t_pos pos);
 
 
 //start_game.c
