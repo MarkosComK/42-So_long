@@ -34,6 +34,10 @@ void	render_player(t_game *game)
 		draw_player_r(game);
 	else if (game->player.d_pos.x == -1)
 		draw_player_l(game);
+	else if (game->player.d_pos.y == 1)
+		draw_player_b(game);
+	else if (game->player.d_pos.y == -1)
+		draw_player_t(game);
 	else
 		draw_player(game);
 }

@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 22:36:23 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 10:17:51 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:02:15 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
 
-void	wall_check(t_game *game, t_pos *pos, int dx, int dy);
+void	wall_check(t_game *game, t_pos *pos, t_pos xy);
 
 int	key_press(int keycode, t_game *g)
 {
@@ -23,23 +23,19 @@ int	key_press(int keycode, t_game *g)
 	pos = &g->player.s_pos;
 	if (keycode == XK_Up || keycode == XK_w)
 	{
-		wall_check(g, pos, 0, -1);
-		check_sprites(&g->player, (t_pos){0, -1});
+		check_sprites(g, &g->player, (t_pos){0, -1});
 	}
 	if (keycode == XK_Down || keycode == XK_s)
 	{
-		wall_check(g, pos, 0, 1);
-		check_sprites(&g->player, (t_pos){0, 1});
+		check_sprites(g, &g->player, (t_pos){0, 1});
 	}
 	else if (keycode == XK_Left || keycode == XK_a)
 	{
-		wall_check(g, pos, -1, 0);
-		check_sprites(&g->player, (t_pos){-1, 0});
+		check_sprites(g, &g->player, (t_pos){-1, 0});
 	}
 	else if (keycode == XK_Right || keycode == XK_d)
 	{
-		wall_check(g, pos, 1, 0);
-		check_sprites(&g->player, (t_pos){1, 0});
+		check_sprites(g, &g->player, (t_pos){1, 0});
 	}
 	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
@@ -96,18 +92,18 @@ void	bottle_check(t_game *game, t_pos *pos)
 	}
 }
 
-void	wall_check(t_game *game, t_pos *pos, int dx, int dy)
+void	wall_check(t_game *game, t_pos *pos, t_pos xy)
 {
 	t_pos	new_pos;
 
-	new_pos.x = pos->x + dx;
-	new_pos.y = pos->y + dy;
+	new_pos.x = pos->x + xy.x;
+	new_pos.y = pos->y + xy.y;
 	if (game->map.data[new_pos.y][new_pos.x] == '1')
 		return ;
 	else
 	{
-		game->player.s_pos.x += dx;
-		game->player.s_pos.y += dy;
+		game->player.s_pos.x += xy.x;
+		game->player.s_pos.y += xy.y;
 	}
 }
 
