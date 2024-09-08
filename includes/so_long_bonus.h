@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 11:59:58 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:54:06 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@
 # define P_L_RUN_2 "./sprites/l-run-2.xpm"
 # define P_L_RUN_3 "./sprites/l-run-3.xpm"
 //collectible
-# define COLLECTIBLE "./sprites/collectible-0.xpm"
+# define ENEMY_0 "./sprites/enemy-0.xpm"
+# define ENEMY_1 "./sprites/enemy-1.xpm"
+# define ENEMY_2 "./sprites/enemy-2.xpm"
+# define ENEMY_3 "./sprites/enemy-3.xpm"
 //exit
 # define EXIT_CLOSE "./sprites/floor-1.xpm"
 # define EXIT_OPEN "./sprites/door-open.xpm"
@@ -119,12 +122,13 @@ typedef struct s_exit
 	bool		open;
 }				t_exit;
 
-typedef struct s_bottle
+typedef struct s_enemy
 {
 	t_pos		pos;
 	t_img		*sprite;
-	struct s_bottle	*next;
-}				t_bottle;
+	char		*sprite_idle[4];
+	struct s_enemy	*next;
+}				t_enemy;
 
 typedef struct  s_game
 {
@@ -133,7 +137,7 @@ typedef struct  s_game
 	t_map		map;
 	t_entity	player;
 	t_img		*world;
-	t_bottle	*bottle;
+	t_enemy		*enemy;
 	t_exit		exit;
 }               t_game;
 
@@ -154,11 +158,11 @@ int	map_walls(t_map map);
 //collectibles.c
 void	init_collectibles(t_game *game);
 //list_utils.c
-t_bottle	*ft_bottlelast(t_bottle *lst);
-t_bottle	*bottle_add(t_bottle *node, int x, int y);
-t_bottle	*bottle_push_tail(t_bottle *stack, int x, int y);
-t_bottle	*bottle_create(int x, int y);
-int			bottles_size(t_bottle *lst);
+t_enemy	*ft_bottlelast(t_enemy *lst);
+t_enemy	*bottle_add(t_enemy *node, int x, int y);
+t_enemy	*bottle_push_tail(t_enemy *stack, int x, int y);
+t_enemy	*bottle_create(int x, int y);
+int			bottles_size(t_enemy *lst);
 /*
  * exit/
  */
@@ -173,7 +177,7 @@ void	create_exit(t_img *sprite, t_game *game, int posx, int posy);
 void	destroy_sprite(t_img **sprite, void *mlx);
 void	free_map(t_map map);
 void	free_tiles(t_map map);
-void	free_bottles(t_bottle *bottles);
+void	free_bottles(t_enemy *bottles);
 
 /*
  * player/

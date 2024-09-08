@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 18:37:28 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 19:37:38 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:46:15 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long_bonus.h"
 
-t_bottle	*ft_bottlelast(t_bottle *lst)
+t_enemy	*ft_bottlelast(t_enemy *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -21,9 +21,9 @@ t_bottle	*ft_bottlelast(t_bottle *lst)
 	return (lst);
 }
 
-t_bottle	*bottle_add(t_bottle *node, int x, int y)
+t_enemy	*bottle_add(t_enemy *node, int x, int y)
 {
-	t_bottle	*new;
+	t_enemy	*new;
 
 	new = bottle_create(x, y);
 	if (!new)
@@ -34,10 +34,10 @@ t_bottle	*bottle_add(t_bottle *node, int x, int y)
 	return (new);
 }
 
-t_bottle	*bottle_push_tail(t_bottle *stack, int x, int y)
+t_enemy	*bottle_push_tail(t_enemy *stack, int x, int y)
 {
-	t_bottle	*new_node;
-	t_bottle	*last;
+	t_enemy	*new_node;
+	t_enemy	*last;
 
 	new_node = bottle_create(x, y);
 	if (!new_node)
@@ -47,11 +47,11 @@ t_bottle	*bottle_push_tail(t_bottle *stack, int x, int y)
 	return (new_node);
 }
 
-t_bottle	*bottle_create(int x, int y)
+t_enemy	*bottle_create(int x, int y)
 {
-	t_bottle	*stack_new;
+	t_enemy	*stack_new;
 
-	stack_new = (t_bottle *)malloc(sizeof(t_bottle));
+	stack_new = (t_enemy *)malloc(sizeof(t_enemy));
 	if (!stack_new)
 		return (NULL);
 	stack_new -> sprite = NULL;
@@ -60,7 +60,7 @@ t_bottle	*bottle_create(int x, int y)
 	return (stack_new);
 }
 
-int	bottles_size(t_bottle *lst)
+int	bottles_size(t_enemy *lst)
 {
 	int	size;
 

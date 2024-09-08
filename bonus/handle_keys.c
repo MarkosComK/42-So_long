@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 22:36:23 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 12:05:17 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:52:49 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ int	key_press(int keycode, t_game *g)
 
 void	del_bottle(t_game *game, int index)
 {
-	t_bottle	*prev;
-	t_bottle	*temp;
+	t_enemy	*prev;
+	t_enemy	*temp;
 	int			i;
 
-	temp = game->bottle;
+	temp = game->enemy;
 	i = 0;
 	if (index == 0 && temp != NULL)
 	{
-		game->bottle = temp->next;
+		game->enemy = temp->next;
 		free(temp);
 		return ;
 	}
@@ -73,21 +73,21 @@ void	del_bottle(t_game *game, int index)
 void	bottle_check(t_game *game, t_pos *pos)
 {
 	t_pos		new_pos;
-	t_bottle	*bottles;
+	t_enemy		*enemy;
 	int			index;
 
 	new_pos = (t_pos){pos->x, pos->y};
-	bottles = game->bottle;
+	enemy = game->enemy;
 	index = 0;
-	while (bottles)
+	while (enemy)
 	{
-		if (new_pos.x == bottles->pos.x && new_pos.y == bottles->pos.y)
+		if (new_pos.x == enemy->pos.x && new_pos.y == enemy->pos.y)
 		{
 			game->player.points++;
 			del_bottle(game, index);
 			return ;
 		}
-		bottles = bottles -> next;
+		enemy = enemy -> next;
 		index++;
 	}
 }

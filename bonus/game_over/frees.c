@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:10:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 10:30:08 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:53:52 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	free_tiles(t_map map)
 	free(map.tiles);
 }
 
-void	free_bottles(t_bottle *bottles)
+void	free_bottles(t_enemy *bottles)
 {
-	t_bottle	*tmp;
+	t_enemy	*tmp;
 
 	tmp = bottles;
 	while (tmp)

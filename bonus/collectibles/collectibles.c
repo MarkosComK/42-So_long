@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 18:06:36 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 11:59:05 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:47:10 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	init_collectibles(t_game *game)
 {
-	t_bottle	*node;
+	t_enemy		*node;
 	int			i;
 	int			j;
 
@@ -28,14 +28,14 @@ void	init_collectibles(t_game *game)
 		{
 			if (game->map.data[i][j] == 'C')
 			{
-				if (!game->bottle)
-					game->bottle = bottle_create(j, j);
+				if (!game->enemy)
+					game->enemy = bottle_create(j, j);
 				else
-					bottle_push_tail(game->bottle, j, i);
+					bottle_push_tail(game->enemy, j, i);
 			}
 			j++;
 		}
 		i++;
 	}
-	game->map.collectables = bottles_size(game->bottle);
+	game->map.collectables = bottles_size(game->enemy);
 }
