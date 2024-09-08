@@ -16,8 +16,8 @@
 void	print_fps(clock_t current_time)
 {
 	static clock_t	fps_last_time = 0;
-	static int	frame_count = 0;
-	int fps;
+	static int		frame_count = 0;
+	int				fps;
 
 	frame_count++;
 	if ((current_time - fps_last_time) >= CLOCKS_PER_SEC)
