@@ -80,8 +80,9 @@ void	create_player_l(t_img *sprite, t_game *game, int posx, int posy)
 			color = get_color_in_pixel(sprite, x, y);
 			if (color != trans_color)
 			{
-				put_pixel(game->world, posx * SZ - (game->player.current_sprite*6) + x + 22, posy * SZ - 16 + y,
-					color);
+				put_pixel(game->world, posx * SZ
+					- (game->player.current_sprite * 6)
+					+ x + 22, posy * SZ - 16 + y, color);
 			}
 		}
 	}
@@ -104,8 +105,9 @@ void	create_player_r(t_img *sprite, t_game *game, int posx, int posy)
 			color = get_color_in_pixel(sprite, x, y);
 			if (color != trans_color)
 			{
-				put_pixel(game->world, posx * SZ + (game->player.current_sprite*6) + x - 16, posy * SZ - 16 + y,
-					color);
+				put_pixel(game->world, posx * SZ
+					+ (game->player.current_sprite * 6)
+					+ x - 16, posy * SZ - 16 + y, color);
 			}
 		}
 	}
