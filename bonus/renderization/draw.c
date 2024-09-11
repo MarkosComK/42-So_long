@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:04:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 19:10:37 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:50:25 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ void	draw_bottles(t_game *game)
 	enemy = game->enemy;
 	while (enemy)
 	{
-		enemy->sprite = create_sprite(game, ENEMY_0);
+	//	ft_printf("enemy {%i, %i} %i\n",enemy->pos.x, enemy->pos.y, enemy->current_s);
+		enemy->sprite = create_sprite(game, enemy->sprite_idle[enemy->current_s]);
+		ft_printf("{%i, %i} current_s %s\n",enemy->pos.x, enemy->pos.y, enemy->sprite_idle[enemy->current_s]);
 		create_player(enemy->sprite, game, enemy->pos.x, enemy->pos.y);
 		mlx_destroy_image(game->mlx, enemy->sprite->ptr);
 		free(enemy->sprite);

@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 18:37:28 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 12:46:15 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:35:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ t_enemy	*bottle_create(int x, int y)
 	if (!stack_new)
 		return (NULL);
 	stack_new -> sprite = NULL;
+	stack_new -> current_s = 0;
+	stack_new -> sprite_idle[0] = ENEMY_0;
+	stack_new -> sprite_idle[1] = ENEMY_1;
+	stack_new -> sprite_idle[2] = ENEMY_2;
+	stack_new -> sprite_idle[3] = ENEMY_3;
 	stack_new -> pos = (t_pos){x, y};
 	stack_new -> next = NULL;
 	return (stack_new);

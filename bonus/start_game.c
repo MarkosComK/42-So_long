@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 19:30:36 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:34:39 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	delay_time(t_game *game, int frame)
 	delay += frame;
 	frames++;
 	game->player.delay = delay;
+	game->e_delay = delay;
 	if (frames == 10)
 	{
 		frames = 0;
