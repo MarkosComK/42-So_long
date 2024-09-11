@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 09:14:10 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 18:59:56 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 17:14:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	render_game(t_game *game)
 	render_walls_0(game);
 	render_collectibles(game);
 	render_exit(game);
+	render_holes(game);
 	render_player(game);
 	render_walls_1(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);

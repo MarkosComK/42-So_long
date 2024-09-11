@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:40:26 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/06 20:00:06 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:50:04 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	*get_sprite_path(t_game *game, char c, int x, int y)
 		path = WALL_R;
 	else if ((c == '1' && y == 0) || (c == '1' && y == map.rows - 1))
 		path = WALL;
-	else if (c == '1')
+	else if (c == '1' || c == 'H')
 		path = randomize_floor(x, y, map);
 	else if (c == '0' || c == 'C' || c == 'E' || c == 'P' || c == 'M')
 		path = randomize_floor(x, y, map);

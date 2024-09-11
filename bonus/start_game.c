@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 22:03:35 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:54:00 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ void	set_game(t_game *game, char *map_path)
 	set_player_pos(game);
 	init_player(game);
 	init_collectibles(game);
+	init_holes(game);
 	init_exit(game);
 }

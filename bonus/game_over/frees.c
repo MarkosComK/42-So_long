@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:10:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 12:53:52 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:58:47 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,18 @@ void	free_bottles(t_enemy *bottles)
 		tmp = bottles -> next;
 		free(bottles);
 		bottles = tmp;
+	}
+}
+
+void	free_holes(t_hole *holes)
+{
+	t_hole	*tmp;
+
+	tmp = holes;
+	while (tmp)
+	{
+		tmp = holes -> next;
+		free(holes);
+		holes = tmp;
 	}
 }

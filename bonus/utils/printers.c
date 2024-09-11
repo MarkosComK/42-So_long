@@ -6,11 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:46:42 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 19:47:30 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 17:09:04 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../includes/so_long_bonus.h"
 
 int	error_msg(char *msg)
 {
@@ -44,10 +44,24 @@ void	print_player(t_game *game)
 
 void	print_bottles(t_game *game)
 {
-	t_bottle	*current;
+	t_enemy	*current;
 
-	current = game->bottle;
+	current = game->enemy;
 	ft_printf("BOTTLES: \n");
+	while (current)
+	{
+		ft_printf("node->pos{%i, %i}\n", current->pos.x, current->pos.y);
+		current = current->next;
+	}
+	ft_printf("\n");
+}
+
+void	print_holes(t_game *game)
+{
+	t_hole	*current;
+
+	current = game->hole;
+	ft_printf("HOLES: \n");
 	while (current)
 	{
 		ft_printf("node->pos{%i, %i}\n", current->pos.x, current->pos.y);

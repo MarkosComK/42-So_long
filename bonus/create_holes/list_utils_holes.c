@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:35:47 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 16:36:01 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 17:12:46 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long_bonus.h"
 
-t_enemy	*ft_bottlelast(t_enemy *lst)
+t_hole *ft_holelast(t_hole *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -21,11 +21,11 @@ t_enemy	*ft_bottlelast(t_enemy *lst)
 	return (lst);
 }
 
-t_enemy	*bottle_add(t_enemy *node, int x, int y)
+t_hole	*hole_add(t_hole *node, int x, int y)
 {
-	t_enemy	*new;
+	t_hole	*new;
 
-	new = bottle_create(x, y);
+	new = hole_create(x, y);
 	if (!new)
 		return (NULL);
 	if (!node)
@@ -34,33 +34,34 @@ t_enemy	*bottle_add(t_enemy *node, int x, int y)
 	return (new);
 }
 
-t_enemy	*bottle_push_tail(t_enemy *stack, int x, int y)
+t_hole	*hole_push_tail(t_hole *stack, int x, int y)
 {
-	t_enemy	*new_node;
-	t_enemy	*last;
+	t_hole	*new_node;
+	t_hole	*last;
 
-	new_node = bottle_create(x, y);
+	new_node = hole_create(x, y);
 	if (!new_node)
 		return (NULL);
-	last = ft_bottlelast(stack);
+	last = ft_holelast(stack);
 	last->next = new_node;
 	return (new_node);
 }
 
-t_enemy	*bottle_create(int x, int y)
+t_hole	*hole_create(int x, int y)
 {
-	t_enemy	*stack_new;
+	t_hole	*stack_new;
 
-	stack_new = (t_enemy *)malloc(sizeof(t_enemy));
+	stack_new = (t_hole *)malloc(sizeof(t_hole));
 	if (!stack_new)
 		return (NULL);
-	stack_new -> sprite = NULL;
+	stack_new -> sprite[0] = NULL;
+	stack_new -> sprite[1] = NULL;
 	stack_new -> pos = (t_pos){x, y};
 	stack_new -> next = NULL;
 	return (stack_new);
 }
 
-int	bottles_size(t_enemy *lst)
+int	holes_size(t_hole *lst)
 {
 	int	size;
 

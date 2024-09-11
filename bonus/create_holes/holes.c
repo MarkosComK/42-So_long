@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:33:33 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 16:35:17 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 17:53:56 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	init_holes(t_game *game)
 		{
 			if (game->map.data[i][j] == 'H')
 			{
-				if (!game->enemy)
-					game->enemy = hole_create(j, j);
+				if (!game->hole)
+					game->hole = hole_create(j, i);
 				else
-					hole_push_tail(game->enemy, j, i);
+					hole_push_tail(game->hole, j, i);
 			}
 			j++;
 		}
 		i++;
 	}
-	game->map.collectables = bottles_size(game->enemy);
+	print_holes(game);
 }

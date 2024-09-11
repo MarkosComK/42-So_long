@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 16:38:06 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 17:21:54 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@
 //exit
 # define EXIT_CLOSE "./sprites/floor-1.xpm"
 # define EXIT_OPEN "./sprites/door-open.xpm"
+//holes
+# define HOLE_CLOSE "./sprites/hole-close.xpm"
+# define HOLE_OPEN "./sprites/door-open.xpm"
 
 typedef struct s_img
 {
@@ -145,6 +148,7 @@ typedef struct  s_game
 	t_entity	player;
 	t_img		*world;
 	t_enemy		*enemy;
+	t_hole		*hole;
 	t_exit		exit;
 }               t_game;
 
@@ -171,6 +175,22 @@ t_enemy	*bottle_push_tail(t_enemy *stack, int x, int y);
 t_enemy	*bottle_create(int x, int y);
 int			bottles_size(t_enemy *lst);
 /*
+ * create_holes.c
+ */
+//draw_holes.c
+void	create_holes(t_img *sprite, t_game *game, int posx, int posy);
+void	draw_hole(t_game *game);
+//holes.c
+void	init_holes(t_game *game);
+//list_utils_holes.c
+t_hole	*ft_holelast(t_hole *lst);
+t_hole	*hole_add(t_hole *node, int x, int y);
+t_hole	*hole_push_tail(t_hole *stack, int x, int y);
+t_hole	*hole_create(int x, int y);
+int			hole_size(t_hole *lst);
+//render_holes.c
+void	render_holes(t_game *game);
+/*
  * exit/
  */
 //exit.c
@@ -185,6 +205,7 @@ void	destroy_sprite(t_img **sprite, void *mlx);
 void	free_map(t_map map);
 void	free_tiles(t_map map);
 void	free_bottles(t_enemy *bottles);
+void	free_holes(t_hole *holes);
 
 /*
  * player/
@@ -247,6 +268,7 @@ int     error_msg(char *msg);
 void	print_map(t_game *game);
 void	print_player(t_game *game);
 void	print_bottles(t_game *game);
+void	print_holes(t_game *game);
 //randomizer.c
 char	*randomize_floor(int x, int y, t_map map);
 //utils.c
