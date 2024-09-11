@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 12:54:06 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:38:06 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,13 @@ typedef struct s_enemy
 	char		*sprite_idle[4];
 	struct s_enemy	*next;
 }				t_enemy;
+
+typedef struct s_hole
+{
+	t_pos			pos;
+	t_img			*sprite[2];
+	struct s_hole	*next;
+}				t_hole;
 
 typedef struct  s_game
 {
