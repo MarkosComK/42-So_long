@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:42:39 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 20:39:54 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 18:55:52 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	init_player(t_game *game)
 	player.is_mov = 0;
 	player.current_sprite = 0;
 	player.delay = 0;
+	player.death = 0;
 	load_player_sprite(game);
 	player.points = 0;
 }
@@ -33,6 +34,7 @@ void	load_player_sprite(t_game *game)
 
 	player = &game->player;
 	player->sprite_idle[0] = P_IDLE0;
+	player->sprite_idle[1] = P_DEATH;
 	player->left_sprites[0] = P_L_RUN_0;
 	player->left_sprites[1] = P_L_RUN_1;
 	player->left_sprites[2] = P_L_RUN_2;

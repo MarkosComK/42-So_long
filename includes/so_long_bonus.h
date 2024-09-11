@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 17:21:54 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 18:55:33 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@
 # define FLOOR4 "./sprites/floor-4.xpm"
 //player
 # define P_IDLE0 "./sprites/idle-01.xpm"
+# define P_DEATH "./sprites/death.xpm"
 # define P_R_RUN_0 "./sprites/r-run-0.xpm"
 # define P_R_RUN_1 "./sprites/r-run-1.xpm"
 # define P_R_RUN_2 "./sprites/r-run-2.xpm"
@@ -59,7 +60,7 @@
 # define EXIT_OPEN "./sprites/door-open.xpm"
 //holes
 # define HOLE_CLOSE "./sprites/hole-close.xpm"
-# define HOLE_OPEN "./sprites/door-open.xpm"
+# define HOLE_OPEN "./sprites/hole-open.xpm"
 
 typedef struct s_img
 {
@@ -111,8 +112,9 @@ typedef struct s_entity
 	t_img		*sprite;
 	int			delay;
 	int			is_mov;
+	int			death;
 	int			current_sprite;
-	char		*sprite_idle[0];
+	char		*sprite_idle[2];
 	char		*right_sprites[4];
 	char		*left_sprites[4];
 	int			points;
