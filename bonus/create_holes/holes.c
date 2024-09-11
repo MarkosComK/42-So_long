@@ -37,5 +37,4 @@ void	init_holes(t_game *game)
 		}
 		i++;
 	}
-	print_holes(game);
 }
