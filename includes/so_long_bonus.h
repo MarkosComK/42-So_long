@@ -118,6 +118,7 @@ typedef struct s_entity
 	char		*right_sprites[4];
 	char		*left_sprites[4];
 	int			points;
+	int			moves;
 }				t_entity;
 
 typedef struct s_exit

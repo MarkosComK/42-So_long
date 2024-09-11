@@ -24,21 +24,15 @@ int	key_press(int keycode, t_game *g)
 	{
 		pos = &g->player.s_pos;
 		if (keycode == XK_Up || keycode == XK_w)
-		{
 			check_sprites(g, &g->player, (t_pos){0, -1});
-		}
 		else if (keycode == XK_Down || keycode == XK_s)
-		{
 			check_sprites(g, &g->player, (t_pos){0, 1});
-		}
 		else if (keycode == XK_Left || keycode == XK_a)
-		{
 			check_sprites(g, &g->player, (t_pos){-1, 0});
-		}
 		else if (keycode == XK_Right || keycode == XK_d)
-		{
 			check_sprites(g, &g->player, (t_pos){1, 0});
-		}
+		else if (keycode == XK_Escape || keycode == XK_q)
+			quit(g);
 	}
 	else if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
@@ -107,6 +101,8 @@ void	wall_check(t_game *game, t_pos *pos, t_pos xy)
 	{
 		game->player.s_pos.x += xy.x;
 		game->player.s_pos.y += xy.y;
+		game->player.moves++;
+		ft_printf("moves: %i\n", game->player.moves);
 	}
 }
 

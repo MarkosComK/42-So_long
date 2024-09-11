@@ -24,6 +24,7 @@ void	init_player(t_game *game)
 	player.current_sprite = 0;
 	player.delay = 0;
 	player.death = 0;
+	player.moves = 0;
 	load_player_sprite(game);
 	player.points = 0;
 }
