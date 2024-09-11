@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 18:55:33 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:14:59 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,6 +236,8 @@ void	draw_player_l(t_game *game);
 //draw_animate_player2.c
 void	draw_player_b(t_game *game);
 void	draw_player_t(t_game *game);
+//draw_death.c
+void	draw_death(t_game *game);
 //draw_wall.c
 void	draw_wall_0(t_game *game);
 void	draw_wall_1(t_game *game);

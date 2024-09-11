@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:04:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 12:50:18 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:10:37 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	draw_player(t_game *game)
 	player = game->player;
 	current_sprite = P_IDLE0;
 	player.sprite = create_sprite(game, current_sprite);
+	if (player.death)
+		player.sprite = create_sprite(game, P_DEATH);
 	create_player(player.sprite, game, player.s_pos.x, player.s_pos.y);
 	if (player.sprite)
 		destroy_sprite(&player.sprite, game->mlx);

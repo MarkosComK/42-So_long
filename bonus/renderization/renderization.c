@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 09:14:10 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 18:01:09 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:29:31 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void	render_map(t_game *game)
 
 void	render_player(t_game *game)
 {
-	if (game->player.d_pos.x == 1)
+	if (game->player.death)
+		draw_death(game);
+	else if (game->player.d_pos.x == 1)
 		draw_player_r(game);
 	else if (game->player.d_pos.x == -1)
 		draw_player_l(game);

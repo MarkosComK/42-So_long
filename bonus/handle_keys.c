@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 22:36:23 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 12:52:49 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:41:36 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,27 @@ int	key_press(int keycode, t_game *g)
 
 	if (g->player.is_mov)
 		return (1);
-	pos = &g->player.s_pos;
-	if (keycode == XK_Up || keycode == XK_w)
+	else if (!g->player.death)
 	{
-		check_sprites(g, &g->player, (t_pos){0, -1});
+		pos = &g->player.s_pos;
+		if (keycode == XK_Up || keycode == XK_w)
+		{
+			check_sprites(g, &g->player, (t_pos){0, -1});
+		}
+		else if (keycode == XK_Down || keycode == XK_s)
+		{
+			check_sprites(g, &g->player, (t_pos){0, 1});
+		}
+		else if (keycode == XK_Left || keycode == XK_a)
+		{
+			check_sprites(g, &g->player, (t_pos){-1, 0});
+		}
+		else if (keycode == XK_Right || keycode == XK_d)
+		{
+			check_sprites(g, &g->player, (t_pos){1, 0});
+		}
 	}
-	if (keycode == XK_Down || keycode == XK_s)
-	{
-		check_sprites(g, &g->player, (t_pos){0, 1});
-	}
-	else if (keycode == XK_Left || keycode == XK_a)
-	{
-		check_sprites(g, &g->player, (t_pos){-1, 0});
-	}
-	else if (keycode == XK_Right || keycode == XK_d)
-	{
-		check_sprites(g, &g->player, (t_pos){1, 0});
-	}
-	if (keycode == XK_Escape || keycode == XK_q)
+	else if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
 	return (1);
 }
