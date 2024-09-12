@@ -15,7 +15,7 @@
 # include "./colors.h"
 # include "../libraries/libft/libft.h"
 # include "./sprites.h"
-# include "../libraries/minilibx-linux/mlx.h"
+# include "../minilibx-linux/mlx.h"
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdbool.h>

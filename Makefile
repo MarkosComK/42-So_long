@@ -15,8 +15,8 @@ UNAME_S := $(shell uname -s)
 LIBFT_PATH		=	./libraries/libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-MINILIBX_PATH	=	./libraries/minilibx-linux
-MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
+MINILIBX_PATH	=	./minilibx-linux/
+MLX		=	$(MINILIBX_PATH)/libmlx.a
 
 SOURCES_FILES	=	so_long.c \
 
@@ -55,49 +55,42 @@ endif
 
 all:	$(NAME)
 
-$(NAME): $(LIBFT) $(MINILIBX) $(OBJECTS) $(HEADER)
-	@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(INCLUDES) $(MINILIBX) $(MLXFLAGS) -o $(NAME)
+$(NAME): $(LIBFT) $(MLX) $(OBJECTS) $(HEADER)
+	@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(INCLUDES) $(MLX) $(MLXFLAGS) -o $(NAME)
 
 $(LIBFT):
 	@make --silent -C $(LIBFT_PATH)
 
-$(MINILIBX):
-	@make --silent -C $(MINILIBX_PATH)
-	@clear
-	@echo
-	@echo
-	@echo "$(TITLE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-	@echo "$(PURPLE)"
-	@echo "                   )                               /=>                                   "
-	@echo "                   (  +____________________/\\/\\___ / /|                                  "
-	@echo "                   .''._____________'._____      / /|/\\                                  "
-	@echo "                  : () :              :\\ ----\\|    \\ )                                   "
-	@echo "                   '..'______________.'0|----|      \\                                    "
-	@echo "                     0_0/____/        \\                                                  "
-	@echo "                                       |----    /----\\                                   "
-	@echo "                                       || -\\\\ --|      \\                                  "
-	@echo "                                       ||   || ||\\      \\                                "
-	@echo "                                       \\\\____// '|      \\                                 "
-	@echo "                Bang! Bang!                     .'/       |                              "
-	@echo "                                               .:/        |                              "
-	@echo "                                                :/_________|                             "
-	@echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(TITLE)]━━"
-	@echo
-	@echo
-	@echo "$(GREEN) Successfully compiled so_long."
-	@echo
-	@echo
-
 bonus:	$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS) $(HEADER)
-	@$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(INCLUDES) $(MINILIBX) $(MLXFLAGS) -o $(NAME)_bonus
+	@$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(INCLUDES) $(MLX) $(MLXFLAGS) -o $(NAME)_bonus
+
+$(MLX): $(MINILIBX_PATH)
+	@rm -rf minilibx-linux/.git
+	@make -C $^ > /dev/null 2>&1
+
+$(MINILIBX_PATH):
+	@echo "\033[1;35m[ ✔ ] Preparing minilibx...\033[0m"
+	@git clone https://github.com/42Paris/minilibx-linux.git > /dev/null 2>&1
+	@clear
+	@echo "$(TITLE) $(PURPLE)"
+	@echo "  ███████╗ ██████╗         ██╗      ██████╗ ███╗   ██╗ ██████╗   "
+	@echo "  ██╔════╝██╔═══██╗        ██║     ██╔═══██╗████╗  ██║██╔════╝   "
+	@echo "  ███████╗██║   ██║        ██║     ██║   ██║██╔██╗ ██║██║  ███╗  "
+	@echo "  ╚════██║██║   ██║        ██║     ██║   ██║██║╚██╗██║██║   ██║  "
+	@echo "  ███████║╚██████╔╝███████╗███████╗╚██████╔╝██║ ╚████║╚██████╔╝  "
+	@echo "  ╚══════╝ ╚═════╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   "
+	@echo "  $(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(TITLE)]━━━━"
+	@echo "$(RESET)"
 
 clean:
-	$(MAKE) -C $(LIBFT_PATH) clean
-	$(MAKE) -C $(MINILIBX_PATH) clean
-	$(RM) $(OBJECTS) $(OBJECTS_BONUS)
+	@$(MAKE) -C $(LIBFT_PATH) clean
+	@$(RM) $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean:	clean
-	$(MAKE) -C $(LIBFT_PATH) fclean
-	$(RM) $(NAME) $(NAME)_bonus
+	@$(MAKE) -C $(LIBFT_PATH) fclean
+	@$(RM) $(NAME) $(NAME)_bonus
+	@$(RM) $(NAME) $(NAME)
 
-re:	fclean all
+re:	fclean clean all
+
+.PHONY: clean fclean bonus all re

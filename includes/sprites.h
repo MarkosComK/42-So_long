@@ -14,6 +14,7 @@
 # define SPRITES_H
 # include "so_long.h"
 
+//walls
 # define WALL "./sprites/wall-0.xpm"
 # define WALL_L "./sprites/wall-l.xpm"
 # define WALL_R "./sprites/wall-r.xpm"
@@ -24,15 +25,19 @@
 # define WALL_INNER_0 "./sprites/wall-inner-0.xpm"
 # define WALL_I_01 "./sprites/wall-inner-01.xpm"
 # define WALL_INNER_2 "./sprites/wall-inner-2.xpm"
+//floors
 # define FLOOR0 "./sprites/floor-0.xpm"
 # define FLOOR1 "./sprites/floor-1.xpm"
 # define FLOOR2 "./sprites/floor-2.xpm"
 # define FLOOR3 "./sprites/floor-3.xpm"
 # define FLOOR4 "./sprites/floor-4.xpm"
-# define P_IDLE0 "./sprites/idle-01.xpm"
-# define COLLECTIBLE "./sprites/collectible-0.xpm"
+//exit
 # define EXIT_CLOSE "./sprites/floor-1.xpm"
 # define EXIT_OPEN "./sprites/door-open.xpm"
+//player
+# define P_IDLE0 "./sprites/idle-01.xpm"
+//collectibles
+# define COLLECTIBLE "./sprites/collectible-0.xpm"
 
 typedef struct s_img
 {
