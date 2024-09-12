@@ -6,11 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:54:14 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 20:06:47 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:28:37 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
+
+int	map_path(t_game *game);
 
 void	validate_map(t_game *game)
 {
@@ -22,6 +24,8 @@ void	validate_map(t_game *game)
 		error_map("Map is not valid! 3", game);
 	else if (!map_walls(game->map))
 		error_map("Map is not valid! 4", game);
+	else if (!map_path(game))
+		error_map("Map is not valid! 5", game);
 	game->map.cols = ft_strlen(game->map.data[0]);
 	game->map.width = game->map.cols * SZ;
 	game->map.height = game->map.rows * SZ;
@@ -116,5 +120,5 @@ int	map_path(t_game *game)
 	matrix_map[i] = NULL;
 	floodfill(game, matrix_map, game->player.s_pos);
 	map_matrix_delete(matrix_map);
-	return (game->path == 1 && game->path_collect == game->map->collectables);
+	return (game->path == 1 && game->path_coll == (unsigned int)game->map.collectables);
 }

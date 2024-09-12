@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/12 15:38:54 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:00:32 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ typedef struct  s_game
 	t_map		map;
 	t_entity	player;
 	t_img		*world;
+	unsigned int	path;
+	unsigned int	path_coll;
 	t_bottle	*bottle;
 	t_exit		exit;
 }               t_game;
@@ -96,6 +98,9 @@ void	validate_map(t_game *game);
 int	map_retangular(t_map map);
 int	map_components(t_map map);
 int	map_walls(t_map map);
+//validate_utils.c
+void	floodfill(t_game *game, char **matrix, t_pos cur);
+void	map_matrix_delete(char **map_bytes);
 
 /*
  * collectibes/

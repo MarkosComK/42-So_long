@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:36:02 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/12 15:38:18 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:21:20 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	floodfill(t_game *game, char **matrix, t_pos cur)
 	if (matrix[cur.y][cur.x] == '1')
 		return ;
 	else if (matrix[cur.y][cur.x] == 'C')
-		game->path_collect++;
+		game->path_coll++;
 	else if (matrix[cur.y][cur.x] == 'E')
 		game->path = 1;
 	matrix[cur.y][cur.x] = '1';
@@ -27,16 +27,16 @@ void	floodfill(t_game *game, char **matrix, t_pos cur)
 	floodfill(game, matrix, (t_pos){cur.x, cur.y - 1});
 }
 
-void	map_matrix_delete(char **map_bytes)
+void	map_matrix_delete(char **map)
 {
 	int	i;
 
 	i = 0;
-	while (map_bytes[i])
+	while (map[i])
 	{
-		free(map_bytes[i]);
+		free(map[i]);
 		i++;
 	}
-	free(map_bytes[i]);
-	free(map_bytes);
+	free(map[i]);
+	free(map);
 }
