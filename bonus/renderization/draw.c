@@ -59,6 +59,7 @@ void	draw_bottles(t_game *game)
 		ft_printf("{%i, %i} current_s %s\n",enemy->pos.x, enemy->pos.y, enemy->sprite_idle[enemy->current_s]);
 		create_player(enemy->sprite, game, enemy->pos.x, enemy->pos.y);
 		mlx_destroy_image(game->mlx, enemy->sprite->ptr);
+		enemy->current_s = (enemy->current_s + 1) % 4;
 		free(enemy->sprite);
 		enemy = enemy->next;
 	}
