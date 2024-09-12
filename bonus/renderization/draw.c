@@ -54,7 +54,6 @@ void	draw_bottles(t_game *game)
 	enemy = game->enemy;
 	while (enemy)
 	{
-	//	ft_printf("enemy {%i, %i} %i\n",enemy->pos.x, enemy->pos.y, enemy->current_s);
 		if (game->e_delay == 4)
 		{
 			enemy->sprite = create_sprite(game, enemy->sprite_idle[enemy->current_s]);
