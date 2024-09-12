@@ -53,6 +53,8 @@ endif
 .c.o:
 	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
+TEST = val.sh
+
 all:	$(NAME)
 
 $(NAME): $(LIBFT) $(MLX) $(OBJECTS) $(HEADER)
@@ -92,5 +94,8 @@ fclean:	clean
 	@$(RM) $(NAME) $(NAME)
 
 re:	fclean clean all
+
+test: re
+	./$(TEST)
 
 .PHONY: clean fclean bonus all re

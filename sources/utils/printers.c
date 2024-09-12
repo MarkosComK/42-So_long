@@ -19,6 +19,15 @@ int	error_msg(char *msg)
 	return (0);
 }
 
+int	error_map(char *msg, t_game *game)
+{
+	ft_printf("ERROR\n%s%s%s\n", RED, msg, DEFAULT);
+	free_tiles(game->map);
+	free_map(game->map);
+	exit(0);
+	return (0);
+}
+
 void	print_map(t_game *game)
 {
 	int	i;

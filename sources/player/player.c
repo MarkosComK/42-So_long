@@ -21,6 +21,7 @@ void	init_player(t_game *game)
 	player.d_pos = (t_pos){0, 0};
 	player.sprite = NULL;
 	player.current_sprite = 0;
+	player.moves = 0;
 	load_player_sprite(game);
 	player.points = 0;
 }

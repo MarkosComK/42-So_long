@@ -102,6 +102,8 @@ void	wall_check(t_game *game, t_pos *pos, int dx, int dy)
 	{
 		game->player.s_pos.x += dx;
 		game->player.s_pos.y += dy;
+		game->player.moves++;
+		ft_printf("moves: %i\n", game->player.moves);
 	}
 }
 

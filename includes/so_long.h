@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/07 12:08:37 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/12 15:38:54 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_entity
 	int			current_sprite;
 	char		*sprite_idle[0];
 	int			points;
+	int			moves;
 }				t_entity;
 
 typedef struct s_exit
@@ -175,6 +176,7 @@ unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
  */
 //printers.c
 int     error_msg(char *msg);
+int     error_map(char *msg, t_game *game);
 void	print_map(t_game *game);
 void	print_player(t_game *game);
 void	print_bottles(t_game *game);
