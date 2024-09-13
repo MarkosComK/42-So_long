@@ -26,7 +26,7 @@ void	init_collectibles(t_game *game)
 		j = 0;
 		while (game->map.data[i][j])
 		{
-			if (game->map.data[i][j] == 'C')
+			if (game->map.data[i][j] == 'H')
 			{
 				if (!game->enemy)
 					game->enemy = bottle_create(j, i);
@@ -37,5 +37,4 @@ void	init_collectibles(t_game *game)
 		}
 		i++;
 	}
-	game->map.collectables = bottles_size(game->enemy);
 }

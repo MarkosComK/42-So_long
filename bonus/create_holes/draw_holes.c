@@ -44,20 +44,10 @@ void	draw_hole(t_game *game)
 	p_pos = game->player.s_pos;
 	while (hole)
 	{
-		hole->sprite[0] = create_sprite(game, HOLE_CLOSE);
-		hole->sprite[1] = create_sprite(game, HOLE_OPEN);
-		if (hole->pos.x == p_pos.x && hole->pos.y == p_pos.y)
-		{
-			create_holes(hole->sprite[1], game, hole->pos.x, hole->pos.y);
-		}
-		else
-		{
-			create_holes(hole->sprite[0], game, hole->pos.x, hole->pos.y);
-		}
-		mlx_destroy_image(game->mlx, hole->sprite[0]->ptr);
-		mlx_destroy_image(game->mlx, hole->sprite[1]->ptr);
-		free(hole->sprite[0]);
-		free(hole->sprite[1]);
+		hole->sprite = create_sprite(game, HOLE);
+		create_holes(hole->sprite, game, hole->pos.x, hole->pos.y);
+		mlx_destroy_image(game->mlx, hole->sprite->ptr);
+		free(hole->sprite);
 		hole = hole->next;
 	}
 }

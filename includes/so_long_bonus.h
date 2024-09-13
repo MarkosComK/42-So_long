@@ -60,6 +60,7 @@
 # define EXIT_OPEN "./sprites/door-open.xpm"
 //holes
 # define HOLE_CLOSE "./sprites/hole-close.xpm"
+# define HOLE "./sprites/collectible-0.xpm"
 # define HOLE_OPEN "./sprites/hole-open.xpm"
 
 typedef struct s_img
@@ -140,7 +141,7 @@ typedef struct s_enemy
 typedef struct s_hole
 {
 	t_pos			pos;
-	t_img			*sprite[2];
+	t_img			*sprite;
 	struct s_hole	*next;
 }				t_hole;
 

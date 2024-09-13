@@ -54,8 +54,7 @@ t_hole	*hole_create(int x, int y)
 	stack_new = (t_hole *)malloc(sizeof(t_hole));
 	if (!stack_new)
 		return (NULL);
-	stack_new -> sprite[0] = NULL;
-	stack_new -> sprite[1] = NULL;
+	stack_new -> sprite = NULL;
 	stack_new -> pos = (t_pos){x, y};
 	stack_new -> next = NULL;
 	return (stack_new);

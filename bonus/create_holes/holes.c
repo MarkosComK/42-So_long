@@ -26,7 +26,7 @@ void	init_holes(t_game *game)
 		j = 0;
 		while (game->map.data[i][j])
 		{
-			if (game->map.data[i][j] == 'H')
+			if (game->map.data[i][j] == 'C')
 			{
 				if (!game->hole)
 					game->hole = hole_create(j, i);

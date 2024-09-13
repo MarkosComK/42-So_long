@@ -17,7 +17,7 @@ void	hole_check(t_game *game);
 void	check_sprites(t_game *game, t_entity *player, t_pos pos)
 {
 	wall_check(game, &game->player.s_pos, pos);
-	hole_check(game);
+	bottle_check(game, &pos);
 	player->d_pos = pos;
 	player->current_sprite = 0;
 	player->is_mov = 1;
