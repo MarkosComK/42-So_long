@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:27:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 20:34:33 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/13 09:06:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,8 @@ typedef struct  s_game
 	t_enemy		*enemy;
 	t_hole		*hole;
 	t_exit		exit;
+	unsigned int	path;
+	unsigned int	path_coll;
 	int			e_delay;
 }               t_game;
 
@@ -167,6 +169,10 @@ void	validate_map(t_game *game);
 int	map_retangular(t_map map);
 int	map_components(t_map map);
 int	map_walls(t_map map);
+int	map_path(t_game *game);
+//validate_utils.c
+void	floodfill(t_game *game, char **matrix, t_pos cur);
+void	map_matrix_delete(char **map_bytes);
 
 /*
  * collectibes/
@@ -272,6 +278,7 @@ unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
  */
 //printers.c
 int     error_msg(char *msg);
+int     error_map(char *msg, t_game *game);
 void	print_map(t_game *game);
 void	print_player(t_game *game);
 void	print_bottles(t_game *game);

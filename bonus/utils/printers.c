@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:46:42 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 17:09:04 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/13 09:02:13 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 int	error_msg(char *msg)
 {
 	ft_printf("ERROR\n%s%s%s\n", RED, msg, DEFAULT);
+	exit(0);
+	return (0);
+}
+
+int	error_map(char *msg, t_game *game)
+{
+	ft_printf("ERROR\n%s%s%s\n", RED, msg, DEFAULT);
+	free_tiles(game->map);
+	free_map(game->map);
 	exit(0);
 	return (0);
 }

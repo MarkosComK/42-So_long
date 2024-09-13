@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:30:49 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 20:34:39 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/13 08:55:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,31 @@ int	game_loop_hook(t_game *game)
 	return (0);
 }
 
+int	count_collect(t_game *game)
+{
+	int			i;
+	int			j;
+	int			collect;
+
+	i = 0;
+	j = 0;
+	collect = 0;
+	while (game->map.data[i])
+	{
+		j = 0;
+		while (game->map.data[i][j])
+		{
+			if (game->map.data[i][j] == 'C')
+			{
+				collect += 1;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (collect);
+}
+
 void	start_game(char	*map_path)
 {
 	t_game	game;
@@ -73,8 +98,9 @@ void	set_game(t_game *game, char *map_path)
 {
 	ft_bzero(game, sizeof(t_game));
 	set_map(game, map_path);
-	validate_map(game);
+	game->map.collectables = count_collect(game);
 	set_player_pos(game);
+	validate_map(game);
 	init_player(game);
 	init_collectibles(game);
 	init_holes(game);

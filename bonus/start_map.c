@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:33:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/05 11:13:30 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/13 08:57:21 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,10 @@ void	set_map(t_game *game, char *map_path)
 	while (str)
 	{
 		game->map.data[i] = ft_calloc(sizeof(char *), ft_strlen(str) + 1);
-		ft_strlcpy(game->map.data[i], str, ft_strlen(str));
+		if (i == game->map.rows - 1)
+			ft_strlcpy(game->map.data[i], str, ft_strlen(str) + 1);
+		else
+			ft_strlcpy(game->map.data[i], str, ft_strlen(str));
 		free(str);
 		i++;
 		str = get_next_line(fd);

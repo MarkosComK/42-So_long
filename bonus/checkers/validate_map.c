@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:54:14 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/03 20:06:47 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/13 09:06:51 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	validate_map(t_game *game)
 {
 	if (!game->map.data[0])
-		error_msg("Map is empty!");
+		error_map("Map is invalid", game);
 	if (!map_retangular(game->map))
-		error_msg("Map is not retangular!");
+		error_map("Map is invalid", game);
 	if (!map_components(game->map))
-		error_msg("Map doesn't have the correct components!");
+		error_map("Map is invalid", game);
 	if (!map_walls(game->map))
-		error_msg("Map isn't completely surrounded by walls!");
+		error_map("Map is invalid", game);
+	else if (!map_path(game))
+		error_map("Map is invalid", game);
 	game->map.cols = ft_strlen(game->map.data[0]);
 	game->map.width = game->map.cols * SZ;
 	game->map.height = game->map.rows * SZ;
@@ -61,6 +63,8 @@ int	map_components(t_map map)
 				map.player++;
 			else if (map.data[i][j] == 'E')
 				map.exits++;
+			else if (map.data[i][j] != '0' && map.data[i][j] != '1')
+				return (0);
 		}
 	}
 	if (map.collectables >= 1 && map.exits == 1 && map.player == 1)
@@ -95,4 +99,24 @@ int	map_walls(t_map map)
 		i++;
 	}
 	return (1);
+}
+
+int	map_path(t_game *game)
+{
+	char	**matrix_map;
+	int		i;
+
+	i = 0;
+	matrix_map = malloc(sizeof(char *) * (game->map.rows + 1));
+	if (!matrix_map)
+		error_msg("Mamory allocation fail!\n");
+	while (game->map.data[i])
+	{
+		matrix_map[i] = ft_strdup(game->map.data[i]);
+		i++;
+	}
+	matrix_map[i] = NULL;
+	floodfill(game, matrix_map, game->player.s_pos);
+	map_matrix_delete(matrix_map);
+	return (game->path == 1 && game->path_coll == (unsigned int)game->map.collectables);
 }

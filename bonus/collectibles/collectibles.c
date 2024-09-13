@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 18:06:36 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/08 12:47:10 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/13 09:07:32 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	init_collectibles(t_game *game)
 			if (game->map.data[i][j] == 'C')
 			{
 				if (!game->enemy)
-					game->enemy = bottle_create(j, j);
+					game->enemy = bottle_create(j, i);
 				else
 					bottle_push_tail(game->enemy, j, i);
 			}
