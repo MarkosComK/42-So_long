@@ -64,7 +64,7 @@ int	map_components(t_map map)
 			else if (map.data[i][j] == 'E')
 				map.exits++;
 			else if (map.data[i][j] == 'H')
-					continue ;
+				continue ;
 			else if (map.data[i][j] != '0' && map.data[i][j] != '1')
 				return (0);
 		}
