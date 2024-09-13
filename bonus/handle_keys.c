@@ -41,8 +41,8 @@ int	key_press(int keycode, t_game *g)
 
 void	del_bottle(t_game *game, int index)
 {
-	t_enemy	*prev;
-	t_enemy	*temp;
+	t_enemy		*prev;
+	t_enemy		*temp;
 	int			i;
 
 	temp = game->enemy;
