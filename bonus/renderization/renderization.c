@@ -23,7 +23,8 @@ void	render_game(t_game *game)
 	render_walls_1(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);
 	mlx_string_put(game->mlx, game->win, 10, 16, 0xFFF000, "moves");
-	mlx_string_put(game->mlx, game->win, 19, 27, 0xFFF000, ft_itoa(game->player.moves));
+	mlx_string_put(game->mlx, game->win, 19, 27, 0xFFF000,
+		ft_itoa(game->player.moves));
 }
 
 void	render_map(t_game *game)
