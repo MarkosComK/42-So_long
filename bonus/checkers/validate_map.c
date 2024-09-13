@@ -118,5 +118,5 @@ int	map_path(t_game *game)
 	matrix_map[i] = NULL;
 	floodfill(game, matrix_map, game->player.s_pos);
 	map_matrix_delete(matrix_map);
-	return (game->path == 1 && game->path_coll == (unsigned int)game->map.collectables);
+	return (game->path == 1 && (int)game->path_coll == game->map.collectables);
 }
