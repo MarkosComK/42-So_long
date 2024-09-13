@@ -43,3 +43,11 @@ void	hole_check(t_game *game)
 		index++;
 	}
 }
+
+int	close_x(t_game *game)
+{
+	ft_printf(RED "Game interrupted by the user.\n" DEFAULT);
+	quit(game);
+	exit(0);
+}
+

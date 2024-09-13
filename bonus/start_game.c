@@ -89,8 +89,9 @@ void	start_game(char	*map_path)
 			game.map.height, "So Long");
 	start_world(&game);
 	create_map(&game);
-	mlx_loop_hook(game.mlx, game_loop_hook, &game);
+	mlx_hook(game.win, 17, 1L << 17, close_x, &game);
 	mlx_hook(game.win, 02, 1L << 0, key_press, &game);
+	mlx_loop_hook(game.mlx, game_loop_hook, &game);
 	mlx_loop(game.mlx);
 }
 

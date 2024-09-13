@@ -299,6 +299,7 @@ void	exit_check(t_game *game, t_pos *pos);
 void	wall_check(t_game *game, t_pos *pos, t_pos xy);
 //handle_keys_utils.c
 void	check_sprites(t_game *game, t_entity *player, t_pos pos);
+int	close_x(t_game *game);
 
 
 //start_game.c
