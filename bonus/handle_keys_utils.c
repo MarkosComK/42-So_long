@@ -18,6 +18,7 @@ void	check_sprites(t_game *game, t_entity *player, t_pos pos)
 {
 	wall_check(game, &game->player.s_pos, pos);
 	bottle_check(game, &pos);
+	hole_check(game);
 	player->d_pos = pos;
 	player->current_sprite = 0;
 	player->is_mov = 1;
@@ -26,11 +27,11 @@ void	check_sprites(t_game *game, t_entity *player, t_pos pos)
 void	hole_check(t_game *game)
 {
 	t_pos		new_pos;
-	t_hole		*hole;
+	t_enemy		*hole;
 	int			index;
 
 	new_pos = game->player.s_pos;
-	hole = game->hole;
+	hole = game->enemy;
 	index = 0;
 	while (hole)
 	{
