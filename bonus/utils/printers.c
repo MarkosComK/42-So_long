@@ -64,7 +64,7 @@ void	print_bottles(t_game *game)
 	}
 	ft_printf("\n");
 }
-
+/*
 void	print_holes(t_game *game)
 {
 	t_hole	*current;
@@ -78,3 +78,4 @@ void	print_holes(t_game *game)
 	}
 	ft_printf("\n");
 }
+*/
