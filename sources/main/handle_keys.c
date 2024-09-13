@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long.h"
 
 void	wall_check(t_game *game, t_pos *pos, int dx, int dy);
 
@@ -35,7 +35,7 @@ int	key_press(int keycode, t_game *g)
 	{
 		wall_check(g, pos, 1, 0);
 	}
-	if (keycode == XK_Escape || keycode == XK_q || keycode == XK_Terminate_Server)
+	if (keycode == XK_Escape || keycode == XK_q)
 		quit(g);
 	return (1);
 }
