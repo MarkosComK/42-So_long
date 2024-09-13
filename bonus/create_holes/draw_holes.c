@@ -29,7 +29,7 @@ void	create_holes(t_img *sprite, t_game *game, int posx, int posy)
 			color = get_color_in_pixel(sprite, x, y);
 			if (color != trans_color)
 			{
-				put_pixel(game->world, posx * SZ + x, posy * SZ + y, color);
+				put_pixel(game->world, posx * SZ + x, posy * SZ - 10 + y, color);
 			}
 		}
 	}

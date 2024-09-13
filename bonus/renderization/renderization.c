@@ -16,10 +16,10 @@ void	render_game(t_game *game)
 {
 	render_map(game);
 	render_walls_0(game);
-	render_collectibles(game);
 	render_exit(game);
 	render_holes(game);
 	render_player(game);
+	render_collectibles(game);
 	render_walls_1(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);
 }
