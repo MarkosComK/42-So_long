@@ -55,6 +55,4 @@ typedef struct s_sprite
 	t_img	wall;
 }		t_sprite;
 
-
-
 #endif
