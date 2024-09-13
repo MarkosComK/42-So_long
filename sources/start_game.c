@@ -22,6 +22,13 @@ int	game_loop_hook(t_game *game)
 	return (0);
 }
 
+int	close_x(t_game *game)
+{
+	ft_printf(RED "Game interrupted by the user.\n" DEFAULT);
+	quit(game);
+	exit(0);
+}
+
 void	start_game(char	*map_path)
 {
 	t_game	game;
@@ -33,6 +40,7 @@ void	start_game(char	*map_path)
 			game.map.height, "So Long");
 	start_world(&game);
 	create_map(&game);
+	mlx_hook(game.win, 17, 1L << 17, close_x, &game);
 	mlx_hook(game.win, 02, 1L << 0, key_press, &game);
 	mlx_loop_hook(game.mlx, game_loop_hook, &game);
 	mlx_loop(game.mlx);

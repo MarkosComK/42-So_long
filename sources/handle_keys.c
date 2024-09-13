@@ -35,7 +35,7 @@ int	key_press(int keycode, t_game *g)
 	{
 		wall_check(g, pos, 1, 0);
 	}
-	if (keycode == XK_Escape || keycode == XK_q)
+	if (keycode == XK_Escape || keycode == XK_q || keycode == XK_Terminate_Server)
 		quit(g);
 	return (1);
 }
