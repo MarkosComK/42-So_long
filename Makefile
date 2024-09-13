@@ -63,7 +63,7 @@ $(NAME): $(LIBFT) $(MLX) $(OBJECTS) $(HEADER)
 $(LIBFT):
 	@make --silent -C $(LIBFT_PATH)
 
-bonus:	$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS) $(HEADER)
+bonus:	$(LIBFT) $(MLX) $(MINILIBX_PATH) $(OBJECTS_BONUS) $(HEADER)
 	@$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(INCLUDES) $(MLX) $(MLXFLAGS) -o $(NAME)_bonus
 
 $(MLX): $(MINILIBX_PATH)
