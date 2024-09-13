@@ -72,14 +72,14 @@ typedef struct s_img
 	int		bpp;
 	int		endian;
 	int		line_len;
-}		t_img;
+}				t_img;
 
 typedef struct s_sprite
 {
 	t_img	wall;
-}		t_sprite;
+}				t_sprite;
 
-typedef struct	s_pos
+typedef struct s_pos
 {
 	int	x;
 	int	y;
@@ -92,19 +92,18 @@ typedef struct s_tile
 	t_pos	pos;
 }		t_tile;
 
-typedef struct	s_map
+typedef struct s_map
 {
 	char		**data;
-	int		rows;
-	int		cols;
-	int		width;
-	int		height;
-	int		collectables;
-	int		player;
-	int		exits;
+	int			rows;
+	int			cols;
+	int			width;
+	int			height;
+	int			collectables;
+	int			player;
+	int			exits;
 	t_tile		**tiles;
 }				t_map;
-
 
 typedef struct s_entity
 {
@@ -131,10 +130,10 @@ typedef struct s_exit
 
 typedef struct s_enemy
 {
-	t_pos		pos;
-	t_img		*sprite;
-	int			current_s;
-	char		*sprite_idle[4];
+	t_pos			pos;
+	t_img			*sprite;
+	int				current_s;
+	char			*sprite_idle[4];
 	struct s_enemy	*next;
 }				t_enemy;
 
@@ -145,173 +144,173 @@ typedef struct s_hole
 	struct s_hole	*next;
 }				t_hole;
 
-typedef struct  s_game
+typedef struct s_game
 {
-	void		*mlx;
-	void		*win;
-	t_map		map;
-	t_entity	player;
-	t_img		*world;
-	t_enemy		*enemy;
-	t_hole		*hole;
-	t_exit		exit;
+	void			*mlx;
+	void			*win;
+	t_map			map;
+	t_entity		player;
+	t_img			*world;
+	t_enemy			*enemy;
+	t_hole			*hole;
+	t_exit			exit;
 	unsigned int	path;
 	unsigned int	path_coll;
-	int			e_delay;
-}               t_game;
+	int				e_delay;
+}					t_game;
 
 /*
  * checkers/
  */
 //validate_ber.c
-bool	validate_ber(char *path);
+bool			validate_ber(char *path);
 //validate_map.c
-void	validate_map(t_game *game);
-int	map_retangular(t_map map);
-int	map_components(t_map map);
-int	map_walls(t_map map);
-int	map_path(t_game *game);
+void			validate_map(t_game *game);
+int				map_retangular(t_map map);
+int				map_components(t_map map);
+int				map_walls(t_map map);
+int				map_path(t_game *game);
 //validate_utils.c
-void	floodfill(t_game *game, char **matrix, t_pos cur);
-void	map_matrix_delete(char **map_bytes);
+void			floodfill(t_game *game, char **matrix, t_pos cur);
+void			map_matrix_delete(char **map_bytes);
 
 /*
  * collectibes/
  */
 //collectibles.c
-void	init_collectibles(t_game *game);
+void			init_collectibles(t_game *game);
 //list_utils.c
-t_enemy	*ft_bottlelast(t_enemy *lst);
-t_enemy	*bottle_add(t_enemy *node, int x, int y);
-t_enemy	*bottle_push_tail(t_enemy *stack, int x, int y);
-t_enemy	*bottle_create(int x, int y);
-int			bottles_size(t_enemy *lst);
+t_enemy			*ft_bottlelast(t_enemy *lst);
+t_enemy			*bottle_add(t_enemy *node, int x, int y);
+t_enemy			*bottle_push_tail(t_enemy *stack, int x, int y);
+t_enemy			*bottle_create(int x, int y);
+int				bottles_size(t_enemy *lst);
 /*
  * create_holes.c
  */
 //draw_holes.c
-void	create_holes(t_img *sprite, t_game *game, int posx, int posy);
-void	draw_hole(t_game *game);
+void			create_holes(t_img *sprite, t_game *game, int posx, int posy);
+void			draw_hole(t_game *game);
 //holes.c
-void	init_holes(t_game *game);
+void			init_holes(t_game *game);
 //list_utils_holes.c
-t_hole	*ft_holelast(t_hole *lst);
-t_hole	*hole_add(t_hole *node, int x, int y);
-t_hole	*hole_push_tail(t_hole *stack, int x, int y);
-t_hole	*hole_create(int x, int y);
-int			hole_size(t_hole *lst);
+t_hole			*ft_holelast(t_hole *lst);
+t_hole			*hole_add(t_hole *node, int x, int y);
+t_hole			*hole_push_tail(t_hole *stack, int x, int y);
+t_hole			*hole_create(int x, int y);
+int				hole_size(t_hole *lst);
 //render_holes.c
-void	render_holes(t_game *game);
+void			render_holes(t_game *game);
 /*
  * exit/
  */
 //exit.c
-void	init_exit(t_game *game);
-void	create_exit(t_img *sprite, t_game *game, int posx, int posy);
+void			init_exit(t_game *game);
+void			create_exit(t_img *sprite, t_game *game, int posx, int posy);
 
 /*
  * game_over/
  */
 //frees.c
-void	destroy_sprite(t_img **sprite, void *mlx);
-void	free_map(t_map map);
-void	free_tiles(t_map map);
-void	free_bottles(t_enemy *bottles);
-void	free_holes(t_hole *holes);
+void			destroy_sprite(t_img **sprite, void *mlx);
+void			free_map(t_map map);
+void			free_tiles(t_map map);
+void			free_bottles(t_enemy *bottles);
+void			free_holes(t_hole *holes);
 
 /*
  * player/
  */
 //player.c
-void	init_player(t_game *game);
-void	load_player_sprite(t_game *game);
-void	set_player_pos(t_game *game);
-void	create_player(t_img *sprite, t_game *game, int posx, int posy);
+void			init_player(t_game *game);
+void			load_player_sprite(t_game *game);
+void			set_player_pos(t_game *game);
+void			create_player(t_img *sprite, t_game *game, int posx, int posy);
 
 //quit.c
-void	quit(t_game *game);
+void			quit(t_game *game);
 
 /*
  * renderization/
  */
 //draw.c
-void	draw_player(t_game *game);
-void	draw_map(t_game *game);
-void	draw_collectibles(t_game *game);
-void	draw_bottles(t_game *game);
-void	draw_exit(t_game *game);
+void			draw_player(t_game *game);
+void			draw_map(t_game *game);
+void			draw_collectibles(t_game *game);
+void			draw_bottles(t_game *game);
+void			draw_exit(t_game *game);
 //draw_animate_player.c
-void	draw_player_r(t_game *game);
-void	draw_player_l(t_game *game);
+void			draw_player_r(t_game *game);
+void			draw_player_l(t_game *game);
 //draw_animate_player2.c
-void	draw_player_b(t_game *game);
-void	draw_player_t(t_game *game);
+void			draw_player_b(t_game *game);
+void			draw_player_t(t_game *game);
 //draw_death.c
-void	draw_death(t_game *game);
+void			draw_death(t_game *game);
 //draw_wall.c
-void	draw_wall_0(t_game *game);
-void	draw_wall_1(t_game *game);
+void			draw_wall_0(t_game *game);
+void			draw_wall_1(t_game *game);
 //render_wall.c
-void	render_walls_0(t_game *game);
-void	render_walls_1(t_game *game);
+void			render_walls_0(t_game *game);
+void			render_walls_1(t_game *game);
 //renderization.c
-void	render_game(t_game *game);
-void	render_map(t_game *game);
-void	render_player(t_game *game);
-void	render_collectibles(t_game *game);
-void	render_exit(t_game *game);
+void			render_game(t_game *game);
+void			render_map(t_game *game);
+void			render_player(t_game *game);
+void			render_collectibles(t_game *game);
+void			render_exit(t_game *game);
 
 /*
  * sprites/
  */
 //create_sprites.c
-t_img	*create_sprite(t_game *game, char *sprite_path);
-void	create_map(t_game *game);
-char	*get_sprite_path(t_game *game, char c, int x, int y);
-void	create_world(t_img *sprite, t_game *game, int posx, int posy);
+t_img			*create_sprite(t_game *game, char *sprite_path);
+void			create_map(t_game *game);
+char			*get_sprite_path(t_game *game, char c, int x, int y);
+void			create_world(t_img *sprite, t_game *game, int posx, int posy);
 
 //handle_pixel.c
-void	put_pixel(t_img *sprite, int x, int y, int color);
+void			put_pixel(t_img *sprite, int x, int y, int color);
 unsigned int	get_color_in_pixel(t_img *sprite, int x, int y);
 
 /*
  * utils/
  */
 //printers.c
-int     error_msg(char *msg);
-int     error_map(char *msg, t_game *game);
-void	print_map(t_game *game);
-void	print_player(t_game *game);
-void	print_bottles(t_game *game);
-void	print_holes(t_game *game);
+int				error_msg(char *msg);
+int				error_map(char *msg, t_game *game);
+void			print_map(t_game *game);
+void			print_player(t_game *game);
+void			print_bottles(t_game *game);
+void			print_holes(t_game *game);
 //randomizer.c
-char	*randomize_floor(int x, int y, t_map map);
-t_pos randomize_pos(t_pos pos, char **map, t_pos p_pos, t_game *game);
+char			*randomize_floor(int x, int y, t_map map);
+t_pos			randomize_pos(t_pos pos, char **map, t_pos p_pos, t_game *game);
 //utils.c
-int	count_lines(char *map_path);
-int	print_fps(clock_t current_time);
+int				count_lines(char *map_path);
+int				print_fps(clock_t current_time);
 
 //end_game.c
-void	quit(t_game *game);
+void			quit(t_game *game);
 
 //handle_keys.c
-int	key_press(int keycode, t_game *g);
-void	bottle_check(t_game *game, t_pos *pos);
-void	exit_check(t_game *game, t_pos *pos);
-void	wall_check(t_game *game, t_pos *pos, t_pos xy);
+int				key_press(int keycode, t_game *g);
+void			bottle_check(t_game *game, t_pos *pos);
+void			exit_check(t_game *game, t_pos *pos);
+void			wall_check(t_game *game, t_pos *pos, t_pos xy);
 //handle_keys_utils.c
-void	check_sprites(t_game *game, t_entity *player, t_pos pos);
-int	close_x(t_game *game);
+void			check_sprites(t_game *game, t_entity *player, t_pos pos);
+int				close_x(t_game *game);
 
 //start_game.c
-void	start_game(char	*map_path);
-void	set_game(t_game *game, char *map_path);
+void			start_game(char	*map_path);
+void			set_game(t_game *game, char *map_path);
 
 //start_map.c
-void	set_map_tiles(t_game *game);
-t_tile	new_tile(char type, int x, int y);
-void	fill_map(t_game *game);
-void	start_world(t_game *game);
-void    set_map(t_game *game, char *map_path);
+void			set_map_tiles(t_game *game);
+t_tile			new_tile(char type, int x, int y);
+void			fill_map(t_game *game);
+void			start_world(t_game *game);
+void			set_map(t_game *game, char *map_path);
 
 #endif
