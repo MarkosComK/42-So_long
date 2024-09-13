@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../includes/so_long_bonus.h"
 
 char	*randomize_floor(int x, int y, t_map map)
 {
@@ -31,7 +31,7 @@ char	*randomize_floor(int x, int y, t_map map)
 	return (floor);
 }
 
-t_pos randomize_pos(t_pos pos, char **map)
+t_pos randomize_pos(t_pos pos, char **map, t_pos p_pos, t_game *game)
 {
 	t_pos	value;
 	int		direction;
@@ -51,5 +51,10 @@ t_pos randomize_pos(t_pos pos, char **map)
 	value.y = pos.y + dy[direction];
 	if (map[value.y][value.x] == '1')
 		value = pos;
+	if (value.x == p_pos.x && value.y == p_pos.y)
+	{
+		game->player.death = 1;
+		ft_printf(RED "You have ben caught!\n" DEFAULT);
+	}
 	return value;
 }

@@ -52,4 +52,3 @@ int	close_x(t_game *game)
 	quit(game);
 	exit(0);
 }
-
