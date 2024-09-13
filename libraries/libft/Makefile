@@ -60,9 +60,9 @@ ${NAME}: ${OBJS}
 all: $(NAME)
 
 clean:
-	rm -rf *.o
-	rm -rf printf/*.o
-	rm -rf get_next_line/*.o
+	@rm -rf *.o
+	@rm -rf printf/*.o
+	@rm -rf get_next_line/*.o
 	@clear
 	@echo
 	@echo "$(RED)┏┓┓ ┏┓┏┓┳┓┏┓┳┓"
@@ -71,7 +71,7 @@ clean:
 	@echo
 
 fclean: clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 	@clear
 	@echo
 	@echo "$(RED)┏┓┓ ┏┓┏┓┳┓┏┓┳┓"

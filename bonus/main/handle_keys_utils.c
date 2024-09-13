@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 
 void	hole_check(t_game *game);
 

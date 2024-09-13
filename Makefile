@@ -85,11 +85,11 @@ $(MINILIBX_PATH):
 	@echo "$(RESET)"
 
 clean:
-	@$(MAKE) -C $(LIBFT_PATH) clean
+	@$(MAKE) --silent -C $(LIBFT_PATH) clean
 	@$(RM) $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean:	clean
-	@$(MAKE) -C $(LIBFT_PATH) fclean
+	@$(MAKE) --silent -C $(LIBFT_PATH) fclean
 	@$(RM) $(NAME) $(NAME)_bonus
 	@$(RM) $(NAME) $(NAME)
 

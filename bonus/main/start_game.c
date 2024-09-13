@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 #include <time.h>
 
 int	delay_time(t_game *game, int frame)
