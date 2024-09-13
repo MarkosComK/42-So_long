@@ -56,13 +56,15 @@ void	draw_bottles(t_game *game)
 	{
 		if (game->e_delay == 4)
 		{
-			enemy->sprite = create_sprite(game, enemy->sprite_idle[enemy->current_s]);
+			enemy->sprite = create_sprite(game,
+					enemy->sprite_idle[enemy->current_s]);
 			create_player(enemy->sprite, game, enemy->pos.x, enemy->pos.y);
 			enemy->current_s = (enemy->current_s + 1) % 4;
 		}
 		else
 		{
-			enemy->sprite = create_sprite(game, enemy->sprite_idle[enemy->current_s]);
+			enemy->sprite = create_sprite(game,
+					enemy->sprite_idle[enemy->current_s]);
 			create_player(enemy->sprite, game, enemy->pos.x, enemy->pos.y);
 		}
 		mlx_destroy_image(game->mlx, enemy->sprite->ptr);
