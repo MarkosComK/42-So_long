@@ -60,6 +60,7 @@ void	draw_bottles(t_game *game)
 					enemy->sprite_idle[enemy->current_s]);
 			create_player(enemy->sprite, game, enemy->pos.x, enemy->pos.y);
 			enemy->current_s = (enemy->current_s + 1) % 4;
+			enemy->pos = randomize_pos(enemy->pos, game->map.data);
 		}
 		else
 		{

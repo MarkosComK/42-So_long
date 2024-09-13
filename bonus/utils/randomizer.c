@@ -30,3 +30,26 @@ char	*randomize_floor(int x, int y, t_map map)
 		floor = FLOOR1;
 	return (floor);
 }
+
+t_pos randomize_pos(t_pos pos, char **map)
+{
+	t_pos	value;
+	int		direction;
+	int		dx[4];
+	int		dy[4];
+
+	direction = rand() % 4;
+	dx[0] = 0;
+	dx[1] = 1;
+	dx[2] = 0;
+	dx[3] = -1;
+	dy[0] = -1;
+	dy[1] = 0;
+	dy[2] = 1;
+	dy[3] = 0;
+	value.x = pos.x + dx[direction];
+	value.y = pos.y + dy[direction];
+	if (map[value.y][value.x] == '1')
+		value = pos;
+	return value;
+}

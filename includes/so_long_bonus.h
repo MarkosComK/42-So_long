@@ -286,6 +286,7 @@ void	print_bottles(t_game *game);
 void	print_holes(t_game *game);
 //randomizer.c
 char	*randomize_floor(int x, int y, t_map map);
+t_pos randomize_pos(t_pos pos, char **map);
 //utils.c
 int	count_lines(char *map_path);
 int	print_fps(clock_t current_time);
