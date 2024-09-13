@@ -31,7 +31,7 @@ char	*randomize_floor(int x, int y, t_map map)
 	return (floor);
 }
 
-t_pos randomize_pos(t_pos pos, char **map, t_pos p_pos, t_game *game)
+t_pos	randomize_pos(t_pos pos, char **map, t_pos p_pos, t_game *game)
 {
 	t_pos	value;
 	int		direction;
@@ -56,5 +56,5 @@ t_pos randomize_pos(t_pos pos, char **map, t_pos p_pos, t_game *game)
 		game->player.death = 1;
 		ft_printf(RED "You have ben caught!\n" DEFAULT);
 	}
-	return value;
+	return (value);
 }
