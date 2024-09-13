@@ -12,7 +12,7 @@
 
 #include "../../includes/so_long_bonus.h"
 
-t_hole *ft_holelast(t_hole *lst)
+t_hole	*ft_holelast(t_hole *lst)
 {
 	if (!lst)
 		return (NULL);
