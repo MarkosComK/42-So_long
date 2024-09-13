@@ -301,7 +301,6 @@ void	wall_check(t_game *game, t_pos *pos, t_pos xy);
 void	check_sprites(t_game *game, t_entity *player, t_pos pos);
 int	close_x(t_game *game);
 
-
 //start_game.c
 void	start_game(char	*map_path);
 void	set_game(t_game *game, char *map_path);
