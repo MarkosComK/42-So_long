@@ -38,6 +38,7 @@ void	hole_check(t_game *game)
 		if (new_pos.x == hole->pos.x && new_pos.y == hole->pos.y)
 		{
 			game->player.death = 1;
+			ft_printf(RED "You have ben caught!\n" DEFAULT);
 			return ;
 		}
 		hole = hole-> next;
