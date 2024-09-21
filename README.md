@@ -1,8 +1,15 @@
 <h1 align="center"> 42Cursus so_long </h1>
 
+<p align="center">
+<img alt="so_long" src="https://github.com/user-attachments/assets/12029da6-0667-4a64-970e-df681c40cc48">
+</p>
 <p align="center">Development repo for 42Cursus so_long project</p>
 
 ## This project is in progress. Keep looking!
+
+<div align="center">
+	<img src="https://github.com/MarkosComK/42-Libft/assets/67120870/10a2a298-340e-4a67-96bd-d97716a60526">
+</div>
 
 ## Index
 * [What is so_long?](#what-is-so_long)
@@ -56,11 +63,15 @@ In case you wanna play the bonus version:
 	
 So, run ./so_long followed by the map:
 	
-	./so_long assets/maps/valid/map2.ber	
+```sh
+	./so_long maps/valid/valid2.ber
+```
 
 For bonus:
-	
-	./so_long_bonus assets/maps/valid/bonus/map5.ber
+
+```sh
+	./so_long_bonus maps/bonus_cluster.ber
+```
 	
 <h3 id="maps" align="center"> Maps </h3>   
 You can parse any kind of map, as long as it respects the below rules:
@@ -81,7 +92,7 @@ For bonus there's an extra character - which makes you lose once touch it.
     
 | CHAR |	OBJECT   |
 | --------- | ---------- |
-| T         |   Toxic River  |
+| H         |   Enemy  |
 
 
 The map must be rectangular and surrounded by walls '1'.
@@ -93,6 +104,7 @@ Check some examples in the folder /assets/maps.
 As in assets/maps/valid/map2.ber:
 
 <img src="HERE THE MAP IMG FOR EXAMPLE">
+
 This .ber file generates this map:
     
     
@@ -140,27 +152,27 @@ missing W parameter, missing C parameter, missing E parameter, missing P paramet
 I used augustobecker tester [Tester](https://github.com/augustobecker/so_long_tester).
 
 To test the code in this repo Clone this repo and cd into it:
-```
+
+```sh
 git clone https://github.com/augustobecker/so_long
 
 cd so_long/
 ```
 Now, clone the Tester
 
-```
+```sh
 git clone https://github.com/augustobecker/so_long_tester
 ```
 
 Go into the test folder and run with make:
 
-```
+```sh
 cd so_long_tester
 make
 ```
 
 If you did everything correctly you should see something like this
 
-![image](https://user-images.githubusercontent.com/81205527/179400332-9e80f631-7d46-464b-a0eb-e481b48ad6b4.png)
 
 <h2 align="center" id="42-cursus"> 42 Cursus </h2>
 	
@@ -180,7 +192,7 @@ To see other projects developed by me at 42, click here: <a href="https://github
 <h2  align="center" id="author">Author</h2>
 <div align="center">
 	<div>
-	<img height="222em" src="HERE PROFILE IMG">
+	<img width="200" src="https://github.com/user-attachments/assets/7f5d1839-bd82-44e8-aa06-168ea71ca392">
 	</div>
 	<div>
 		<strong> Markos Santos | marsoare | 🇧🇷👨‍🚀</strong>
