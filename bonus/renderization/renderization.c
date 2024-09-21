@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 09:14:10 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/11 19:29:31 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:49:20 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	render_game(t_game *game)
 {
+	char	*itoa;
+
+	itoa = ft_itoa(game->player.moves);
 	render_map(game);
 	render_walls_0(game);
 	render_exit(game);
@@ -23,8 +26,8 @@ void	render_game(t_game *game)
 	render_walls_1(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->world->ptr, -24, 0);
 	mlx_string_put(game->mlx, game->win, 10, 16, 0xFFF000, "moves");
-	mlx_string_put(game->mlx, game->win, 19, 27, 0xFFF000,
-		ft_itoa(game->player.moves));
+	mlx_string_put(game->mlx, game->win, 19, 27, 0xFFF000, itoa);
+	free(itoa);
 }
 
 void	render_map(t_game *game)
